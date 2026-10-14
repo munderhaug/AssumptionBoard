@@ -1,8 +1,8 @@
 # Eksempelkort
 
-Tre ferdig utfylte kort, ett for hver beslutning. De viser hvordan et godt kort ser ut. Legg gjerne merke til at et *Ikke sant*-kort er et godt resultat: vi slapp å bygge noe som ikke virket.
+Fire ferdig utfylte kort: én utforsking og tre antakelser, én for hver beslutning. De viser hvordan et godt kort ser ut. Utforskingen kom først, og to av antakelsene kom fra den. Legg gjerne merke til at et *Ikke sant*-kort er et godt resultat: vi slapp å bygge noe som ikke virket.
 
-Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel: dere lager deres egne.
+Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempel: dere lager deres egne.
 
 > **LM1: Vi vet om automatisk fakturaimport er verdt å bygge** (frist 15. november)
 >
@@ -10,13 +10,33 @@ Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel
 
 ---
 
-## Kort 1: Ikke sant
+## Kort 1: Utforsking
+
+**Tittel:** Vi vil forstå hvordan fakturaene kommer fra pilotkundene til regnskapsføreren i dag
+
+**Viktighet:** Høy · **Eier:** designer og utvikler · **Status:** Innsikt
+
+**Vi vil forstå…** hvordan fakturaene kommer fra pilotkundene til regnskapsføreren i dag, og hvor det stopper opp. Svaret avgjør hva vi tester først før M2.
+
+**Vi utforsker ved å…** ha samtaler med regnskapsførere og pilotkunder om hvordan de håndterte fakturaene forrige uke, og se på eksportfilene fra regnskapssystemene pilotkundene bruker.
+
+**Vi er ferdige når…** vi har hatt seks samtaler, eller etter to uker, det som kommer først.
+
+**Innsikt**
+- **Det vi så:** I 5 av 6 samtaler kom fakturaene som PDF på e-post, og regnskapsføreren la dem inn for hånd. Pilotkundene bruker tre ulike regnskapssystemer, og alle kan eksportere fakturaene, men i ulike formater.
+- **Nye kort:** «Vi tror at vi kan importere 80 % av fakturaene automatisk» (kort 2) og «Vi tror at pilotkundene vil laste opp fakturaer selv» (kort 3).
+- **Nye spørsmål:** Hvor mye tid går med til å purre på fakturaer som mangler? Ikke et kort ennå.
+- **Bevis:** Miro-frame «Fakturaflyt, oppsummering av seks samtaler», 26. september.
+
+---
+
+## Kort 2: Ikke sant
 
 **Tittel:** Vi tror at vi kan importere 80 % av fakturaene automatisk
 
 **Risikotype:** Gjennomførbarhet · **Viktighet:** Høy · **Sikkerhet:** Høy · **Eier:** utvikler
 
-**Vi tror at…** vi kan importere 80 % av kundenes fakturaer automatisk fra deres eksisterende regnskapseksporter, uten manuell kobling av felt.
+**Vi tror at…** vi kan importere 80 % av kundenes fakturaer automatisk fra deres eksisterende regnskapseksporter, uten manuell kobling av felt. Kommer fra kort 1.
 
 **Vi tester ved å…** kjøre en spike på to dager som leser 30 ekte eksportfiler fra tre pilotkunder.
 
@@ -30,13 +50,13 @@ Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel
 
 ---
 
-## Kort 2: Validert
+## Kort 3: Validert
 
 **Tittel:** Vi tror at pilotkundene vil laste opp fakturaer selv
 
 **Risikotype:** Verdi · **Viktighet:** Høy · **Sikkerhet:** Middels · **Eier:** designer
 
-**Vi tror at…** minst halvparten av pilotkundene vil laste opp fakturaer selv, i stedet for å sende dem på e-post til regnskapsføreren, hvis opplastingen tar under ett minutt.
+**Vi tror at…** minst halvparten av pilotkundene vil laste opp fakturaer selv, i stedet for å sende dem på e-post til regnskapsføreren, hvis opplastingen tar under ett minutt. Kommer fra kort 1.
 
 **Vi tester ved å…** gi 8 brukere hos pilotkundene en enkel opplastingsside i én uke, ved siden av e-post, og se hvem som bruker den.
 
@@ -50,7 +70,7 @@ Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel
 
 ---
 
-## Kort 3: Bet
+## Kort 4: Bet
 
 **Tittel:** Vi tror at brukerne forstår statusikonene uten forklaring
 
