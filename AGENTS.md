@@ -96,6 +96,7 @@ Step-by-step instructions for recurring tasks live in `.claude/skills/`. Claude 
 | Turn a loose belief into a good card, challenge it, suggest a test and create the issue | `.claude/skills/writing-assumptions/SKILL.md` |
 | Prepare the weekly meeting (ukesmøtet) | `.claude/skills/preparing-weekly-meeting/SKILL.md` |
 | Summarize what the team learned (læringsbrev) | `.claude/skills/summarizing-learnings/SKILL.md` |
+| Review a decision before the card leaves discovery | `.claude/skills/reviewing-decisions/SKILL.md` |
 
 ## In the template itself
 
