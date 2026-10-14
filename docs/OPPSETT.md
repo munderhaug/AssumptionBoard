@@ -115,6 +115,18 @@ Kolonnen blir rød når grensen overskrides. Grensene er startpunkter. Juster et
 
 ## 8. Tilgang
 
+**Før kunden får tilgang:** bytt ut `README.md`. Repoet har arvet malens README, som handler om å sette opp en tavle, ikke om å lese den. Et utgangspunkt:
+
+```markdown
+# Discovery: <kunde eller prosjekt>
+
+Her samler vi det vi tror, men ikke har verifisert, og det vi har lært. Hvert kort er en antakelse, ikke en oppgave.
+
+- **Tavlen:** <lenke til prosjektet>. Visningen *Kunde* viser beslutningene.
+- **Et kort:** «Vi tror at…» er påstanden, «Vi har rett hvis…» er linjen vi satte før testen, og «Beslutning og innsikt» er konklusjonen.
+- **Slik jobber vi:** [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md)
+```
+
 Tilgang til repoet gir du under repoets *Settings* → *Collaborators* (i en organisasjon: *Collaborators and teams*). Tilgang til prosjektet gir du under prosjektets *Settings* → *Manage access*.
 
 - Teamet: skrivetilgang til repoet og prosjektet.
@@ -184,6 +196,7 @@ Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *M
 - [ ] Auto-add og Backlog som startstatus er på, Item closed og Auto-archive er av
 - [ ] Visningene er laget
 - [ ] Grenser satt (3 og 5)
+- [ ] README er byttet ut med en beskrivelse av tavlen
 - [ ] Teamet har skrivetilgang (minst triage), kunden lesetilgang
 - [ ] PR-malen er kopiert til dev-repoet
 - [ ] Avhengigheter på tvers av repoer er testet med to testrepoer
