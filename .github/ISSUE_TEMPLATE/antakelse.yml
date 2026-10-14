@@ -1,0 +1,43 @@
+name: Antakelse
+description: Noe vi tror, men ikke har verifisert
+title: "Vi tror at "
+labels: ["antakelse"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Skriv én konkret påstand som kan vise seg å være feil.
+        Sett Oppfølging (dato) på tavlen: når vi senest ser på kortet igjen.
+        Milepæl, Risikotype, Viktighet og Sikkerhet er valgfrie og brukes når backlogen vokser.
+  - type: textarea
+    id: tror
+    attributes:
+      label: Vi tror at…
+      description: Én konkret, etterprøvbar påstand
+    validations:
+      required: true
+  - type: textarea
+    id: tester
+    attributes:
+      label: Vi tester ved å…
+      description: Intervju, prototype, teknisk spike, dataanalyse eller lignende
+  - type: textarea
+    id: rett
+    attributes:
+      label: Vi har rett hvis…
+      description: Bestått/ikke-bestått-linjen. Skriv den før testen starter
+  - type: textarea
+    id: beslutning
+    attributes:
+      label: Beslutning og innsikt
+      description: >-
+        Fylles ut når kortet forlater discovery. Skriv konklusjonen her i kortet,
+        slik at den kan leses uten å åpne Miro eller andre verktøy.
+        Lenk til konkrete frames eller dokumenter, ikke hele tavler.
+        Ingen personopplysninger: lenk til oppsummeringer, ikke opptak eller navn.
+      value: |
+        **Beslutning:** Validert / Bet / Ikke sant
+        **Det vi så:**
+        **Produktimplikasjon:**
+        **Bevis:**
+        **Hvis Bet, måling vi følger:**
