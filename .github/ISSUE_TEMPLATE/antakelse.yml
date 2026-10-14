@@ -8,7 +8,7 @@ body:
       value: |
         Skriv én konkret påstand som kan vise seg å være feil. Vet dere ikke nok til å tro noe ennå, bruk «Utforsking».
         Sett Oppfølging (dato) på tavlen: når vi senest ser på kortet igjen.
-        Milepæl, Risikotype, Viktighet og Sikkerhet er valgfrie og brukes når backlogen vokser.
+        Milepæl og Risikotype er valgfrie.
   - type: textarea
     id: tror
     attributes:
@@ -40,4 +40,4 @@ body:
         **Det vi så:**
         **Produktimplikasjon:**
         **Bevis:**
-        **Hvis Bet, måling vi følger:**
+        **Hvis Bet, det vi følger med på (valgfritt):**

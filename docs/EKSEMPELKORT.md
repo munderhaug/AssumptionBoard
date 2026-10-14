@@ -1,8 +1,8 @@
 # Eksempelkort
 
-Fire ferdig utfylte kort: én utforsking og tre antakelser, én for hver beslutning. De viser hvordan et godt kort ser ut. Utforskingen kom først, og to av antakelsene kom fra den. Legg gjerne merke til at et *Ikke sant*-kort er et godt resultat: vi slapp å bygge noe som ikke virket.
+Fire ferdig utfylte kort: én utforsking og tre antakelser, én for hver beslutning. De viser hvordan et godt kort ser ut. Utforskingen kom først, og to av antakelsene kom fra den. Den siste kom fra kartleggingen av det som allerede var bygd. Legg gjerne merke til at et *Ikke sant*-kort er et godt resultat: vi slapp å bygge noe som ikke virket.
 
-Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempel: dere lager deres egne.
+De tre første hører til samme læringsmilepæl. Bet-kortet hører ikke til noen, og det er greit: ikke alle kort trenger en milepæl. Milepælen er også bare et eksempel. Dere lager deres egne.
 
 > **LM1: Vi vet om automatisk fakturaimport er verdt å bygge** (frist 15. november)
 >
@@ -14,7 +14,7 @@ Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempe
 
 **Tittel:** Vi vil forstå hvordan fakturaene kommer fra pilotkundene til regnskapsføreren i dag
 
-**Viktighet:** Høy · **Eier:** designer og utvikler · **Status:** Innsikt
+**Eier:** designer og utvikler · **Status:** Innsikt
 
 **Vi vil forstå…** hvordan fakturaene kommer fra pilotkundene til regnskapsføreren i dag, og hvor det stopper opp. Svaret avgjør hva vi tester først før M2.
 
@@ -34,7 +34,7 @@ Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempe
 
 **Tittel:** Vi tror at vi kan importere 80 % av fakturaene automatisk
 
-**Risikotype:** Gjennomførbarhet · **Viktighet:** Høy · **Sikkerhet:** Høy · **Eier:** utvikler
+**Risikotype:** Gjennomførbarhet · **Eier:** utvikler
 
 **Vi tror at…** vi kan importere 80 % av kundenes fakturaer automatisk fra deres eksisterende regnskapseksporter, uten manuell kobling av felt. Kommer fra kort 1.
 
@@ -54,7 +54,7 @@ Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempe
 
 **Tittel:** Vi tror at pilotkundene vil laste opp fakturaer selv
 
-**Risikotype:** Verdi · **Viktighet:** Høy · **Sikkerhet:** Middels · **Eier:** designer
+**Risikotype:** Verdi · **Eier:** designer
 
 **Vi tror at…** minst halvparten av pilotkundene vil laste opp fakturaer selv, i stedet for å sende dem på e-post til regnskapsføreren, hvis opplastingen tar under ett minutt. Kommer fra kort 1.
 
@@ -65,7 +65,7 @@ Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempe
 **Beslutning og innsikt**
 - **Beslutning:** Validert
 - **Det vi så:** 6 av 8 lastet opp selv, og alle opplastingene tok under ett minutt. De to som ikke gjorde det, har en regnskapsfører som henter fakturaene selv.
-- **Produktimplikasjon:** Opplasting blir hovedflyten i M2. E-post beholdes som reserve. Sikkerheten er middels fordi utvalget er lite og perioden kort, så vi følger med på bruken i piloten.
+- **Produktimplikasjon:** Opplasting blir hovedflyten i M2. E-post beholdes som reserve. Utvalget er lite og perioden kort, så vi følger med på bruken i piloten.
 - **Bevis:** bruksdata fra opplastingssiden og Miro-frame «Opplastingstest uke 41, oppsummering», 14. oktober.
 
 ---
@@ -74,17 +74,17 @@ Alle fire hører til samme læringsmilepæl. Milepælen er også bare et eksempe
 
 **Tittel:** Vi tror at brukerne forstår statusikonene uten forklaring
 
-**Risikotype:** Brukbarhet · **Viktighet:** Lav · **Sikkerhet:** Middels · **Eier:** designer · **Oppfølging:** 1. desember
+**Risikotype:** Brukbarhet · **Eier:** designer · **Status:** Implementert · **Oppfølging:** 1. desember
 
-**Vi tror at…** brukerne forstår de fire statusikonene på fakturalisten uten hjelpetekst.
+**Vi tror at…** brukerne forstår de fire statusikonene på fakturalisten uten hjelpetekst. Ikonene er allerede bygd, og kortet kom fra kartleggingen av det som er bygd.
 
-**Vi tester ved å…** ikke teste før lansering. Ikonene følger et kjent mønster, og de er enkle å endre.
+**Vi tester ved å…** ikke teste nå. Ikonene følger et kjent mønster, og de er enkle å endre.
 
 **Vi har rett hvis…** det kommer færre enn 5 henvendelser til support om fakturastatus per måned.
 
 **Beslutning og innsikt**
 - **Beslutning:** Bet
 - **Det vi så:** Ikke testet. Ikonene er hentet fra designsystemet, der de brukes i to andre produkter.
-- **Produktimplikasjon:** Bygges som skissert. Hvis vi får flere henvendelser enn grensen, legger vi til en tekst ved siden av ikonet.
+- **Produktimplikasjon:** Ikonene beholdes som de er. Hvis vi får flere henvendelser enn grensen, legger vi til en tekst ved siden av ikonet.
 - **Bevis:** lenke til komponentene i designsystemet.
-- **Hvis Bet, måling vi følger:** antall supporthenvendelser merket «fakturastatus».
+- **Hvis Bet, det vi følger med på (valgfritt):** antall supporthenvendelser merket «fakturastatus».
