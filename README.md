@@ -63,7 +63,7 @@ Tavlen virker uten AI. Bruker teamet AI-verktøy, ligger instruksjonene klare:
 
 - `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
 - Fire ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.
-  - `writing-assumptions` gjør en løs tanke om til et godt kort, utfordrer det og foreslår en test. Den oppretter issuen bare etter et ja.
+  - `writing-assumptions` hjelper dere å gjøre spørsmål, idéer, funksjoner eller en løs tanke om til gode kort. Den finner hva dere må finne ut av fra produkt, design, teknologi og forretning, utfordrer hvert kort og foreslår en test. Den oppretter issuen bare etter et ja.
   - `preparing-weekly-meeting` går gjennom tavlen og lager en kort agenda til ukesmøtet. Den endrer ingenting.
   - `summarizing-learnings` skriver et utkast til ukens læringsbrev, «Dette lærte vi», fra beslutningene på kortene, med lenke til hvert kort. Den kan også oppsummere en læringsmilepæl. Den sender ingenting.
   - `reviewing-decisions` går gjennom beslutningen på ett kort før det forlater discovery: om «Det vi så» når grensen i «Vi har rett hvis…», og om en Validert egentlig er en Bet. Den stiller spørsmål og godkjenner aldri.

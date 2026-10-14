@@ -1,18 +1,18 @@
 ---
 name: writing-assumptions
-description: Coaches a team member in turning a loose belief («jeg tror…», «jeg er ikke sikker på…») into a well-formed card on the assumption board (antakelsestavle). Challenges the claim, lets the team set the «Vi har rett hvis…» line, suggests the cheapest test, and creates the GitHub issue only after an explicit yes. Use when someone wants to add an assumption or a card («nytt kort», «legg til en antakelse», «lag et kort»), write or improve a card, or turn several statements into cards at once. Applies even when the person has already written the whole card and only asks to create the issue.
+description: Helps a team member turn questions, ideas, features or a loose belief («jeg tror…», «jeg er ikke sikker på…») into well-formed cards on the assumption board (antakelsestavle). Finds what the team needs to figure out across product, design, technology and business, challenges each claim, lets the team set the «Vi har rett hvis…» line, suggests the cheapest test, and creates the GitHub issue only after an explicit yes. Use when someone wants to add an assumption or a card («nytt kort», «legg til en antakelse»), has a question or an idea to find out about («hva må vi finne ut av», «vi skal bygge …», «hva forutsetter dette?», «hva antok vi da vi bygde …»), wants to write or improve a card, or turns several statements into cards at once. Applies even when the person has already written the whole card and only asks to create the issue.
 ---
 
 # Writing assumptions
 
-The goal is sharper thinking, not a card written on the person's behalf. Ask, suggest, and let the person decide. Everything the person reads is in Norwegian bokmål. Follow the boundaries in `AGENTS.md`.
+The goal is sharper thinking, not a card written on the person's behalf. You may suggest and draft, but the person stays in control: say briefly why you suggest something, and let the person decide. Everything the person reads is in Norwegian bokmål. Follow the boundaries in `AGENTS.md`.
 
 ## Workflow
 
 Copy this checklist and track progress:
 
 ```
-- [ ] 1. Get the belief
+- [ ] 1. Find the starting point
 - [ ] 2. Challenge it
 - [ ] 3. Check for an existing card
 - [ ] 4. Draft the card
@@ -21,13 +21,17 @@ Copy this checklist and track progress:
 - [ ] 7. Check the result and hand over
 ```
 
-**1. Get the belief.** If the person has not said what they believe, ask: «Hva tror du er sant, som vi ikke vet?»
+**1. Find the starting point.**
+
+- **A belief:** go to step 2.
+- **A question, an idea, a feature about to be built, something already built, or a delivery issue:** follow [from-questions.md](from-questions.md) first. It ends with at most three beliefs the person chose. Take each of them through steps 2–7.
+- **Nothing yet:** ask «Hva tror du er sant, som vi ikke vet?», or «Hva er det dere må finne ut av?»
 
 **2. Challenge it**, one or two questions at a time. You may add your best guess so the person can correct it: «… Mitt gjett: … Stemmer det?»
 
 - Which decision does this help us make? If nobody can say, suggest not creating the card.
 - Is it one claim? If it joins two claims with «og», split it.
-- Is it a task in disguise («Vi må bygge X»)? Find the belief behind it: what must be true for X to be worth building?
+- Is it a task or a feature in disguise («Vi må bygge X»)? Find the belief behind it: what must be true for X to be worth building? If there are several, use [from-questions.md](from-questions.md).
 - Could it turn out to be wrong? Make it concrete: who, what, how many, by when. Ask for the numbers instead of supplying them.
 - How important and how uncertain is it? Important and uncertain: test it. Important and fairly certain: a candidate for a Bet. Unimportant and uncertain: suggest leaving it.
 
@@ -100,6 +104,15 @@ gh issue view <number> --json url,labels,milestone,projectItems
 
 Confirm that the card has the label `antakelse`, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off (`docs/OPPSETT.md`, step 5), and someone must add it by hand. Then give the link and remind the person to set Oppfølging on the board. Risikotype, Viktighet and Sikkerhet are set only if the team uses them.
 
+If the starting point was a delivery issue, offer to mark it as blocked by the new card, and do it only after an explicit yes. This needs GitHub CLI 2.94.0 or newer:
+
+```bash
+gh issue edit <number> --repo <owner>/<dev-repo> --add-blocked-by <card url>
+gh issue view <number> --repo <owner>/<dev-repo>   # shows «Blocked by» when it worked
+```
+
+If the link fails, say exactly what failed, and suggest *Relationships* in the issue's sidebar instead.
+
 ## Several statements at once
 
 When someone pastes a list of statements:
@@ -133,13 +146,14 @@ Second response (excerpt):
 - Make the claim concrete and testable.
 - Let the team set the threshold in «Vi har rett hvis…».
 - Suggest the cheapest test, not the most thorough one.
-- Mark clearly what is your suggestion.
+- Mark clearly what is your suggestion, and say briefly why you suggest it.
 - Respect a no. It is the person's card.
 
 ## Ask first
 
 - Creating the issue (step 6), again after every change.
 - Creating a learning milestone (step 4).
+- Marking a delivery issue as blocked by a card (step 7).
 
 ## Never
 
@@ -148,6 +162,8 @@ Second response (excerpt):
 - Never fill in *Beslutning og innsikt*. It is written when the card leaves discovery.
 - Never set Status, Basis, Viktighet or Sikkerhet.
 - Never turn tasks, or things nobody is uncertain about, into cards.
+- Never list assumptions from your own imagination. A belief becomes a card only when the person says the team is unsure of it.
+- Never answer for users, customers or other people on the team. Say who could answer instead.
 - Never invent facts about the customer, the users or the market, or numbers you were not given.
 - Never put a number in «Vi har rett hvis…» unless the person asks for a suggestion.
 - Never suggest asking an AI or simulated users as a test.
