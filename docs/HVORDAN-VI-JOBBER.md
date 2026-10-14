@@ -17,8 +17,8 @@ Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → 
 1. **Et kort er noe vi ikke vet, ikke en oppgave.** En antakelse starter med «Vi tror at…» og har én påstand som kan vise seg å være feil. En utforsking starter med «Vi vil forstå…» og har ett spørsmål. Alle kan lage kort.
 2. **Linjen skrives før vi starter.** «Vi har rett hvis…» for en antakelse, «Vi er ferdige når…» for en utforsking. Det er den som skiller bevis fra meninger.
 3. **Maks 3 kort under discovery og 5 i Neste opp.** Vi henter det som er viktigst og mest usikkert, og bestemmer det sammen i ukesmøtet. Ligger et kort under discovery i over to uker, tar flere i teamet det sammen, deler det opp eller stopper det.
-4. **Alle åpne kort har en oppfølgingsdato.** Er den passert, avgjør teamet i ukesmøtet: ny dato, test, eller slett. For en utforsking under discovery er datoen stoppdatoen.
-5. **Ingen kort forlater discovery uten konklusjon på kortet.** En antakelse får «Beslutning og innsikt»: Validert, Bet eller Ikke sant. En utforsking får «Innsikt» og lenker til de nye kortene. Bygger vi på en gjetning, merker vi det som Bet.
+4. **Alle åpne kort har en oppfølgingsdato.** Er den passert, avgjør teamet i ukesmøtet: ny dato, test eller slett. For en utforsking under discovery er datoen stoppdatoen.
+5. **Ingen kort forlater discovery uten konklusjon på kortet.** En antakelse får «Beslutning og innsikt»: Validert, Bet eller Ikke sant. Er den Validert eller en Bet, settes Basis. En utforsking får «Innsikt» og lenker til de nye kortene. Så lukkes issuen. Bygger vi på en gjetning, merker vi det som Bet.
 
 Dette er avtaler som skal hjelpe, ikke krav som skal oppfylles. Etter 3–4 uker: hva gjør dere bare fordi dere må? Endre eller fjern det. Resten av dokumentet er oppslag.
 
@@ -28,12 +28,12 @@ Tavlen er et arbeidsverktøy for å ta bedre beslutninger sammen. Den er ikke en
 
 - **Kortet kommer fra en faktisk usikkerhet.** Lag et kort når noen sier «jeg tror…», «jeg er ikke sikker på…» eller «vi vet ikke hvordan…» i en samtale, et møte eller en PR, eller når et spørsmål, en idé eller en funksjon skjuler noe dere ikke vet. Ingen kvote, og ingen utfylling i etterkant.
 - **Spør alltid: hvilken beslutning hjelper dette oss med?** Kan ingen svare, slett kortet.
-- **Start smått.** Kolonnene, de to skjemaene og en oppfølgingsdato er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
-- **Alle lager kort i skjemaet.** AI-assistentene kan hjelpe med å formulere, men kortet er personens, ikke assistentens.
+- **Start smått.** Kolonnene, de to skjemaene, Oppfølging og Basis er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
+- **Alle lager kort selv,** i skjemaet eller med hjelp fra en AI-assistent etter et ja. Kortet er personens, ikke assistentens.
 - **Samtalen skjer på kortet.** Spørsmål og funn som kommentarer i issuen, ikke i egne statusrapporter. Kunden leser tavlen, ikke en egen rapport.
 - **Ukesmøtet slutter når det ikke er mer å snakke om.** Skjer det lite, kutt det til 15 minutter eller hopp over en uke.
 
-**Tegn på at tavlen er i ferd med å dø:** kortene oppdateres bare rett før en demo, det kommer ingen nye kort på to uker, ukesmøtet leser opp kort uten diskusjon, oppfølgingsdatoene passerer uten at noen bryr seg, eller felt ingen bruker eller filtrerer på. Slett, forenkle, eller spør teamet hvilken beslutning de står foran akkurat nå.
+**Tegn på at tavlen er i ferd med å dø:** kortene oppdateres bare rett før en demo, det kommer ingen nye kort på to uker, ukesmøtet leser opp kort uten diskusjon, oppfølgingsdatoene passerer uten at noen bryr seg, eller felt ingen bruker eller filtrerer på. Slett, forenkle eller spør teamet hvilken beslutning de står foran akkurat nå.
 
 ## Hvor kortene kommer fra
 
@@ -44,12 +44,12 @@ Midt i et prosjekt kommer kortene fra to steder: det som allerede er bygd, og de
 Kartlegg det som er bygd, for å se hva dere vet og hva dere har antatt. Ta med det som betyr noe for retningen videre, ikke hver funksjon. For hver ting:
 
 1. **Skriv det dere trodde da dere bygde det,** som en antakelse.
-2. **Kan dere vise beviset,** lenk det og skriv hva det viser. Holder det, er kortet Validert.
-3. **Finnes det data dere ikke har sett på ennå,** som bruksdata eller supporthenvendelser, skriv «Vi har rett hvis…» først og se etterpå.
+2. **Kan dere vise beviset,** skriv «Vi har rett hvis…», lenk beviset og skriv hva det viser. Si på kortet at linjen ble skrevet etter at beviset var kjent, så kunden kan vurdere det selv. Holder det, er kortet Validert. Er beviset tynt, er det ærligere med en Bet, eller med nye data (punkt 3).
+3. **Finnes det data dere ikke har sett på ennå,** som bruksdata eller supporthenvendelser, skriv «Vi har rett hvis…» først og se etterpå. Da går kortet gjennom *Neste opp* og *Under discovery* som andre kort.
 4. **Kan dere ikke vise det,** er det en Bet. Det er greit, så lenge det er merket (se [Bets](#bets)).
 5. **Vet dere ikke hvorfor det virker eller ikke virker,** utforsk.
 
-Kort om noe som er bygd, flyttes til *Implementert* når de er Validert eller en Bet. Viser det seg at noe ikke holder, flyttes kortet til *Ikke sant*, og dere bestemmer hva som skal endres. Kartleggingen viser hva dere bør gjøre discovery på: de Bets som betyr mest, og det dere ikke forstår.
+Et kort som avklares med en gang (punkt 2 og 4), trenger ikke gå gjennom discovery. Fyll ut «Beslutning og innsikt», sett Basis, lukk issuen og flytt kortet rett til *Implementert*. Viser det seg at noe ikke holder, flyttes kortet til *Ikke sant*, og dere bestemmer hva som skal endres. Kartleggingen viser hva dere kan gjøre discovery på: det dere ikke forstår, og de viktigste Bet-kortene, hvis teamet vil.
 
 ### Det dere vet at dere ikke vet
 
@@ -154,7 +154,7 @@ Antakelser ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. 
 | --- | --- | --- |
 | Oppfølging | Dato | Alle åpne kort |
 | Milestone | Læringsmilepælen kortet hører til | Når dere har milepæler |
-| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når dere vil vise hvilket fag kortet angår |
+| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når dere vil vise hvilken risiko kortet handler om |
 | Basis | Validert, Bet | Når en antakelse forlater discovery |
 
 **Oppfølging** er datoen vi senest ser på kortet igjen. Den er ikke en frist å bli målt på, men et signal:
@@ -174,17 +174,17 @@ Blir backlogen så stor at dere trenger å sortere den, kan dere legge til felte
 
 En Bet er en antakelse dere bygger på uten å ha testet, med vilje. Det er greit, så lenge alle vet at det er en gjetning. At den er merket, og ikke hevdet som kunnskap, er det som gir kunden trygghet.
 
-- Sett Basis til Bet, og skriv i «Det vi så» at den ikke er testet, og hvorfor dere bygger likevel.
+- En Bet trenger ikke gå gjennom discovery. Fyll ut «Beslutning og innsikt», skriv i «Det vi så» at den ikke er testet og hvorfor dere bygger likevel, sett Basis til Bet og lukk issuen. Flytt kortet til *Klar for implementering*, eller rett til *Implementert* hvis det allerede er bygd.
 - Har dere noe enkelt å følge med på, som bruk eller supporthenvendelser, skriv det, og sett gjerne en oppfølgingsdato. Det er valgfritt.
-- Dere kan når som helst ta opp en Bet igjen, for eksempel når den blir viktigere, eller kunden ber om det. Lag en antakelse eller en utforsking som viser til Bet-kortet.
-- Har dere satt en dato, ser dere på det dere fulgte med på da. Holder det, sett Basis til Validert. Holder det ikke, flytt kortet til *Ikke sant* og lag et nytt kort for det som må endres.
+- Har dere satt en dato, ser dere på det dere fulgte med på da. Holder det, oppdater «Beslutning og innsikt» og sett Basis til Validert. Holder det ikke, flytt kortet til *Ikke sant* og lag et nytt kort for det som må endres. Er det for tidlig å si, sett en ny dato eller fjern den.
+- Dere kan når som helst ta opp en Bet igjen, for eksempel når den blir viktigere eller kunden ber om det. Gjenåpne kortet, flytt det til *Neste opp* og skriv en test og en ny «Vi har rett hvis…». Vil dere heller forstå noe rundt den først, lag en utforsking.
 
 ## Når en test ikke gir svar
 
-«Trenger mer research» er en tilstand, ikke en kolonne. Skriv en kommentar om hva dere lærte og hva som fortsatt er uklart, og sett etiketten `trenger-mer-research`. I ukesmøtet velger teamet hva som er neste steg:
+«Trenger mer research» er en tilstand, ikke en kolonne. Skriv en kommentar om hva dere lærte og hva som fortsatt er uklart, sett etiketten `trenger-mer-research` og legg kortet i *Neste opp*. Der venter det til teamet velger neste steg i ukesmøtet. Fjern etiketten når dere har valgt:
 
-- **En skarpere test:** legg kortet tilbake i *Neste opp* med en ny «Vi har rett hvis…» og en ny oppfølgingsdato. Fjern etiketten når testen starter.
-- **Utforske først:** viste testen at dere ikke vet nok til å tro noe bestemt, lag en utforsking og flytt antakelsen tilbake til *Backlog*.
+- **En skarpere test:** skriv en ny «Vi har rett hvis…» og sett en ny oppfølgingsdato.
+- **Utforske først:** viste testen at dere ikke vet nok til å tro noe bestemt, lag en utforsking og flytt antakelsen tilbake til *Backlog*. Når utforskingen er ferdig, skriver dere antakelsen om, eller sletter den.
 - **Dele kortet:** var testen delvis nyttig, behold det som er avklart, og lag et nytt, smalere kort for resten.
 - **Bestemme seg:** er det nok til å velge, blir kortet en Bet eller flyttes til *Ikke sant*.
 
@@ -194,7 +194,7 @@ Milepælene lager teamet selv, når dere trenger dem. Malen definerer ingen. En 
 
 - **Formuler milepælen som et spørsmål vi skal kunne svare på.** For eksempel «Vi vet om automatisk fakturaimport er verdt å bygge (15. november)».
 - **Knytt den til leveransemilepælen den avgjør,** hvis dere har en. «Vi kan ikke love M2 før dette er avklart.» Her blir discovery synlig for kunden.
-- **Knytt hvert kort til milepælen det hjelper å svare på.** Velg den under *Milestone* i sidepanelet på kortet. Milepælsiden i repoet (*Issues* → *Milestones*) viser da fremdriften per læringsmål.
+- **Knytt kortene til milepælen de hjelper å svare på.** Velg den under *Milestone* i sidepanelet på kortet. Kort som ikke hører til noen, trenger ingen. Milepælsiden i repoet (*Issues* → *Milestones*) viser da fremdriften per læringsmål.
 - **Fremdriften måler læring, ikke leveranse.** En issue lukkes når beslutningen er tatt eller innsikten er skrevet, ikke når noe er levert.
 - **Én milepæl per kort, ett repo per kunde.** En issue kan bare ha én milepæl. Hører et kort til to, velg den det blokkerer først.
 - **Avslutt milepælen med en oppsummering** i milepælens beskrivelse. Den er rapporten til kunden.

@@ -42,7 +42,7 @@ Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → 
 - Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking, eller hvorfor det ikke ble noen.
 - Issuen lukkes når beslutningen er tatt eller innsikten er skrevet, så milepælens fremdrift måler læring.
 - «Trenger mer research» er en etikett, ikke en kolonne.
-- Start smått: kolonnene, de to skjemaene og en oppfølgingsdato er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
+- Start smått: kolonnene, de to skjemaene, Oppfølging og Basis er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
 
 ## Innhold
 
@@ -53,7 +53,7 @@ Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → 
 templates/dev-repo/pull_request_template.md   PR-mal som kopieres til dev-repoet
 scripts/setup.sh                       Oppretter etiketter, Project og felt
 docs/OPPSETT.md                        Oppsett steg for steg
-docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengigheter og kobling til dev
+docs/HVORDAN-VI-JOBBER.md              Fem avtaler, korttypene, kolonnene, rutiner og kobling til dev
 docs/EKSEMPELKORT.md                   Fire ferdig utfylte kort: en utforsking og tre antakelser
 AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.md peker hit)
 .claude/skills/                        Fire ferdigheter for AI-assistenter
@@ -62,7 +62,7 @@ AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.
 
 ## AI-assistenter (valgfritt)
 
-Tavlen virker uten AI, og alle lager kort i skjemaet. Bruker teamet AI-verktøy, ligger instruksjonene klare:
+Tavlen virker uten AI, og alle lager kort selv, i skjemaet eller med hjelp fra en assistent. Bruker teamet AI-verktøy, ligger instruksjonene klare:
 
 - `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
 - Fire ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.

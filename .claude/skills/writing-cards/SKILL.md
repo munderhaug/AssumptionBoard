@@ -168,7 +168,7 @@ If the label does not exist, stop and say which label is missing. `scripts/setup
 gh issue view <number> --json url,labels,milestone,projectItems
 ```
 
-Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off, or that its filter does not match the card's type (`docs/OPPSETT.md`, step 5). Someone must then add it by hand. Then give the link and remind the person to set Oppfølging on the board. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype is set only if the team uses it.
+Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off, or that its filter does not match the card's type (`docs/OPPSETT.md`, step 5). Someone must then add it by hand. Then give the link and remind the person to set Oppfølging on the board. If the team already knows the answer, such as a Bet, or something already built with evidence it can show, remind the person that the team fills in *Beslutning og innsikt*, sets Basis, closes the issue and moves the card (see «Bets» and «Det som allerede er bygd» in `docs/HVORDAN-VI-JOBBER.md`). Do not do it yourself. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype is set only if the team uses it.
 
 If the card came from an utforsking, remind the person to add its number under *Nye kort* on that utforsking. Do not edit the utforsking yourself.
 

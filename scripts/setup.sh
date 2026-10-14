@@ -50,7 +50,7 @@ gh label create "antakelse" --repo "$FULL_REPO" --color "1d76db" \
 gh label create "utforsking" --repo "$FULL_REPO" --color "5319e7" \
   --description "Noe vi må forstå før vi vet hva vi tror" --force
 gh label create "trenger-mer-research" --repo "$FULL_REPO" --color "fbca04" \
-  --description "Testen ga ikke svar. Trenger en skarpere test" --force
+  --description "Testen ga ikke svar. Teamet velger neste steg" --force
 
 if [ -n "$MALPROSJEKT" ]; then
   echo "2/4 Kopierer malprosjektet $MALPROSJEKT til \"$TITLE\" ..."

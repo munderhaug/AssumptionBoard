@@ -34,7 +34,7 @@ De tre første hører til samme læringsmilepæl. Bet-kortet hører ikke til noe
 
 **Tittel:** Vi tror at vi kan importere 80 % av fakturaene automatisk
 
-**Risikotype:** Gjennomførbarhet · **Eier:** utvikler
+**Risikotype:** Gjennomførbarhet · **Eier:** utvikler · **Status:** Ikke sant
 
 **Vi tror at…** vi kan importere 80 % av kundenes fakturaer automatisk fra deres eksisterende regnskapseksporter, uten manuell kobling av felt. Kommer fra kort 1.
 
@@ -45,7 +45,7 @@ De tre første hører til samme læringsmilepæl. Bet-kortet hører ikke til noe
 **Beslutning og innsikt**
 - **Beslutning:** Ikke sant
 - **Det vi så:** 19 av 30 filer gikk gjennom. Alle de 11 feilene kom fra én leverandørs datoformat.
-- **Produktimplikasjon:** Vi bygger automatisk import for de to andre leverandørene og manuell feltkobling for leverandør X. Nytt kort: «Brukere av leverandør X godtar å koble felt én gang.»
+- **Produktimplikasjon:** Vi bygger automatisk import for de to andre leverandørene og manuell feltkobling for leverandør X. Nytt kort: «Vi tror at brukere av leverandør X godtar å koble felt én gang.»
 - **Bevis:** spike-branch `spike/import-test`, resultatark (fane «Runde 1»), 3. oktober.
 
 ---
@@ -54,7 +54,7 @@ De tre første hører til samme læringsmilepæl. Bet-kortet hører ikke til noe
 
 **Tittel:** Vi tror at pilotkundene vil laste opp fakturaer selv
 
-**Risikotype:** Verdi · **Eier:** designer
+**Risikotype:** Verdi · **Eier:** designer · **Status:** Klar for implementering
 
 **Vi tror at…** minst halvparten av pilotkundene vil laste opp fakturaer selv, i stedet for å sende dem på e-post til regnskapsføreren, hvis opplastingen tar under ett minutt. Kommer fra kort 1.
 

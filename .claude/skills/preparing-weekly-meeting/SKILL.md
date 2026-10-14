@@ -40,13 +40,13 @@ date +%F
 | Antakelser in *Neste opp* or *Under discovery* without *Vi har rett hvis…*, and utforskinger there without *Vi er ferdige når…* | Agreement 2 |
 | Open cards without Oppfølging | Agreement 4 |
 | Open cards without a learning milestone, if the repo has milestones | «Læringsmilepæler» |
-| Closed antakelser without a filled-in *Beslutning og innsikt* or without Basis. Closed utforskinger without a filled-in *Innsikt*, or without new cards and no reason given | Agreement 5 |
+| Closed antakelser without a filled-in *Beslutning og innsikt*, and Validert or Bet cards without Basis (Ikke sant has no Basis). Closed utforskinger without a filled-in *Innsikt*, or without new cards and no reason given | Agreement 5 |
 | On a board older than six weeks: no utforsking created or closed in the last six weeks. On any board: utforskinger closed without new cards and no reason given | «Utforske og teste», «Tegn på ubalanse» |
 | Backlog size (roughly 15–40) and likely duplicates | «Rutiner», the weekly row |
 | Cards in *Klar for implementering* not updated for more than four weeks: are they delivered? | «Rutiner», the weekly row |
 | Blocked cards in *Under discovery*, with GitHub CLI 2.94.0 or newer: `gh issue view <number> --json blockedBy` | «Avhengigheter mellom kort» |
 
-gh does not show when a card moved between columns. Use `updatedAt` as a signal, and say it is an estimate. The balance between testing and exploring is a signal, not a rule: mention it once, as a question, and only when the board shows it plainly. If there is room in the columns and the team uses Viktighet and Sikkerhet, point to Backlog antakelser with Høy viktighet and Lav sikkerhet, and utforskinger with Høy viktighet, as candidates. A conclusion section with only the prefilled labels counts as not filled in.
+gh does not show when a card moved between columns. Use `updatedAt` as a signal, and say it is an estimate. The balance between testing and exploring is a signal, not a rule: mention it once, as a question, and only when the board shows it plainly. If there is room in the columns and the team uses Viktighet and Sikkerhet, point to Backlog antakelser with Høy viktighet and Lav sikkerhet, and utforskinger with Høy viktighet, as candidates. Without those fields, only say how much room there is and let the team choose. Never list Bets as candidates for testing. A conclusion section with only the prefilled labels counts as not filled in.
 
 **3. Draft the agenda** in this order, which follows the weekly routine in `docs/HVORDAN-VI-JOBBER.md`. Skip empty items, and use one line per card:
 
@@ -56,9 +56,10 @@ gh does not show when a card moved between columns. Use `updatedAt` as a signal,
 1. **Passert oppfølging:**
    - #12 «Vi tror at …» (Neste opp, <dato>): ny dato, test eller slett?
    - #15 «Vi vil forstå …» (Under discovery, stoppdato <dato>): skrive innsikten nå? Trengs en ny, smalere utforsking?
-2. **Trenger mer research:** #17 «Vi tror at …»: skarpere test, utforske først, Bet eller Ikke sant?
+   - #5 «Vi tror at …» (Bet, <dato>): holder det dere fulgte med på, eller ny dato?
+2. **Trenger mer research:** #17 «Vi tror at …»: skarpere test, utforske først, dele kortet, Bet eller Ikke sant?
 3. **Nye beslutninger og ny innsikt siden sist:** #8 Ikke sant, #9 Bet, #7 Innsikt (ga #21 og #22).
-4. **Plass til nye kort:** Under discovery 2 av 3 (én antakelse, én utforsking), Neste opp 5 av 5 (fire antakelser, én utforsking). Kandidater: #21, #23.
+4. **Plass til nye kort:** Under discovery 2 av 3 (én antakelse, én utforsking), Neste opp 4 av 5 (tre antakelser, én utforsking).
 5. **Rydding:** 3 åpne kort uten oppfølgingsdato (#14, #16, #19). 2 åpne kort uten milepæl (#22, #24). Mulig duplikat: #14 og #20.
 ```
 

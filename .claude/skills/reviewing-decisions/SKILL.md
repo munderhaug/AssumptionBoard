@@ -39,7 +39,7 @@ Antakelse:
 | The line can fail | «Vi har rett hvis…» names what is measured, a threshold and who. «Vi lærer mye» cannot fail. |
 | Same unit | *Det vi så* reports what the line measures, as «x av N», not a percentage of a small sample or a general impression. |
 | The line is met | Compare the numbers. Close is not met: 4 av 8 does not meet «minst 5 av 8». |
-| Validert rests on a test | A Validert needs a test that was run. If it rests only on what people said they would do, on opinions or on AI output, it is closer to a Bet. |
+| Validert rests on a test | A Validert needs a test that was run. If it rests only on what people said they would do, on opinions or on AI output, it is closer to a Bet. For something already built, evidence the team had before is allowed when the card says the line was written afterwards. Ask whether that evidence is strong enough. |
 | Nothing beyond the line | What the team noticed outside the line is a new question or a new card, not a result. |
 | The implication fits the test | *Produktimplikasjon* does not claim more than was tested, such as more users, other segments or more features. |
 | Evidence can be found | *Bevis* links to a specific frame or file, with a date, and the numbers in *Det vi så* appear there. |

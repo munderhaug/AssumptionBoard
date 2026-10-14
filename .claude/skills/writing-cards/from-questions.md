@@ -37,7 +37,8 @@ If the team has no belief yet, the point is a candidate for an utforsking: «Vi 
 
 Check for existing cards with `gh issue list --state all --search "<keywords>" --json number,title,state,labels,url`. Then sort each point:
 
-- **Known:** there is a card already. Link it. No new card. For something already built, evidence the team can show still becomes a card, so the knowledge is visible on the board.
+- **Known, with a card already:** link it. No new card.
+- **Already built, with evidence the team can show:** an antakelse the team can close as Validert, so the knowledge is visible on the board.
 - **Important and uncertain:** a candidate for an antakelse.
 - **Important and fairly certain, or already built without evidence:** a candidate for a Bet.
 - **Important, and the team has no belief yet:** a candidate for an utforsking.
@@ -58,6 +59,7 @@ Use the person's words:
 3. Utforsking: Vi vil forstå …
 
 Det vet vi allerede: … (#12)
+Det er bygd, og vi kan vise bevis: …
 Det bygger vi på uten test (Bet): …
 Det kan noen svare på direkte: … (spør …)
 Det forutsetter det ikke: …

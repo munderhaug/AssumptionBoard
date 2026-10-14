@@ -59,7 +59,7 @@ Feltene skriptet lager. *Milestone* og *Assignees* er innebygde felt i GitHub.
 | Felt | Verdier | Brukes |
 | --- | --- | --- |
 | Oppfølging | Dato | Alle åpne kort: når vi senest ser på kortet igjen |
-| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når dere vil vise hvilket fag kortet angår |
+| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når dere vil vise hvilken risiko kortet handler om |
 | Basis | Validert, Bet | Når en antakelse forlater discovery |
 
 Viktighet og Sikkerhet lages ikke. Trenger dere dem senere, se [Flere felt](#flere-felt-valgfritt).
@@ -88,7 +88,7 @@ Antakelser ender i 4–6, utforskinger i *Innsikt*. Hva kolonnene betyr, står i
 
 Filteret er `is:issue` og ikke etikettene, fordi de to korttypene har hver sin etikett. Per 14.10.2026 tillater GitHub Free bare én auto-add-workflow, og [dokumentasjonen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) viser ikke at ett filter kan treffe to etiketter. Det går greit så lenge repoet bare brukes til kort. Tomme issues er slått av i nettleseren, og kort som lages fra terminalen, får etiketten sin der. Kort som fantes før auto-add ble slått på, må legges til for hånd.
 
-**Når lukkes en issue?** En antakelse lukkes når beslutningen er tatt: kortet flyttes til *Klar for implementering* eller *Ikke sant*. En utforsking lukkes når innsikten er skrevet og de nye kortene er laget, eller innsikten sier hvorfor det ikke ble noen: kortet flyttes til *Innsikt*. Da måler fremdriftslinjen på milepælen læring, ikke leveranse. En antakelse kan fortsatt flyttes til *Implementert* etterpå.
+**Når lukkes en issue?** En antakelse lukkes når beslutningen er tatt: kortet flyttes til *Klar for implementering* eller *Ikke sant*, eller rett til *Implementert* hvis det allerede er bygd. En utforsking lukkes når innsikten er skrevet og de nye kortene er laget, eller innsikten sier hvorfor det ikke ble noen: kortet flyttes til *Innsikt*. Da måler fremdriftslinjen på milepælen læring, ikke leveranse. En antakelse kan fortsatt flyttes til *Implementert* etterpå.
 
 ## 6. Visninger
 
@@ -236,6 +236,6 @@ Per 14.10.2026 er dette ikke prøvd. GitHubs [dokumentasjon om kopiering](https:
 - [ ] README er byttet ut med en beskrivelse av tavlen
 - [ ] Teamet har skrivetilgang (minst triage), kunden lesetilgang
 - [ ] PR-malen er kopiert til dev-repoet
-- [ ] Avhengigheter på tvers av repoer er testet med to testrepoer
+- [ ] Bruker dere avhengigheter: de er testet på tvers av repoer med to testrepoer
 - [ ] Et testkort av hver type er opprettet fra skjemaene og havnet i Backlog
-- [ ] Teamet vet hvordan de oppretter en milepæl og setter en avhengighet
+- [ ] Teamet vet hvordan de oppretter en milepæl, og at avhengigheter er valgfrie
