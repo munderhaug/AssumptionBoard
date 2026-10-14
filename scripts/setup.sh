@@ -48,21 +48,29 @@ fi
 echo "3/4 Kobler prosjektet til $FULL_REPO ..."
 gh project link "$NUMBER" --owner "$OWNER" --repo "$REPO"
 
-echo "4/4 Oppretter felt ..."
+echo "4/4 Oppretter felt (Risikotype, Viktighet, Sikkerhet, Basis, Oppfølging) ..."
 gh project field-create "$NUMBER" --owner "$OWNER" --name "Risikotype" \
   --data-type "SINGLE_SELECT" \
   --single-select-options "Verdi,Brukbarhet,Gjennomførbarhet,Levedyktighet"
 gh project field-create "$NUMBER" --owner "$OWNER" --name "Viktighet" \
   --data-type "SINGLE_SELECT" \
   --single-select-options "Høy,Middels,Lav"
+# Rekkefølgen på valgene er bevisst: sortert stigende kommer Høy viktighet
+# og Lav sikkerhet først, altså de kortene som bør testes først.
+gh project field-create "$NUMBER" --owner "$OWNER" --name "Sikkerhet" \
+  --data-type "SINGLE_SELECT" \
+  --single-select-options "Lav,Middels,Høy"
 gh project field-create "$NUMBER" --owner "$OWNER" --name "Basis" \
   --data-type "SINGLE_SELECT" \
   --single-select-options "Validert,Bet"
+gh project field-create "$NUMBER" --owner "$OWNER" --name "Oppfølging" \
+  --data-type "DATE"
 
 echo
 echo "Ferdig. Prosjekt nummer $NUMBER er opprettet og koblet til $FULL_REPO."
 echo
 echo "Gjenstår (kan ikke gjøres via skript), se docs/OPPSETT.md:"
+echo "  - Lag læringsmilepælene i repoet"
 echo "  - Endre Status-kolonnene"
 echo "  - Sett grenser: 3 under discovery, 5 i neste opp"
 echo "  - Slå på automatisering (auto-add og Backlog som startstatus)"

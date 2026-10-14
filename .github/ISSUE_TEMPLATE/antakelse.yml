@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Skriv én konkret påstand som kan vise seg å være feil.
-        Sett Risikotype og Viktighet på tavlen etter at kortet er opprettet.
+        Velg læringsmilepæl (Milestone) til høyre. Sett Risikotype, Viktighet og Sikkerhet på tavlen.
   - type: textarea
     id: tror
     attributes:
@@ -26,7 +26,17 @@ body:
       label: Vi har rett hvis…
       description: Bestått/ikke-bestått-linjen. Skriv den før testen starter
   - type: textarea
-    id: lart
+    id: beslutning
     attributes:
-      label: Vi lærte / derfor…
-      description: Fylles ut når kortet forlater discovery
+      label: Beslutning og innsikt
+      description: >-
+        Fylles ut når kortet forlater discovery. Skriv konklusjonen her i kortet,
+        slik at den kan leses uten å åpne Miro eller andre verktøy.
+        Lenk til konkrete frames eller dokumenter, ikke hele tavler.
+        Ingen personopplysninger: lenk til oppsummeringer, ikke opptak eller navn.
+      value: |
+        **Beslutning:** Validert / Bet / Ikke sant
+        **Det vi så:**
+        **Produktimplikasjon:**
+        **Bevis:**
+        **Hvis Bet, måling vi følger:**
