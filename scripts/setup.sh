@@ -55,6 +55,8 @@ gh project field-create "$NUMBER" --owner "$OWNER" --name "Risikotype" \
 gh project field-create "$NUMBER" --owner "$OWNER" --name "Viktighet" \
   --data-type "SINGLE_SELECT" \
   --single-select-options "Høy,Middels,Lav"
+# Oppfølging er datoen vi senest ser på et åpent kort igjen (ikke en frist).
+# Risikotype, Viktighet og Sikkerhet kan dere ignorere til backlogen vokser.
 # Rekkefølgen på valgene er bevisst: sortert stigende kommer Høy viktighet
 # og Lav sikkerhet først, altså de kortene som bør testes først.
 gh project field-create "$NUMBER" --owner "$OWNER" --name "Sikkerhet" \
@@ -70,9 +72,11 @@ echo
 echo "Ferdig. Prosjekt nummer $NUMBER er opprettet og koblet til $FULL_REPO."
 echo
 echo "Gjenstår (kan ikke gjøres via skript), se docs/OPPSETT.md:"
-echo "  - Lag læringsmilepælene i repoet"
 echo "  - Endre Status-kolonnene"
 echo "  - Sett grenser: 3 under discovery, 5 i neste opp"
 echo "  - Slå på automatisering (auto-add og Backlog som startstatus)"
 echo "  - Lag visningene"
-echo "  - Gi teamet skrivetilgang og kunden lesetilgang"
+echo "  - Gi teamet skrivetilgang (minst triage) og kunden lesetilgang"
+echo "  - Kopier PR-malen til dev-repoet"
+echo
+echo "Læringsmilepæler lager teamet selv, når de trenger dem."

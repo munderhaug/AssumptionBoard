@@ -2,7 +2,7 @@
 
 Tre ferdig utfylte kort, ett for hver beslutning. Bruk dem i workshopen, så teamet ser hvordan et godt kort ser ut før de skriver sine egne. Legg gjerne merke til at et *Ikke sant*-kort er et godt resultat: vi slapp å bygge noe som ikke virket.
 
-Alle tre hører til samme læringsmilepæl:
+Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel: dere lager deres egne.
 
 > **LM1: Vi vet om automatisk fakturaimport er verdt å bygge** (frist 15. november)
 >
