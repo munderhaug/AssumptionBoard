@@ -54,6 +54,7 @@ docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengighet
 docs/EKSEMPELKORT.md                   Tre ferdig utfylte kort: Validert, Ikke sant og Bet
 AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.md peker hit)
 .claude/skills/                        Tre ferdigheter for AI-assistenter
+.mcp.json                              Kobling til Miro og Figma for AI-assistenter
 ```
 
 ## AI-assistenter (valgfritt)
@@ -64,7 +65,8 @@ Tavlen virker uten AI. Bruker teamet AI-verktøy, ligger instruksjonene klare:
 - Tre ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.
   - `writing-assumptions` gjør en løs tanke om til et godt kort, utfordrer det og foreslår en test. Den oppretter issuen bare etter et ja.
   - `preparing-weekly-meeting` går gjennom tavlen og lager en kort agenda til ukesmøtet. Den endrer ingenting.
-  - `summarizing-learnings` skriver et utkast til læringsbrev om hva dere har lært, med lenke til hvert kort. Den sender ingenting.
+  - `summarizing-learnings` skriver et utkast til ukens læringsbrev, «Dette lærte vi», fra beslutningene på kortene, med lenke til hvert kort. Den kan også oppsummere en læringsmilepæl. Den sender ingenting.
+- `.mcp.json` kobler Claude Code og VS Code (GitHub Copilot) til Miro og Figma. Da kan assistenten lese bevisene kortene lenker til, og utfordre konklusjonen mot dem. Hver person logger inn med egen konto (i Claude Code med `/mcp`), og assistenten ser bare det personen har tilgang til. Den skal bare lese, aldri endre. På Mirós Enterprise-plan må en admin slå på MCP-serveren først. Begge tjenestene er nye og kan endre seg. Andre verktøy med MCP-server kan legges til i samme fil.
 
 Instruksjonene er på engelsk, men assistentene svarer på norsk. Sjekk at avtalen med kunden tillater at innhold fra tavlen sendes til en AI-tjeneste.
 
