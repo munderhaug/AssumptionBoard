@@ -1,0 +1,32 @@
+name: Antakelse
+description: Noe vi tror, men ikke har verifisert
+title: "Vi tror at "
+labels: ["antakelse"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Skriv én konkret påstand som kan vise seg å være feil.
+        Sett Risikotype og Viktighet på tavlen etter at kortet er opprettet.
+  - type: textarea
+    id: tror
+    attributes:
+      label: Vi tror at…
+      description: Én konkret, etterprøvbar påstand
+    validations:
+      required: true
+  - type: textarea
+    id: tester
+    attributes:
+      label: Vi tester ved å…
+      description: Intervju, prototype, teknisk spike, dataanalyse eller lignende
+  - type: textarea
+    id: rett
+    attributes:
+      label: Vi har rett hvis…
+      description: Bestått/ikke-bestått-linjen. Skriv den før testen starter
+  - type: textarea
+    id: lart
+    attributes:
+      label: Vi lærte / derfor…
+      description: Fylles ut når kortet forlater discovery
