@@ -198,4 +198,4 @@ Etter 3–4 uker: er grensene riktige? Hva gjør vi bare fordi vi må? Hvilke ko
 - [Discovery og leveranse på en kanban-tavle, Scrum.org](https://www.scrum.org/resources/blog/how-manage-discovery-and-delivery-work-kanban-board)
 - [Discovery Kanban, Kanban Zone](https://kanbanzone.com/2020/improve-product-research-and-design-with-discovery-kanban/)
 - [Assumptions Board, thoughtbot](https://thoughtbot.com/playbook/customer-discovery/initial-alignment)
-- [Creating issue dependencies, GitHub Docs](https://docs.github.com/ko/issues/tracking-your-work-with-issues/using-issues/creating-issue-dependencies) (siden åpnes på koreansk, bytt språk øverst på siden)
+- [Creating issue dependencies, GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-issue-dependencies)
