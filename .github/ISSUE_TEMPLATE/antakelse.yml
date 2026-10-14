@@ -6,14 +6,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        Skriv én konkret påstand som kan vise seg å være feil.
+        Skriv én konkret påstand som kan vise seg å være feil. Vet dere ikke nok til å tro noe ennå, bruk «Utforsking».
         Sett Oppfølging (dato) på tavlen: når vi senest ser på kortet igjen.
         Milepæl, Risikotype, Viktighet og Sikkerhet er valgfrie og brukes når backlogen vokser.
   - type: textarea
     id: tror
     attributes:
       label: Vi tror at…
-      description: Én konkret, etterprøvbar påstand
+      description: "Én konkret, etterprøvbar påstand. Kommer den fra en utforsking, skriv «Kommer fra #<nummer>»."
     validations:
       required: true
   - type: textarea

@@ -47,6 +47,8 @@ fi
 echo "1/4 Oppretter etiketter i $FULL_REPO ..."
 gh label create "antakelse" --repo "$FULL_REPO" --color "1d76db" \
   --description "Noe vi tror, men ikke har verifisert" --force
+gh label create "utforsking" --repo "$FULL_REPO" --color "5319e7" \
+  --description "Noe vi må forstå før vi vet hva vi tror" --force
 gh label create "trenger-mer-research" --repo "$FULL_REPO" --color "fbca04" \
   --description "Testen ga ikke svar. Trenger en skarpere test" --force
 
@@ -98,16 +100,16 @@ echo
 echo "Gjenstår (kan ikke gjøres via skript), se docs/OPPSETT.md fra steg 4:"
 if [ -n "$MALPROSJEKT" ]; then
   echo "  - Sjekk at kolonnene, workflowene, visningene og grensene kom med"
-  echo "  - Slå på auto-add (følger ikke med i kopien)"
+  echo "  - Slå på auto-add med filteret is:issue (følger ikke med i kopien)"
 else
-  echo "  - Endre Status-kolonnene"
-  echo "  - Slå på automatisering (auto-add og Backlog som startstatus)"
+  echo "  - Endre Status-kolonnene (syv, med Innsikt sist)"
+  echo "  - Slå på automatisering (auto-add med filteret is:issue, og Backlog som startstatus)"
   echo "  - Lag visningene"
   echo "  - Sett grenser: 3 under discovery, 5 i neste opp"
 fi
 echo "  - Bytt ut README med en beskrivelse av tavlen"
 echo "  - Gi teamet skrivetilgang (minst triage) og kunden lesetilgang"
 echo "  - Kopier PR-malen til dev-repoet"
-echo "  - Prøv med et testkort"
+echo "  - Prøv med et testkort av hver type"
 echo
 echo "Læringsmilepæler lager teamet selv, når de trenger dem."

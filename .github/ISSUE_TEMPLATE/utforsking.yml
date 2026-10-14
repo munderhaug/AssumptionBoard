@@ -1,0 +1,44 @@
+name: Utforsking
+description: Noe vi må forstå før vi vet hva vi tror
+title: "Vi vil forstå "
+labels: ["utforsking"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bruk utforsking når dere ikke vet nok til å skrive en påstand som kan vise seg å være feil. Vet dere hva dere tror, bruk «Antakelse».
+        Skriv ett spørsmål, ikke en oppgave. Utforskingen ender i innsikt og nye kort.
+        Sett Oppfølging (dato) på tavlen: under discovery er det datoen dere senest stopper.
+  - type: textarea
+    id: forsta
+    attributes:
+      label: Vi vil forstå…
+      description: Ett spørsmål, og hvilken beslutning svaret skal hjelpe oss med
+    validations:
+      required: true
+  - type: textarea
+    id: utforsker
+    attributes:
+      label: Vi utforsker ved å…
+      description: For eksempel samtaler om hvordan folk gjorde det sist, observasjon, bruksdata eller supporthenvendelser
+  - type: textarea
+    id: ferdige
+    attributes:
+      label: Vi er ferdige når…
+      description: >-
+        Stoppregelen. Skriv den før dere starter, for eksempel
+        «etter 6 samtaler eller 2 uker, det som kommer først»
+  - type: textarea
+    id: innsikt
+    attributes:
+      label: Innsikt
+      description: >-
+        Fylles ut når utforskingen avsluttes. Skriv det dere så her i kortet,
+        slik at det kan leses uten å åpne Miro eller andre verktøy.
+        Lenk til de nye kortene, og til konkrete frames eller dokumenter, ikke hele tavler.
+        Ingen personopplysninger: lenk til oppsummeringer, ikke opptak eller navn.
+      value: |
+        **Det vi så:**
+        **Nye kort:**
+        **Nye spørsmål:**
+        **Bevis:**
