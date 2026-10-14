@@ -91,14 +91,16 @@ Lag visningene med *New view*, eller gjør om en visning som finnes fra før. La
 
 | Visning | Type | Filter og oppsett | Brukes til |
 | --- | --- | --- | --- |
-| Tavle | Board | `-status:Backlog,Implementert,"Ikke sant"` | Daglig standup |
+| Tavle | Board | `-status:Backlog` | Daglig standup |
 | Til oppfølging | Table | `oppfølging:<=@today -basis:Validert -status:"Ikke sant"`, sortert på Oppfølging | Første punkt i ukesmøtet |
 | Backlog | Table | `status:Backlog,"Neste opp"`, sortert på Oppfølging (eller Viktighet og Sikkerhet, hvis dere bruker dem) | Ukesmøtet |
 | Milepæler | Table | Gruppert på Milestone | Fremdrift per læringsmilepæl |
 | Trenger mer research | Table | `label:trenger-mer-research` | Ukesmøtet |
 | Kunde | Board | `status:"Klar for implementering",Implementert,"Ikke sant"` | Demo og kundeinnsyn |
 
-Visningene viser også lukkede issues. Derfor holder *Tavle* og *Til oppfølging* ferdige kort ute. *Implementert* og *Ikke sant* vokser med hvert kort som avsluttes, og et lukket kort beholder oppfølgingsdatoen det hadde mens det var åpent. *Til oppfølging* viser åpne kort og Bets. Hele beslutningsloggen finner dere i *Kunde* og i repoets issues.
+*Tavle* viser alle kolonnene utenom Backlog. *Implementert* og *Ikke sant* hører med: de viser hva teamet vet, og hva som ikke stemte, så alle har den samme oversikten over discovery og innsikt.
+
+Visningene viser også lukkede issues, og et lukket kort beholder oppfølgingsdatoen det hadde mens det var åpent. Derfor viser *Til oppfølging* bare åpne kort og Bets.
 
 Felt dere ikke bruker ennå, kan dere skjule i visningene (*Fields* i visningsmenyen). Vis Oppfølging på alle kort. Vis Risikotype og Milestone på kortene i tavlevisningen hvis dere bruker dem.
 
