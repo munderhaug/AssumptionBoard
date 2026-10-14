@@ -107,7 +107,7 @@ Bevisene ligger der teamet jobber: Miro, Figma, Dovetail, regneark, kode. Konklu
 Noen antakelser kan ikke testes før andre er avklart. «Brukere av leverandør X godtar å koble felt én gang» gir ikke mening før vi vet at importen feiler for leverandør X. Bruk GitHubs avhengigheter:
 
 - Åpne kortet → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Krever minst triage-tilgang til repoet.
-- Fra terminalen: `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`.
+- Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`.
 - Et kort med åpne blokkere får et *Blocked*-ikon på tavlen. Ikke hent blokkerte kort til *Under discovery*.
 - Blokkeren lukkes når beslutningen er tatt, og da er kortet fritt.
 - Bruk det sparsomt, bare når rekkefølgen faktisk betyr noe. Lange kjeder av avhengigheter tyder på at kortene er for store, eller at dere planlegger i stedet for å lære.
@@ -117,7 +117,7 @@ Noen antakelser kan ikke testes før andre er avklart. «Brukere av leverandør 
 
 Hold discovery i eget repo og eget Project, og knytt det til utviklingen på tre måter:
 
-1. **Leveranse-issuen blokkeres av antakelsen.** I dev-repoet markerer dere issuen som *blocked by* kortet i discovery-repoet. Dev-tavlen viser *Blocked*-ikonet til beslutningen er tatt, så utviklerne ser discovery uten å åpne en annen tavle. Eksempel:
+1. **Leveranse-issuen blokkeres av antakelsen.** I dev-repoet markerer dere issuen som *blocked by* kortet i discovery-repoet. Dev-tavlen viser *Blocked*-ikonet til beslutningen er tatt, så utviklerne ser discovery uten å åpne en annen tavle. Eksempel (GitHub CLI 2.94.0 eller nyere):
    ```bash
    gh issue edit 456 --repo org/app \
      --add-blocked-by https://github.com/org/discovery/issues/123

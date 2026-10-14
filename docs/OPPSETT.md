@@ -92,12 +92,12 @@ Sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de korte
 
 ## 8. Avhengigheter mellom kort
 
-Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen: `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
+Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
 
 ## 9. Kobling til dev-repo og dev-prosjekt
 
 1. Kopier `templates/dev-repo/pull_request_template.md` til dev-repoet som `.github/pull_request_template.md`. Da oppgir hver PR hvilken antakelse den bygger på, og om den er Validert eller Bet.
-2. Marker leveranse-issuer som blokkert av antakelsene de venter på:
+2. Marker leveranse-issuer som blokkert av antakelsene de venter på (GitHub CLI 2.94.0 eller nyere, eller *Relationships* i sidepanelet):
    ```bash
    gh issue edit <nr> --repo <eier>/<dev-repo> \
      --add-blocked-by https://github.com/<eier>/<discovery-repo>/issues/<nr>
