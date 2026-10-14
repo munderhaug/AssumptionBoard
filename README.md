@@ -13,8 +13,9 @@ Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som se
 ## Kom i gang
 
 1. **Lag ditt eget repo fra malen.** Trykk *Use this template* → *Create a new repository* på GitHub, og gjør det **privat**. Bruk ett repo per kunde. Skal kunden bare ha lesetilgang, må repoet eies av en organisasjon, se [Tilgang](docs/OPPSETT.md#7-tilgang). Alternativt: klon dette repoet og push det til et nytt.
-2. **Kjør oppsettsskriptet.** Det krever [GitHub CLI](https://cli.github.com):
+2. **Kjør oppsettsskriptet** fra en lokal kopi av det nye repoet. Det krever [GitHub CLI](https://cli.github.com):
    ```bash
+   gh repo clone <eier>/<repo> && cd <repo>
    gh auth refresh -s project
    ./scripts/setup.sh <eier> <repo>
    ```
