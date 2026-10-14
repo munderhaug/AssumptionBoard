@@ -38,15 +38,15 @@ Alle tre hører til samme læringsmilepæl. Milepælen er også bare et eksempel
 
 **Vi tror at…** minst halvparten av pilotkundene vil laste opp fakturaer selv, i stedet for å sende dem på e-post til regnskapsføreren, hvis opplastingen tar under ett minutt.
 
-**Vi tester ved å…** teste en klikkbar prototype med 8 brukere hos pilotkundene og spørre hvordan de sender fakturaer i dag.
+**Vi tester ved å…** gi 8 brukere hos pilotkundene en enkel opplastingsside i én uke, ved siden av e-post, og se hvem som bruker den.
 
-**Vi har rett hvis…** minst 5 av 8 fullfører opplastingen på under ett minutt og sier de ville brukt den i stedet for e-post.
+**Vi har rett hvis…** minst 4 av 8 laster opp minst én faktura selv i løpet av uka.
 
 **Beslutning og innsikt**
 - **Beslutning:** Validert
-- **Det vi så:** 6 av 8 fullførte på under ett minutt og ville brukt den. De to som ikke ville, har en regnskapsfører som henter fakturaene selv.
-- **Produktimplikasjon:** Opplasting blir hovedflyten i M2. E-post beholdes som reserve. Sikkerheten er middels fordi utvalget er lite, så vi måler faktisk bruk i piloten.
-- **Bevis:** Miro-frame «Prototypetest uke 40, oppsummering», 7. oktober.
+- **Det vi så:** 6 av 8 lastet opp selv, og alle opplastingene tok under ett minutt. De to som ikke gjorde det, har en regnskapsfører som henter fakturaene selv.
+- **Produktimplikasjon:** Opplasting blir hovedflyten i M2. E-post beholdes som reserve. Sikkerheten er middels fordi utvalget er lite og perioden kort, så vi følger med på bruken i piloten.
+- **Bevis:** bruksdata fra opplastingssiden og Miro-frame «Opplastingstest uke 41, oppsummering», 14. oktober.
 
 ---
 
