@@ -86,7 +86,7 @@ Antakelser ender i 4–6, utforskinger i *Innsikt*. Hva kolonnene betyr, står i
 - **Item added to project**: sett Status til *Backlog*.
 - **Item closed** og **Auto-archive items**: slå av. Status settes for hånd, og lukkede kort skal bli liggende som beslutningslogg.
 
-Filteret er `is:issue` og ikke etikettene, fordi kortene har to etiketter. Per 14.10.2026 tillater GitHub Free bare én auto-add-workflow, og [dokumentasjonen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) viser ikke at ett filter kan treffe to etiketter. Det går greit, for tomme issues er slått av, så alle issues i repoet er kort fra et av skjemaene. Kort som fantes før auto-add ble slått på, må legges til for hånd.
+Filteret er `is:issue` og ikke etikettene, fordi de to korttypene har hver sin etikett. Per 14.10.2026 tillater GitHub Free bare én auto-add-workflow, og [dokumentasjonen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) viser ikke at ett filter kan treffe to etiketter. Det går greit, for tomme issues er slått av, så alle issues i repoet er kort fra et av skjemaene. Kort som fantes før auto-add ble slått på, må legges til for hånd.
 
 **Når lukkes en issue?** En antakelse lukkes når beslutningen er tatt: kortet flyttes til *Klar for implementering* eller *Ikke sant*. En utforsking lukkes når innsikten er skrevet og de nye kortene er laget: kortet flyttes til *Innsikt*. Da måler fremdriftslinjen på milepælen læring, ikke leveranse. En antakelse kan fortsatt flyttes til *Implementert* etterpå.
 

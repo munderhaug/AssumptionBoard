@@ -1,6 +1,6 @@
 # Antakelsestavle: mal for synlig discovery
 
-En mal som lar hele teamet eie discovery. Hvert kort på tavlen er en **antakelse**, ikke en oppgave: noe vi tror, men ikke har verifisert. Tavlen viser hva vi tester, hva som er bekreftet, hva som viste seg ikke å stemme, og hva vi bygget på gjetning med vilje.
+En mal som lar hele teamet eie discovery. Hvert kort på tavlen er noe teamet ikke vet ennå, ikke en oppgave. Det er enten en **antakelse** («Vi tror at…»), noe vi tror, men ikke har verifisert, eller en **utforsking** («Vi vil forstå…»), noe vi må forstå før vi vet hva vi tror. Tavlen viser hva vi utforsker og tester, hva som er bekreftet, hva som viste seg ikke å stemme, hva vi har forstått, og hva vi bygget på gjetning med vilje.
 
 Dette er en **mal**. Den definerer ingen milepæler eller kort for dere. Teamet lager sine egne, når de trenger dem.
 
@@ -8,7 +8,7 @@ Tavlen skal være **levende og praktisk**, ikke et prosjektstyringsverktøy. Den
 
 Bevisene kan ligge i Miro, Figma eller andre verktøy. Konklusjonen og hva den betyr for produktet skrives på kortet, så repoet blir beslutningsloggen.
 
-Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som setter opp et GitHub Project. Noen innstillinger (kolonner, grenser, visninger) gjøres for hånd, eller følger med fra et [malprosjekt](docs/OPPSETT.md#malprosjekt). Regn med ca. 20 minutter totalt.
+Repoet gir deg to issue-skjemaer, PR-mal, eksempelkort, etiketter og et skript som setter opp et GitHub Project. Noen innstillinger (kolonner, grenser, visninger) gjøres for hånd, eller følger med fra et [malprosjekt](docs/OPPSETT.md#malprosjekt). Regn med ca. 20 minutter totalt.
 
 ## Kom i gang
 
@@ -28,17 +28,19 @@ Her er kortversjonen. Hele oppsettet steg for steg, også installasjon av GitHub
 ## Tavlen i korte trekk
 
 ```
-Backlog → Neste opp → Under discovery → Klar for implementering → Implementert
-                                        Ikke sant  (avsluttes her)
+Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → Implementert
+                                       ├→ Ikke sant
+                                       └→ Innsikt
 ```
 
+- To typer kort i samme flyt. **Antakelser** testes og ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. **Utforskinger** har en stoppregel og ender i *Innsikt*, med nye kort. Sammen er sluttkolonnene det dere vet, og visningen *Det vi vet* viser dem samlet.
 - Alle åpne kort har en **oppfølgingsdato**: når vi senest ser på kortet igjen. Det er et signal, ikke en frist å bli målt på.
 - Kortene kan grupperes under **læringsmilepæler** som teamet lager selv: hva vi må vite, og innen når.
 - Kort kan **blokkere hverandre**, og leveranse-issuer i dev-repoet kan **blokkeres av** antakelsene de venter på.
-- Maks **3** kort under discovery og **5** i Neste opp.
-- Kort som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje).
-- Ingen kort forlater discovery uten en skrevet konklusjon og produktimplikasjon.
-- Issuen lukkes når beslutningen er tatt, så milepælens fremdrift måler læring.
+- Maks **3** kort under discovery, begge typene til sammen, og **5** i Neste opp.
+- Antakelser som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje).
+- Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking.
+- Issuen lukkes når beslutningen er tatt eller innsikten er skrevet, så milepælens fremdrift måler læring.
 - «Trenger mer research» er en etikett, ikke en kolonne.
 - Start smått: Risikotype, Viktighet og Sikkerhet tar dere i bruk når backlogen blir så stor at dere trenger dem.
 
@@ -46,12 +48,13 @@ Backlog → Neste opp → Under discovery → Klar for implementering → Implem
 
 ```
 .github/ISSUE_TEMPLATE/antakelse.yml   Skjema for nye antakelser, med beslutningsnotat
-.github/ISSUE_TEMPLATE/config.yml      Slår av tomme issues, så alle bruker skjemaet
+.github/ISSUE_TEMPLATE/utforsking.yml  Skjema for utforskinger, med innsikt og nye kort
+.github/ISSUE_TEMPLATE/config.yml      Slår av tomme issues, så alle bruker skjemaene
 templates/dev-repo/pull_request_template.md   PR-mal som kopieres til dev-repoet
 scripts/setup.sh                       Oppretter etiketter, Project og felt
 docs/OPPSETT.md                        Oppsett steg for steg
 docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengigheter og kobling til dev
-docs/EKSEMPELKORT.md                   Tre ferdig utfylte kort: Validert, Ikke sant og Bet
+docs/EKSEMPELKORT.md                   Fire ferdig utfylte kort: en utforsking og tre antakelser
 AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.md peker hit)
 .claude/skills/                        Fire ferdigheter for AI-assistenter
 .mcp.json                              Kobling til Miro og Figma for AI-assistenter
@@ -63,10 +66,10 @@ Tavlen virker uten AI. Bruker teamet AI-verktøy, ligger instruksjonene klare:
 
 - `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
 - Fire ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.
-  - `writing-assumptions` hjelper dere å gjøre spørsmål, idéer, funksjoner eller en løs tanke om til gode kort. Den finner hva dere må finne ut av fra produkt, design, teknologi og forretning, utfordrer hvert kort og foreslår en test. Den oppretter issuen bare etter et ja.
+  - `writing-cards` hjelper dere å gjøre spørsmål, idéer, funksjoner eller en løs tanke om til gode kort: en antakelse når dere vet hva dere tror, en utforsking når dere må forstå mer først. Den finner hva dere må finne ut av fra produkt, design, teknologi og forretning, utfordrer hvert kort og foreslår en test eller en måte å utforske på. Den oppretter issuen bare etter et ja.
   - `preparing-weekly-meeting` går gjennom tavlen og lager en kort agenda til ukesmøtet. Den endrer ingenting.
-  - `summarizing-learnings` skriver et utkast til ukens læringsbrev, «Dette lærte vi», fra beslutningene på kortene, med lenke til hvert kort. Den kan også oppsummere en læringsmilepæl. Den sender ingenting.
-  - `reviewing-decisions` går gjennom beslutningen på ett kort før det forlater discovery: om «Det vi så» når grensen i «Vi har rett hvis…», og om en Validert egentlig er en Bet. Den stiller spørsmål og godkjenner aldri.
+  - `summarizing-learnings` skriver et utkast til ukens læringsbrev, «Dette lærte vi», fra beslutningene og innsikten på kortene, med lenke til hvert kort. Den kan også oppsummere en læringsmilepæl. Den sender ingenting.
+  - `reviewing-decisions` går gjennom ett kort før det forlater discovery: om «Det vi så» når grensen i «Vi har rett hvis…», om en Validert egentlig er en Bet, og om innsikten fra en utforsking blir presentert som testet. Den stiller spørsmål og godkjenner aldri.
 - `.mcp.json` kobler Claude Code og VS Code (GitHub Copilot) til Miro og Figma. Da kan assistenten lese bevisene kortene lenker til, og utfordre konklusjonen mot dem. Hver person logger inn med egen konto (i Claude Code med `/mcp`), og assistenten ser bare det personen har tilgang til. Den skal bare lese, aldri endre. På Mirós Enterprise-plan må en admin slå på MCP-serveren først. Begge tjenestene er nye og kan endre seg. Andre verktøy med MCP-server kan legges til i samme fil.
 
 Assistentene kan ta feil. En sjekk fra dem er aldri bevis, og teamet bestemmer. Instruksjonene er på engelsk, men assistentene svarer på norsk. Sjekk at avtalen med kunden tillater at innhold fra tavlen sendes til en AI-tjeneste.
