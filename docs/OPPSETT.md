@@ -90,6 +90,8 @@ Sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de korte
 - Kunden: lesetilgang til repoet **og** prosjektet. Prosjektet viser bare issues fra private repoer til de som har tilgang til repoet.
 - Avhengigheter (se under) krever minst triage-tilgang til repoet.
 
+Lesetilgang og triage finnes bare i repoer som eies av en organisasjon. I et repo på en personlig konto får alle som inviteres skrivetilgang, også kunden. Skal kunden bare kunne lese, må discovery-repoet ligge i en organisasjon.
+
 ## 8. Avhengigheter mellom kort
 
 Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
