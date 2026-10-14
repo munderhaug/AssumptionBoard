@@ -71,12 +71,13 @@ gh project field-create "$NUMBER" --owner "$OWNER" --name "Oppfølging" \
 echo
 echo "Ferdig. Prosjekt nummer $NUMBER er opprettet og koblet til $FULL_REPO."
 echo
-echo "Gjenstår (kan ikke gjøres via skript), se docs/OPPSETT.md:"
+echo "Gjenstår (kan ikke gjøres via skript), se docs/OPPSETT.md fra steg 4:"
 echo "  - Endre Status-kolonnene"
-echo "  - Sett grenser: 3 under discovery, 5 i neste opp"
 echo "  - Slå på automatisering (auto-add og Backlog som startstatus)"
 echo "  - Lag visningene"
+echo "  - Sett grenser: 3 under discovery, 5 i neste opp"
 echo "  - Gi teamet skrivetilgang (minst triage) og kunden lesetilgang"
 echo "  - Kopier PR-malen til dev-repoet"
+echo "  - Prøv med et testkort"
 echo
 echo "Læringsmilepæler lager teamet selv, når de trenger dem."
