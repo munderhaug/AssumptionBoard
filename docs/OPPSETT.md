@@ -82,7 +82,7 @@ Bruk *New view* og lagre filteret på hver visning:
 | Trenger mer research | Table | `label:trenger-mer-research` | Ukesmøtet |
 | Kunde | Board | `status:"Klar for implementering",Implementert,"Ikke sant"` | Demo og kundeinnsyn |
 
-Sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de kortene som bør testes først. Filtrene er ikke testet mot alle oppsett. Treffer ikke et filter, sjekk skrivemåten på feltnavn og verdier i GitHubs dokumentasjon for filtrering i Projects.
+Sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de kortene som bør testes først. Skrivemåten er sjekket mot [GitHubs dokumentasjon for filtrering i Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) 14.10.2026, men filtrene og sorteringen er ikke prøvd i et ekte prosjekt ennå. Dokumentasjonen sier ingenting om æ, ø og å i feltnavn, så sjekk `oppfølging:<=@today` først. Treffer ikke et filter, sjekk skrivemåten på feltnavn og verdier i dokumentasjonen.
 
 ## 7. Tilgang
 
@@ -107,7 +107,7 @@ Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *M
    Dev-tavlen viser da *Blocked*-ikonet til beslutningen er tatt.
 3. Skriv også en lenke i teksten, som reserve: «Bygger på: org/discovery#123» i leveranse-issuen, og «Leveranse: org/app#456» på kortet.
 
-**Test først.** At avhengigheter virker på tvers av repoer står ikke eksplisitt i GitHubs dokumentasjon. Prøv med to testrepoer, og sjekk at *Blocked*-ikonet forsvinner når blokkeren lukkes.
+**Test først.** Per 14.10.2026 sier verken GitHubs dokumentasjon eller changelog eksplisitt at avhengigheter virker på tvers av repoer, eller når *Blocked*-ikonet forsvinner. Det er ikke testet i ekte repoer ennå. Prøv med to testrepoer, og sjekk at *Blocked*-ikonet forsvinner når blokkeren lukkes.
 
 ## Sjekkliste
 

@@ -129,7 +129,7 @@ Når en Bet er lukket med bygging som beslutning, forsvinner blokkeringen, og le
 
 **Alternativ:** ett felles Project for både discovery og leveranse, med et *Type*-felt og egne visninger. Det er enklere å koble, men blander to ulike flyter på én tavle. Det anbefaler vi ikke.
 
-**Test før dere stoler på det:** at avhengigheter fungerer på tvers av repoer står ikke eksplisitt i GitHubs dokumentasjon, og dere bør sjekke at ikonet forsvinner når blokkeren lukkes. Prøv først med to testrepoer.
+**Test før dere stoler på det:** per 14.10.2026 sier ikke GitHubs dokumentasjon eksplisitt at avhengigheter fungerer på tvers av repoer, eller når ikonet forsvinner, og det er ikke testet i ekte repoer ennå. Prøv først med to testrepoer, og sjekk at ikonet forsvinner når blokkeren lukkes.
 
 ## Syv avtaler
 
