@@ -1,6 +1,6 @@
 ---
 name: summarizing-learnings
-description: Drafts a short learning summary (læringsbrev, «Dette lærte vi») from the decisions recorded on the assumption board (antakelsestavle) covering what was validated, what turned out not to hold and which Bets were made, with a link to every card. Covers the last week by default, or another period or one learning milestone. Use when someone asks what the team learned («hva lærte vi», «ukens læringsbrev», «nyhetsbrev»), for a weekly summary or newsletter, or for a milestone summary. Builds only on what the cards say and never sends anything.
+description: Drafts a short learning summary (læringsbrev, «Dette lærte vi») from what the assumption board (antakelsestavle) records, covering what was validated, what turned out not to hold, which Bets were made and what explorations found, with a link to every card. Covers the last week by default, or another period or one learning milestone. Use when someone asks what the team learned («hva lærte vi», «ukens læringsbrev», «nyhetsbrev»), for a weekly summary or newsletter, or for a milestone summary. Builds only on what the cards say and never sends anything.
 ---
 
 # Summarizing learnings
@@ -25,31 +25,34 @@ Copy this checklist and track progress:
 - Period: this week, another period, or one learning milestone (læringsmilepæl).
 - Audience: internal (the team and the organisation) or the customer.
 
-**2. Fetch the cards.** Dates are `YYYY-MM-DD`. Get the week number with `date +%V`.
+**2. Fetch the cards.** Every issue is a card, and the label tells the type: `antakelse` or `utforsking`. Dates are `YYYY-MM-DD`. Get the week number with `date +%V`.
 
 ```bash
-# Decisions in the period
-gh issue list --label antakelse --state closed --search "closed:>=<from-date>" --limit 500 \
+# Decisions and insights in the period
+gh issue list --state closed --search "closed:>=<from-date>" --limit 500 \
   --json number,title,closedAt,body,labels,milestone,url
 
-# New assumptions in the period
-gh issue list --label antakelse --state all --search "created:>=<from-date>" --limit 500 \
-  --json number,title,url
+# New cards in the period
+gh issue list --state all --search "created:>=<from-date>" --limit 500 \
+  --json number,title,labels,url
 
 # One milestone instead of a period
-gh issue list --label antakelse --state all --milestone "<milestone title>" --limit 500 \
-  --json number,title,state,body,url
+gh issue list --state all --milestone "<milestone title>" --limit 500 \
+  --json number,title,state,body,labels,url
 ```
 
-For Bets (Basis and Oppfølging) and for what is in *Under discovery* now, read the board fields. Find the project number with `gh repo view --json projectsV2`.
+For Bets (Basis and Oppfølging) and for what is being tested or explored now (*Under discovery*), read the board fields. Find the project number with `gh repo view --json projectsV2`.
 
 ```bash
 gh project item-list <number> --owner <owner> --format json --limit 500
 ```
 
-**3. Read *Beslutning og innsikt*** on each closed card: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Leave out cards without a filled-in conclusion (see step 6). Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
+**3. Read the conclusion** on each closed card. Leave out cards without a filled-in conclusion (see step 6).
 
-**4. Draft the letter** from the template that fits. Use one or two lines per card: what we believed, what we saw, what it means. Skip empty sections. Under «Det som stemte» and «Det som ikke stemte», write only what answers the card's «Vi har rett hvis…» line. Anything else the team noticed goes under «Nye spørsmål».
+- **Antakelse:** read *Beslutning og innsikt*: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
+- **Utforsking:** read *Innsikt*: Det vi så, Nye kort, Nye spørsmål and Bevis. An utforsking has no line and tests nothing. Report what it saw as what was seen, with its counts, and name the new cards it led to.
+
+**4. Draft the letter** from the template that fits. Use one or two lines per card: what we believed or wanted to understand, what we saw, what it means. Skip empty sections. Under «Det som stemte» and «Det som ikke stemte», write only what answers the card's «Vi har rett hvis…» line. Anything else the team noticed goes under «Nye spørsmål».
 
 For a period:
 
@@ -65,14 +68,17 @@ For a period:
 **Det vi bygger på uten å ha testet (Bets)**
 - … Vi følger med på … og ser på det igjen <dato>. ([#9](<url>))
 
-**Det vi tester nå**
+**Det vi har utforsket**
+- Vi ville forstå … Vi så at … Det ga nye kort: … ([#7](<url>))
+
+**Det vi tester og utforsker nå**
 - …
 
 **Nye spørsmål**
-- <antall> nye antakelser, blant annet …
+- <antall> nye antakelser og <antall> nye utforskinger, blant annet …
 ```
 
-For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the milestone description:
+For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the milestone description. Under «Det vi nå vet», write what an utforsking saw as what was seen, with its counts, never as a tested result.
 
 ```markdown
 **Det vi nå vet:**
@@ -80,9 +86,9 @@ For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the m
 **Betydning for leveransen:**
 ```
 
-If no decisions were made in the period, do not write a letter. Say so, and mention what is being tested now.
+If no cards were closed in the period, do not write a letter. Say so, and mention what is being tested and explored now.
 
-**5. Check every line against its card.** The belief, the result and the implication must all be on the card, and every number and quote must appear on it word for word. Remove or correct anything that does not.
+**5. Check every line against its card.** The belief or question, the result and the implication must all be on the card, and every number and quote must appear on it word for word. Remove or correct anything that does not.
 
 **6. Show the draft.** List separately any closed cards left out for a missing conclusion, so the team can fill them in.
 
@@ -113,5 +119,6 @@ Line in the letter:
 - Never include names, quotes or details that could identify interviewees or anyone else.
 - Never present cards that are still being tested as settled.
 - Never present something noticed outside a card's «Vi har rett hvis…» line as a result.
+- Never present what an utforsking saw as validated or decided. It gives grounds for new beliefs, not answers.
 - Never send, publish or post the letter, and never write it into the milestone. Hand the draft to a person.
 - Never use sales language, or statistics that are not on the board.
