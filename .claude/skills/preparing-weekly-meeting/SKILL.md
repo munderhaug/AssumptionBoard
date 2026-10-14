@@ -1,6 +1,6 @@
 ---
 name: preparing-weekly-meeting
-description: Reviews the assumption board (antakelsestavle) read-only against the team's agreements and drafts a short agenda for the weekly meeting (ukesmøtet), covering passed Oppfølging dates, cards labelled trenger-mer-research, new decisions, room in the columns and cleanup. Use when someone asks to prepare the weekly meeting, to review or check the board, or what on the board needs attention. Never changes anything.
+description: Reviews the assumption board (antakelsestavle) read-only against the team's agreements and drafts a short agenda for the weekly meeting (ukesmøtet), covering passed Oppfølging dates, cards labelled trenger-mer-research, new decisions, room in the columns and cleanup. Use when someone asks to prepare the weekly meeting («forbered ukesmøtet», «hva bør vi ta opp»), to review or check the board («se over tavla»), or what on the board needs attention. Never changes anything.
 ---
 
 # Preparing the weekly meeting

@@ -1,6 +1,6 @@
 ---
 name: summarizing-learnings
-description: Drafts a short learning summary (læringsbrev, «Dette lærte vi») from the decisions recorded on the assumption board (antakelsestavle) covering what was validated, what turned out not to hold and which Bets were made, with a link to every card. Covers the last week by default, or another period or one learning milestone. Use when someone asks what the team learned, for a weekly summary or newsletter, or for a milestone summary. Builds only on what the cards say and never sends anything.
+description: Drafts a short learning summary (læringsbrev, «Dette lærte vi») from the decisions recorded on the assumption board (antakelsestavle) covering what was validated, what turned out not to hold and which Bets were made, with a link to every card. Covers the last week by default, or another period or one learning milestone. Use when someone asks what the team learned («hva lærte vi», «ukens læringsbrev», «nyhetsbrev»), for a weekly summary or newsletter, or for a milestone summary. Builds only on what the cards say and never sends anything.
 ---
 
 # Summarizing learnings
@@ -47,9 +47,9 @@ For Bets (Basis and Oppfølging) and for what is in *Under discovery* now, read 
 gh project item-list <number> --owner <owner> --format json --limit 500
 ```
 
-**3. Read *Beslutning og innsikt*** on each closed card: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Leave out cards without a filled-in conclusion (see step 6).
+**3. Read *Beslutning og innsikt*** on each closed card: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Leave out cards without a filled-in conclusion (see step 6). Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
 
-**4. Draft the letter** from the template that fits. Use one or two lines per card: what we believed, what we saw, what it means. Skip empty sections.
+**4. Draft the letter** from the template that fits. Use one or two lines per card: what we believed, what we saw, what it means. Skip empty sections. Under «Det som stemte» and «Det som ikke stemte», write only what answers the card's «Vi har rett hvis…» line. Anything else the team noticed goes under «Nye spørsmål».
 
 For a period:
 
@@ -82,7 +82,7 @@ For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the m
 
 If no decisions were made in the period, do not write a letter. Say so, and mention what is being tested now.
 
-**5. Check every line against its card.** The belief, the result and the implication must all be on the card. Remove or correct anything that is not.
+**5. Check every line against its card.** The belief, the result and the implication must all be on the card, and every number and quote must appear on it word for word. Remove or correct anything that does not.
 
 **6. Show the draft.** List separately any closed cards left out for a missing conclusion, so the team can fill them in.
 
@@ -112,5 +112,6 @@ Line in the letter:
 - Never guess a missing conclusion. Leave the card out and say so.
 - Never include names, quotes or details that could identify interviewees or anyone else.
 - Never present cards that are still being tested as settled.
+- Never present something noticed outside a card's «Vi har rett hvis…» line as a result.
 - Never send, publish or post the letter, and never write it into the milestone. Hand the draft to a person.
 - Never use sales language, or statistics that are not on the board.
