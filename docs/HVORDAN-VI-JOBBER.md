@@ -122,7 +122,7 @@ Hold discovery i eget repo og eget Project, og knytt det til utviklingen på tre
    gh issue edit 456 --repo org/app \
      --add-blocked-by https://github.com/org/discovery/issues/123
    ```
-2. **PR-malen** (`.github/pull_request_template.md`) kopieres til dev-repoet. Hver PR oppgir hvilken antakelse den bygger på og om den er `Validert` eller `Bet`.
+2. **PR-malen** (`templates/dev-repo/pull_request_template.md`) kopieres til dev-repoet som `.github/pull_request_template.md`. Hver PR oppgir hvilken antakelse den bygger på og om den er `Validert` eller `Bet`.
 3. **Lenk i tekst, begge veier,** som reserve: «Bygger på: org/discovery#123» i leveranse-issuen og «Leveranse: org/app#456» på kortet.
 
 Når en Bet er lukket med bygging som beslutning, forsvinner blokkeringen, og leveransen kan gå videre. Beslutningen står på kortet.

@@ -44,7 +44,7 @@ Backlog → Neste opp → Under discovery → Klar for implementering → Implem
 ```
 .github/ISSUE_TEMPLATE/antakelse.yml   Skjema for nye antakelser, med beslutningsnotat
 .github/ISSUE_TEMPLATE/config.yml      Slår av tomme issues, så alle bruker skjemaet
-.github/pull_request_template.md       PR-mal som kopieres til dev-repoet
+templates/dev-repo/pull_request_template.md   PR-mal som kopieres til dev-repoet
 scripts/setup.sh                       Oppretter etiketter, Project og felt
 docs/OPPSETT.md                        Manuelle steg i GitHub Projects
 docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengigheter og kobling til dev

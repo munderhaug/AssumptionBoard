@@ -96,7 +96,7 @@ Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *M
 
 ## 9. Kobling til dev-repo og dev-prosjekt
 
-1. Kopier `.github/pull_request_template.md` til dev-repoet. Da oppgir hver PR hvilken antakelse den bygger på, og om den er Validert eller Bet.
+1. Kopier `templates/dev-repo/pull_request_template.md` til dev-repoet som `.github/pull_request_template.md`. Da oppgir hver PR hvilken antakelse den bygger på, og om den er Validert eller Bet.
 2. Marker leveranse-issuer som blokkert av antakelsene de venter på:
    ```bash
    gh issue edit <nr> --repo <eier>/<dev-repo> \
