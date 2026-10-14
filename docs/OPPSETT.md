@@ -50,6 +50,8 @@ cd <repo>
 
 Skriptet lager etikettene `antakelse` og `trenger-mer-research`, et Project med fem felt, og kobler prosjektet til repoet. Til slutt skriver det ut prosjektnummeret. Prosjektet finner du under fanen *Projects* i repoet.
 
+Er `MALPROSJEKT` satt øverst i `scripts/setup.sh`, kopierer skriptet malprosjektet i stedet for å lage feltene (se [Malprosjekt](#malprosjekt)). Da følger kolonnene, workflowene og visningene med. I steg 4–7 sjekker du bare at alt kom med, også grensene, og slår på *Auto-add to project*, som ikke kopieres.
+
 Kjør skriptet bare én gang per tavle, for det lager et nytt Project hver gang. Stopper det med en feil etter at prosjektet er laget, slett det halvferdige prosjektet før du prøver igjen. Finn nummeret med `gh project list --owner <eier>` og slett med `gh project delete <nr> --owner <eier>`.
 
 Feltene skriptet lager. *Milestone* og *Assignees* er innebygde felt i GitHub.
@@ -186,6 +188,17 @@ En issue kan bare ha én milepæl, og milepæler hører til ett repo. Bruk derfo
 ### Avhengigheter mellom kort
 
 Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
+
+## Malprosjekt
+
+For den som vedlikeholder malen. Et malprosjekt er et ferdig oppsatt Project som `scripts/setup.sh` kopierer. Da slipper hver ny tavle steg 4–7 for hånd, og en forbedring i malprosjektet gjelder alle nye tavler. Det lages én gang:
+
+1. Lag et testrepo fra malen, kjør `scripts/setup.sh` mot det, og gjør steg 4–7. Gi prosjektet et navn som «Discovery-mal».
+2. Sørg for at alle som skal kjøre skriptet, kan lese prosjektet. I en organisasjon kan du i tillegg gjøre det til en mal, så det vises under *New project*: `gh project mark-template <nr> --owner <organisasjon>`.
+3. Sett `MALPROSJEKT="<eier>/<nr>"` øverst i `scripts/setup.sh` i malen, og commit.
+4. Lag et nytt testrepo fra malen, kjør skriptet, og sjekk at kolonnene, workflowene, visningene og grensene kom med.
+
+Per 14.10.2026 er dette ikke prøvd. GitHubs [dokumentasjon om kopiering](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/copying-an-existing-project) sier at kopien får visningene, de egne feltene, workflowene unntatt auto-add, og insights, men ikke kort, samarbeidspartnere eller koblinger til repoer. Den sier ikke om grensene følger med, eller om man kan kopiere et prosjekt som eies av en annen konto.
 
 ## Sjekkliste
 

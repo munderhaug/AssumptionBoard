@@ -8,7 +8,7 @@ Tavlen skal være **levende og praktisk**, ikke et prosjektstyringsverktøy. Den
 
 Bevisene kan ligge i Miro, Figma eller andre verktøy. Konklusjonen og hva den betyr for produktet skrives på kortet, så repoet blir beslutningsloggen.
 
-Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som setter opp et GitHub Project. Noen innstillinger (kolonner, grenser, visninger) gjøres for hånd. Regn med ca. 20 minutter totalt.
+Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som setter opp et GitHub Project. Noen innstillinger (kolonner, grenser, visninger) gjøres for hånd, eller følger med fra et [malprosjekt](docs/OPPSETT.md#malprosjekt). Regn med ca. 20 minutter totalt.
 
 ## Kom i gang
 
@@ -22,7 +22,7 @@ Her er kortversjonen. Hele oppsettet steg for steg, også installasjon av GitHub
    ./scripts/setup.sh <eier> <repo>
    ```
    `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet på det nye repoet. Skriptet lager etikettene, et Project med fem felt og kobler det til repoet.
-3. **Gjør resten for hånd** i [docs/OPPSETT.md](docs/OPPSETT.md), fra steg 4: kolonner, automatisering, visninger, grenser, tilgang, kobling til dev-repoet og et testkort.
+3. **Gjør resten for hånd** i [docs/OPPSETT.md](docs/OPPSETT.md), fra steg 4: kolonner, automatisering, visninger, grenser, tilgang, kobling til dev-repoet og et testkort. Med et malprosjekt er kolonner, visninger og grenser allerede på plass.
 4. **Hold en kort workshop** og fyll tavlen sammen. Oppskrift i [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md), og bruk [eksempelkortene](docs/EKSEMPELKORT.md) til å vise hvordan et godt kort ser ut.
 
 ## Tavlen i korte trekk
