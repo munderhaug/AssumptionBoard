@@ -52,7 +52,21 @@ scripts/setup.sh                       Oppretter etiketter, Project og felt
 docs/OPPSETT.md                        Oppsett steg for steg
 docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengigheter og kobling til dev
 docs/EKSEMPELKORT.md                   Tre ferdig utfylte kort: Validert, Ikke sant og Bet
+AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.md peker hit)
+.claude/skills/                        Tre ferdigheter for AI-assistenter
 ```
+
+## AI-assistenter (valgfritt)
+
+Tavlen virker uten AI. Bruker teamet AI-verktøy, ligger instruksjonene klare:
+
+- `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
+- Tre ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.
+  - `writing-assumptions` gjør en løs tanke om til et godt kort, utfordrer det og foreslår en test. Den oppretter issuen bare etter et ja.
+  - `preparing-weekly-meeting` går gjennom tavlen og lager en kort agenda til ukesmøtet. Den endrer ingenting.
+  - `summarizing-learnings` skriver et utkast til læringsbrev om hva dere har lært, med lenke til hvert kort. Den sender ingenting.
+
+Instruksjonene er på engelsk, men assistentene svarer på norsk. Sjekk at avtalen med kunden tillater at innhold fra tavlen sendes til en AI-tjeneste.
 
 ## Personvern
 
