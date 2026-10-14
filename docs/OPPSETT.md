@@ -48,7 +48,7 @@ cd <repo>
 
 `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet fra steg 2. Prosjekttittelen til slutt er valgfri. Utelater du den, heter prosjektet «Discovery».
 
-Skriptet lager etikettene `antakelse`, `utforsking` og `trenger-mer-research`, et Project med fem felt, og kobler prosjektet til repoet. Til slutt skriver det ut prosjektnummeret. Prosjektet finner du under fanen *Projects* i repoet.
+Skriptet lager etikettene `antakelse`, `utforsking` og `trenger-mer-research`, et Project med tre felt, og kobler prosjektet til repoet. Til slutt skriver det ut prosjektnummeret. Prosjektet finner du under fanen *Projects* i repoet.
 
 Er `MALPROSJEKT` satt øverst i `scripts/setup.sh`, kopierer skriptet malprosjektet i stedet for å lage feltene (se [Malprosjekt](#malprosjekt)). Da følger kolonnene, workflowene og visningene med. I steg 4–7 sjekker du bare at alt kom med, også grensene, og slår på *Auto-add to project*, som ikke kopieres.
 
@@ -59,10 +59,10 @@ Feltene skriptet lager. *Milestone* og *Assignees* er innebygde felt i GitHub.
 | Felt | Verdier | Brukes |
 | --- | --- | --- |
 | Oppfølging | Dato | Alle åpne kort: når vi senest ser på kortet igjen |
-| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når backlogen vokser |
-| Viktighet | Høy, Middels, Lav | Når backlogen vokser |
-| Sikkerhet | Lav, Middels, Høy | Når backlogen vokser, på antakelser |
+| Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når dere vil vise hvilket fag kortet angår |
 | Basis | Validert, Bet | Når en antakelse forlater discovery |
+
+Viktighet og Sikkerhet lages ikke. Trenger dere dem senere, se [Flere felt](#flere-felt-valgfritt).
 
 ## 4. Status-kolonnene
 
@@ -98,18 +98,19 @@ Lag visningene med *New view*, eller gjør om en visning som finnes fra før. La
 | --- | --- | --- | --- |
 | Tavle | Board | `-status:Backlog` | Daglig standup |
 | Til oppfølging | Table | `oppfølging:<=@today -basis:Validert -status:"Ikke sant",Innsikt`, sortert på Oppfølging | Første punkt i ukesmøtet |
-| Backlog | Table | `status:Backlog,"Neste opp"`, sortert på Oppfølging (eller Viktighet og Sikkerhet, hvis dere bruker dem) | Ukesmøtet |
-| Milepæler | Table | Gruppert på Milestone | Fremdrift per læringsmilepæl |
+| Backlog | Table | `status:Backlog,"Neste opp"`, sortert på Oppfølging | Ukesmøtet |
 | Trenger mer research | Table | `label:trenger-mer-research` | Ukesmøtet |
 | Det vi vet | Board | `status:"Klar for implementering",Implementert,"Ikke sant",Innsikt` | Demo, kundeinnsyn og læringsbrev |
 
 *Tavle* viser alle kolonnene utenom Backlog. *Implementert*, *Ikke sant* og *Innsikt* hører med: de viser hva teamet vet, hva som ikke stemte og hva dere har forstått, så alle har den samme oversikten over discovery og innsikt. *Det vi vet* viser bare de fire sluttkolonnene. Vis Basis der, så Bets er merket som gjetning.
 
-Visningene viser også lukkede issues, og et lukket kort beholder oppfølgingsdatoen det hadde mens det var åpent. Derfor viser *Til oppfølging* bare åpne kort og Bets.
+Visningene viser også lukkede issues, og et lukket kort beholder oppfølgingsdatoen det hadde mens det var åpent. Derfor viser *Til oppfølging* bare åpne kort og Bets som har en dato.
 
 Tittelen viser korttypen: «Vi tror at» eller «Vi vil forstå». Felt dere ikke bruker ennå, kan dere skjule i visningene (*Fields* i visningsmenyen). Vis Oppfølging og Labels på alle kort. Vis Risikotype og Milestone på kortene i tavlevisningen hvis dere bruker dem.
 
-Sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de kortene som bør testes først. Skrivemåten er sjekket mot [GitHubs dokumentasjon for filtrering i Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) 14.10.2026, men filtrene og sorteringen er ikke prøvd i et ekte prosjekt ennå. Dokumentasjonen sier ingenting om æ, ø og å i feltnavn, så sjekk *Til oppfølging* først: at `-basis:Validert` tar med kort uten Basis, og at `-status:"Ikke sant",Innsikt` holder begge kolonnene ute. Treffer ikke et filter, sjekk skrivemåten på feltnavn og verdier i dokumentasjonen.
+Fremdriften per læringsmilepæl trenger ingen egen visning: milepælsiden i repoet (*Issues* → *Milestones*) viser den.
+
+Skrivemåten er sjekket mot [GitHubs dokumentasjon for filtrering i Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) 14.10.2026, men filtrene og sorteringen er ikke prøvd i et ekte prosjekt ennå. Dokumentasjonen sier ingenting om æ, ø og å i feltnavn, så sjekk *Til oppfølging* først: at `-basis:Validert` tar med kort uten Basis, og at `-status:"Ikke sant",Innsikt` holder begge kolonnene ute. Treffer ikke et filter, sjekk skrivemåten på feltnavn og verdier i dokumentasjonen.
 
 ## 7. Grenser per kolonne
 
@@ -197,7 +198,20 @@ En issue kan bare ha én milepæl, og milepæler hører til ett repo. Bruk derfo
 
 ### Avhengigheter mellom kort
 
-Ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
+Valgfritt, og ingen oppsett nødvendig. Åpne et kort → *Relationships* i sidepanelet → *Mark as blocked by* eller *Mark as blocking*. Fra terminalen (GitHub CLI 2.94.0 eller nyere): `gh issue edit <nummer> --add-blocked-by <nummer eller URL>`. Et kort med åpne blokkere får et *Blocked*-ikon på tavlen.
+
+### Flere felt (valgfritt)
+
+Blir backlogen så stor at dere trenger å sortere den, kan dere legge til Viktighet og Sikkerhet. Sikkerhet sier hvor godt bevisene underbygger en antakelse, og brukes bare på antakelser:
+
+```bash
+gh project field-create <nr> --owner <eier> --name "Viktighet" \
+  --data-type SINGLE_SELECT --single-select-options "Høy,Middels,Lav"
+gh project field-create <nr> --owner <eier> --name "Sikkerhet" \
+  --data-type SINGLE_SELECT --single-select-options "Lav,Middels,Høy"
+```
+
+Rekkefølgen på valgene er bevisst: sortert stigende kommer Høy viktighet og Lav sikkerhet øverst, altså de antakelsene som bør testes først. Sorter *Backlog* på dem, og vis dem på kortene.
 
 ## Malprosjekt
 
@@ -214,7 +228,7 @@ Per 14.10.2026 er dette ikke prøvd. GitHubs [dokumentasjon om kopiering](https:
 
 - [ ] GitHub CLI er installert og har tilgang til Projects
 - [ ] Repoet er laget fra malen og er privat, i en organisasjon hvis kunden bare skal lese
-- [ ] Skriptet er kjørt: tre etiketter og et prosjekt med fem felt, koblet til repoet
+- [ ] Skriptet er kjørt: tre etiketter og et prosjekt med tre felt, koblet til repoet
 - [ ] Status har syv kolonner i riktig rekkefølge, med Innsikt sist
 - [ ] Auto-add (`is:issue`) og Backlog som startstatus er på, Item closed og Auto-archive er av
 - [ ] Visningene er laget

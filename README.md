@@ -21,9 +21,9 @@ Her er kortversjonen. Hele oppsettet steg for steg, også installasjon av GitHub
    gh auth refresh -s project
    ./scripts/setup.sh <eier> <repo>
    ```
-   `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet på det nye repoet. Skriptet lager etikettene, et Project med fem felt og kobler det til repoet.
+   `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet på det nye repoet. Skriptet lager etikettene, et Project med tre felt og kobler det til repoet.
 3. **Gjør resten for hånd** i [docs/OPPSETT.md](docs/OPPSETT.md), fra steg 4: kolonner, automatisering, visninger, grenser, tilgang, kobling til dev-repoet og et testkort. Med et malprosjekt er kolonner, visninger og grenser allerede på plass.
-4. **Bruk tavlen.** [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md) beskriver hvordan, og [eksempelkortene](docs/EKSEMPELKORT.md) viser hvordan et godt kort ser ut.
+4. **Bruk tavlen.** Start med det dere allerede har bygd og det dere vet at dere ikke vet (se [Hvor kortene kommer fra](docs/HVORDAN-VI-JOBBER.md#hvor-kortene-kommer-fra)). [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md) beskriver resten, og de fem avtalene står øverst. [Eksempelkortene](docs/EKSEMPELKORT.md) viser hvordan et godt kort ser ut.
 
 ## Tavlen i korte trekk
 
@@ -36,13 +36,13 @@ Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → 
 - To typer kort i samme flyt. **Antakelser** testes og ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. **Utforskinger** har en stoppregel og ender i *Innsikt*, med nye kort. Sammen viser sluttkolonnene det dere vet nå: hva som er testet, hva dere bevisst bygger på gjetning, og hva dere har sett, men ikke testet. Visningen *Det vi vet* viser dem samlet.
 - Alle åpne kort har en **oppfølgingsdato**: når vi senest ser på kortet igjen. Det er et signal, ikke en frist å bli målt på.
 - Kortene kan grupperes under **læringsmilepæler** som teamet lager selv: hva vi må vite, og innen når.
-- Kort kan **blokkere hverandre**, og leveranse-issuer i dev-repoet kan **blokkeres av** antakelsene de venter på.
+- Kort kan **blokkere hverandre** hvis dere vil, og leveranse-issuer i dev-repoet kan **blokkeres av** antakelsene de venter på.
 - Maks **3** kort under discovery, begge typene til sammen, og **5** i Neste opp.
-- Antakelser som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje).
+- Antakelser som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje). En Bet er greit, så lenge den er merket.
 - Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking, eller hvorfor det ikke ble noen.
 - Issuen lukkes når beslutningen er tatt eller innsikten er skrevet, så milepælens fremdrift måler læring.
 - «Trenger mer research» er en etikett, ikke en kolonne.
-- Start smått: Risikotype, Viktighet og Sikkerhet tar dere i bruk når backlogen blir så stor at dere trenger dem.
+- Start smått: kolonnene, de to skjemaene og en oppfølgingsdato er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
 
 ## Innhold
 
@@ -62,7 +62,7 @@ AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.
 
 ## AI-assistenter (valgfritt)
 
-Tavlen virker uten AI. Bruker teamet AI-verktøy, ligger instruksjonene klare:
+Tavlen virker uten AI, og alle lager kort i skjemaet. Bruker teamet AI-verktøy, ligger instruksjonene klare:
 
 - `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
 - Fire ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.

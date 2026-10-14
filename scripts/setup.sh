@@ -73,20 +73,13 @@ gh project link "$NUMBER" --owner "$OWNER" --repo "$REPO"
 if [ -n "$MALPROSJEKT" ]; then
   echo "4/4 Feltene følger med fra malprosjektet."
 else
-  echo "4/4 Oppretter felt (Risikotype, Viktighet, Sikkerhet, Basis, Oppfølging) ..."
+  echo "4/4 Oppretter felt (Risikotype, Basis, Oppfølging) ..."
+  # Oppfølging er datoen vi senest ser på et åpent kort igjen (ikke en frist).
+  # Risikotype kan dere ignorere til dere trenger den. Viktighet og Sikkerhet
+  # lages ikke her. Trenger dere dem, se «Flere felt» i docs/OPPSETT.md.
   gh project field-create "$NUMBER" --owner "$OWNER" --name "Risikotype" \
     --data-type "SINGLE_SELECT" \
     --single-select-options "Verdi,Brukbarhet,Gjennomførbarhet,Levedyktighet"
-  gh project field-create "$NUMBER" --owner "$OWNER" --name "Viktighet" \
-    --data-type "SINGLE_SELECT" \
-    --single-select-options "Høy,Middels,Lav"
-  # Oppfølging er datoen vi senest ser på et åpent kort igjen (ikke en frist).
-  # Risikotype, Viktighet og Sikkerhet kan dere ignorere til backlogen vokser.
-  # Rekkefølgen på valgene er bevisst: sortert stigende kommer Høy viktighet
-  # og Lav sikkerhet først, altså de kortene som bør testes først.
-  gh project field-create "$NUMBER" --owner "$OWNER" --name "Sikkerhet" \
-    --data-type "SINGLE_SELECT" \
-    --single-select-options "Lav,Middels,Høy"
   gh project field-create "$NUMBER" --owner "$OWNER" --name "Basis" \
     --data-type "SINGLE_SELECT" \
     --single-select-options "Validert,Bet"
