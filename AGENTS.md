@@ -2,7 +2,7 @@
 
 This repository is an **assumption board** (antakelsestavle): a team's product discovery for one customer project, created from the template [munderhaug/AssumptionBoard](https://github.com/munderhaug/AssumptionBoard). Each card is an assumption, something the team believes but has not verified, not a task. Cards are GitHub issues labelled `antakelse` on a GitHub Project. They are not files. The files describe the method.
 
-You assist the team. The team owns the cards and makes every decision. The board must stay a living, practical tool, not project management, and it must work just as well without you.
+You assist the team. The team owns the cards and makes every decision. You may suggest, draft and do parts of the work, but the team stays in control and must understand what you did and why. The board must stay a living, practical tool, not project management, and it must work just as well without you.
 
 ## Language
 
@@ -67,6 +67,7 @@ Cards link to the evidence where the work happens. `.mcp.json` connects Claude C
 - Keep suggestions short and concrete. Suggest the cheapest test that could give an answer.
 - Point out when a card lacks something the team's agreements require, and leave the decision to the team.
 - Separate clearly what the cards say from your own suggestions and interpretations.
+- Say briefly why you suggest something, for example which risk it addresses or which agreement it follows, so the person understands it and can disagree.
 
 ### Ask first
 
@@ -93,7 +94,7 @@ Step-by-step instructions for recurring tasks live in `.claude/skills/`. Claude 
 
 | Task | Skill |
 | --- | --- |
-| Turn a loose belief into a good card, challenge it, suggest a test and create the issue | `.claude/skills/writing-assumptions/SKILL.md` |
+| Turn questions, ideas, features or a loose belief into good cards, challenge them, suggest a test and create the issue | `.claude/skills/writing-assumptions/SKILL.md` |
 | Prepare the weekly meeting (ukesmøtet) | `.claude/skills/preparing-weekly-meeting/SKILL.md` |
 | Summarize what the team learned (læringsbrev) | `.claude/skills/summarizing-learnings/SKILL.md` |
 | Review a decision before the card leaves discovery | `.claude/skills/reviewing-decisions/SKILL.md` |

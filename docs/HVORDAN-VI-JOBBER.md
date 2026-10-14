@@ -17,7 +17,7 @@ Seks prinsipper:
 
 Tavlen er et arbeidsverktøy for å ta bedre beslutninger sammen. Den er ikke en rapport og ikke et styringssystem. Fyller teamet den ut fordi de må, har den mistet poenget.
 
-- **Kortet kommer fra en faktisk usikkerhet.** Lag et kort når noen sier «jeg tror…» eller «jeg er ikke sikker på…» i en samtale, et møte eller en PR. Ingen kvote, og ingen utfylling i etterkant.
+- **Kortet kommer fra en faktisk usikkerhet.** Lag et kort når noen sier «jeg tror…» eller «jeg er ikke sikker på…» i en samtale, et møte eller en PR, eller når et spørsmål, en idé eller en funksjon skjuler noe dere ikke vet (se [Fra spørsmål til antakelser](#fra-spørsmål-til-antakelser)). Ingen kvote, og ingen utfylling i etterkant.
 - **Spør alltid: hvilken beslutning hjelper dette oss med?** Kan ingen svare, slett kortet.
 - **Start smått.** Kolonnene, «Vi tror at…» og en oppfølgingsdato er nok. Risikotype, Viktighet, Sikkerhet og Basis tar dere i bruk når backlogen blir så stor at dere trenger dem.
 - **Reglene under er standardverdier.** Etter 3–4 uker: hva gjør vi bare fordi vi må? Fjern det.
@@ -77,6 +77,22 @@ Passerer datoen, er det ikke en forsinkelse. Det er et spørsmål i ukesmøtet: 
 **Viktighet og Sikkerhet** er de to aksene vi prioriterer etter når backlogen er stor. Sikkerhet sier hvor godt bevisene i dag underbygger det vi mener. Viktig og usikkert testes først. Sikkerhet oppdateres når nye bevis kommer inn, også når svaret er at antakelsen ikke stemmer. På en Bet viser den hvor sikre vi var da vi valgte å bygge.
 
 **Risikotype** er en farget etikett, ikke egne baner: Verdi (vil kundene ha det?), Brukbarhet (kan de bruke det?), Gjennomførbarhet (kan vi bygge det?) og Levedyktighet (er det lønnsomt og lovlig for oss?).
+
+## Fra spørsmål til antakelser
+
+Teamet vet sjelden hva antakelsene er. Det dere har, er spørsmål, en idé, en funksjon som skal bygges, eller noe som allerede er bygd. Antakelsene ligger skjult i dem.
+
+1. **Finn det dere må finne ut av.** Spør fra alle fire perspektivene, ikke bare design:
+   - **Produkt (Verdi):** hvem har problemet, og hva skal endre seg for dem?
+   - **Design (Brukbarhet):** hva må brukerne forstå eller gjøre for at det skal virke?
+   - **Teknologi (Gjennomførbarhet):** hva er vi avhengige av som vi ikke har prøvd?
+   - **Forretning (Levedyktighet):** hvem betaler, hva koster det å drifte, og finnes det juridiske grenser?
+
+   Er noe allerede bygd, spør: hva antok vi da vi bygde det, og hva vet vi nå?
+2. **Skriv om hvert spørsmål til det dere tror er svaret.** «Vi vet ikke om pilotkundene vil laste opp selv» blir «Vi tror at minst halvparten av pilotkundene vil laste opp fakturaer selv». Det er kortet. Har dere ingen formening ennå, finn ut hvem som kan svare.
+3. **Ta bare med det som er viktig og usikkert.** Lenk til det dere allerede vet. Det som er viktig og ganske sikkert, kan bli en Bet. Start med de to–tre som ville kostet mest å ta feil av.
+
+Spørsmål som hører sammen, blir ofte en læringsmilepæl: det dere må vite, og innen når.
 
 ## Kortet
 
