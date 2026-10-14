@@ -69,7 +69,7 @@ If the person corrects anything, fold it in and restate. «Ja, men …», «gjø
 
 ## 6. Continue in SKILL.md
 
-Take each card the person chose through steps 2–8 in `SKILL.md`. The type is usually clear by now, so step 2 is a quick check. If the starting point was a delivery issue, step 8 offers to mark it as blocked by the new cards.
+Take each card the person chose through steps 2–8 in `SKILL.md`. The type is usually clear by now, so step 2 is a quick check. If the starting point was a delivery issue, step 8 offers to mark it as blocked by the new antakelser, never by an utforsking.
 
 ## Example
 

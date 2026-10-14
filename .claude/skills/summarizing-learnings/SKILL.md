@@ -47,7 +47,7 @@ For Bets (Basis and Oppfølging) and for what is being tested or explored now (*
 gh project item-list <number> --owner <owner> --format json --limit 500
 ```
 
-**3. Read the conclusion** on each closed card. Leave out cards without a filled-in conclusion (see step 6).
+**3. Read the conclusion** on each closed card. Leave out cards without a filled-in conclusion (see step 6). A section with only the prefilled labels counts as empty.
 
 - **Antakelse:** read *Beslutning og innsikt*: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
 - **Utforsking:** read *Innsikt*: Det vi så, Nye kort, Nye spørsmål and Bevis. An utforsking has no line and tests nothing. Report what it saw as what was seen, with its counts, and name the new cards it led to.
@@ -60,7 +60,7 @@ For a period:
 ## Dette lærte vi, uke <nr>
 
 **Det som stemte (Validert)**
-- Vi trodde at … Vi så at … Derfor … ([#12](<url>))
+- Vi trodde at … Vi så at … Derfor … ([#11](<url>))
 
 **Det som ikke stemte (Ikke sant)**
 - Vi trodde at … Vi så at … Dermed slapp vi å … ([#8](<url>))
@@ -68,21 +68,25 @@ For a period:
 **Det vi bygger på uten å ha testet (Bets)**
 - … Vi følger med på … og ser på det igjen <dato>. ([#9](<url>))
 
-**Det vi har utforsket**
+**Det vi har utforsket (sett, men ikke testet)**
 - Vi ville forstå … Vi så at … Det ga nye kort: … ([#7](<url>))
 
 **Det vi tester og utforsker nå**
 - …
 
-**Nye spørsmål**
+**Nye kort**
 - <antall> nye antakelser og <antall> nye utforskinger, blant annet …
+
+**Nye spørsmål**
+- Det teamet la merke til utenfor «Vi har rett hvis…»-linja, og spørsmål fra utforskingene som ikke er kort ennå …
 ```
 
-For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the milestone description. Under «Det vi nå vet», write what an utforsking saw as what was seen, with its counts, never as a tested result.
+For a milestone, use the summary `docs/HVORDAN-VI-JOBBER.md` describes for the milestone description. What an utforsking saw goes under «Det vi har sett, men ikke testet», with its counts, never under «Det vi nå vet».
 
 ```markdown
 **Det vi nå vet:**
 **Det vi fortsatt gjetter (Bets):**
+**Det vi har sett, men ikke testet:**
 **Betydning for leveransen:**
 ```
 
@@ -109,7 +113,7 @@ Line in the letter:
 - Build only on what the cards say, and link every item.
 - Treat *Ikke sant* as a good result: the team avoided building something that would not have worked.
 - Keep it short, in the team's own words from the cards.
-- For the customer, include only what is in *Beslutning og innsikt*, not the discussion in the comments.
+- For the customer, include only what is in *Beslutning og innsikt* and *Innsikt*, not the discussion in the comments.
 
 ## Never
 

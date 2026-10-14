@@ -41,11 +41,11 @@ date +%F
 | Open cards without Oppfølging | Agreement 5 |
 | Open cards without a learning milestone, if the repo has milestones | «Læringsmilepæler» |
 | Closed antakelser without a filled-in *Beslutning og innsikt*, without Basis, or Bets without a measurement. Closed utforskinger without a filled-in *Innsikt*, or without new cards and no reason given | Agreement 6 |
-| No utforsking created or closed in the last six weeks, or utforskinger closed without new cards | «Utforske og teste», «Tegn på ubalanse» |
+| On a board older than six weeks: no utforsking created or closed in the last six weeks. On any board: utforskinger closed without new cards and no reason given | «Utforske og teste», «Tegn på ubalanse» |
 | Backlog size (roughly 15–40 is the agreement) and likely duplicates | Agreement 7 |
 | Blocked cards in *Under discovery*, with GitHub CLI 2.94.0 or newer: `gh issue view <number> --json blockedBy` | «Avhengigheter mellom kort» |
 
-gh does not show when a card moved between columns. Use `updatedAt` as a signal, and say it is an estimate. The balance between testing and exploring is a signal, not a rule: mention it once, as a question, and only when the board shows it plainly. If there is room in the columns and the team uses Viktighet and Sikkerhet, point to Backlog cards with Høy viktighet and Lav sikkerhet as candidates.
+gh does not show when a card moved between columns. Use `updatedAt` as a signal, and say it is an estimate. The balance between testing and exploring is a signal, not a rule: mention it once, as a question, and only when the board shows it plainly. If there is room in the columns and the team uses Viktighet and Sikkerhet, point to Backlog antakelser with Høy viktighet and Lav sikkerhet, and utforskinger with Høy viktighet, as candidates. A conclusion section with only the prefilled labels counts as not filled in.
 
 **3. Draft the agenda** in this order, which follows the weekly routine in `docs/HVORDAN-VI-JOBBER.md`. Skip empty items, and use one line per card:
 
@@ -55,10 +55,10 @@ gh does not show when a card moved between columns. Use `updatedAt` as a signal,
 1. **Passert oppfølging:**
    - #12 «Vi tror at …» (Neste opp, <dato>): ny dato, test eller slett?
    - #15 «Vi vil forstå …» (Under discovery, stoppdato <dato>): skrive innsikten nå? Trengs en ny, smalere utforsking?
-2. **Trenger mer research:** #17 «Vi tror at …»: skarpere test, Bet eller Ikke sant?
-3. **Nye beslutninger og ny innsikt siden sist:** #8 Ikke sant, #9 Validert, #7 Innsikt (ga #21 og #22).
+2. **Trenger mer research:** #17 «Vi tror at …»: skarpere test, utforske først, Bet eller Ikke sant?
+3. **Nye beslutninger og ny innsikt siden sist:** #8 Ikke sant, #9 Bet, #7 Innsikt (ga #21 og #22).
 4. **Plass til nye kort:** Under discovery 2 av 3 (én antakelse, én utforsking), Neste opp 5 av 5 (fire antakelser, én utforsking). Kandidater: #21, #23.
-5. **Rydding:** 3 åpne kort uten oppfølgingsdato (#14, #16, #19). 2 åpne kort uten milepæl (#22, #24). Mulig duplikat: #14 og #21.
+5. **Rydding:** 3 åpne kort uten oppfølgingsdato (#14, #16, #19). 2 åpne kort uten milepæl (#22, #24). Mulig duplikat: #14 og #20.
 ```
 
 When the board shows an imbalance, add one question to item 4, for example: «Ingen utforskinger på seks uker: er det noe dere ikke forstår godt nok til å tro noe om?»

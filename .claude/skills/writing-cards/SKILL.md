@@ -160,7 +160,7 @@ gh issue create --label <antakelse or utforsking> --title "<Vi tror at … or Vi
   --body-file <file> --milestone "<milestone title>"   # leave out --milestone if no milestone was chosen
 ```
 
-If the label does not exist, `scripts/setup.sh` has not been run: stop and say so.
+If the label does not exist, stop and say which label is missing. `scripts/setup.sh` creates the labels when a board is set up. A board set up before utforsking existed lacks that label, and someone on the team must add it.
 
 **8. Check the result and hand over.**
 
@@ -168,11 +168,11 @@ If the label does not exist, `scripts/setup.sh` has not been run: stop and say s
 gh issue view <number> --json url,labels,milestone,projectItems
 ```
 
-Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off (`docs/OPPSETT.md`, step 5), and someone must add it by hand. Then give the link and remind the person to set Oppfølging on the board. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype, Viktighet and Sikkerhet are set only if the team uses them.
+Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off, or that its filter does not match the card's type (`docs/OPPSETT.md`, step 5). Someone must then add it by hand. Then give the link and remind the person to set Oppfølging on the board. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype, Viktighet and Sikkerhet are set only if the team uses them.
 
 If the card came from an utforsking, remind the person to add its number under *Nye kort* on that utforsking. Do not edit the utforsking yourself.
 
-If the starting point was a delivery issue, offer to mark it as blocked by the new card, and do it only after an explicit yes. This needs GitHub CLI 2.94.0 or newer:
+If the starting point was a delivery issue and the new card is an antakelse, offer to mark the delivery issue as blocked by it, and do it only after an explicit yes. Never block a delivery issue by an utforsking: closing it would unblock delivery on untested insight. Say instead that the antakelser that come from the utforsking can block it later. This needs GitHub CLI 2.94.0 or newer:
 
 ```bash
 gh issue edit <number> --repo <owner>/<dev-repo> --add-blocked-by <card url>

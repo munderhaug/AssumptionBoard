@@ -61,7 +61,7 @@ Feltene skriptet lager. *Milestone* og *Assignees* er innebygde felt i GitHub.
 | Oppfølging | Dato | Alle åpne kort: når vi senest ser på kortet igjen |
 | Risikotype | Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet | Når backlogen vokser |
 | Viktighet | Høy, Middels, Lav | Når backlogen vokser |
-| Sikkerhet | Lav, Middels, Høy | Når backlogen vokser |
+| Sikkerhet | Lav, Middels, Høy | Når backlogen vokser, på antakelser |
 | Basis | Validert, Bet | Når en antakelse forlater discovery |
 
 ## 4. Status-kolonnene
@@ -86,9 +86,9 @@ Antakelser ender i 4–6, utforskinger i *Innsikt*. Hva kolonnene betyr, står i
 - **Item added to project**: sett Status til *Backlog*.
 - **Item closed** og **Auto-archive items**: slå av. Status settes for hånd, og lukkede kort skal bli liggende som beslutningslogg.
 
-Filteret er `is:issue` og ikke etikettene, fordi de to korttypene har hver sin etikett. Per 14.10.2026 tillater GitHub Free bare én auto-add-workflow, og [dokumentasjonen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) viser ikke at ett filter kan treffe to etiketter. Det går greit, for tomme issues er slått av, så alle issues i repoet er kort fra et av skjemaene. Kort som fantes før auto-add ble slått på, må legges til for hånd.
+Filteret er `is:issue` og ikke etikettene, fordi de to korttypene har hver sin etikett. Per 14.10.2026 tillater GitHub Free bare én auto-add-workflow, og [dokumentasjonen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) viser ikke at ett filter kan treffe to etiketter. Det går greit så lenge repoet bare brukes til kort. Tomme issues er slått av i nettleseren, og kort som lages fra terminalen, får etiketten sin der. Kort som fantes før auto-add ble slått på, må legges til for hånd.
 
-**Når lukkes en issue?** En antakelse lukkes når beslutningen er tatt: kortet flyttes til *Klar for implementering* eller *Ikke sant*. En utforsking lukkes når innsikten er skrevet og de nye kortene er laget: kortet flyttes til *Innsikt*. Da måler fremdriftslinjen på milepælen læring, ikke leveranse. En antakelse kan fortsatt flyttes til *Implementert* etterpå.
+**Når lukkes en issue?** En antakelse lukkes når beslutningen er tatt: kortet flyttes til *Klar for implementering* eller *Ikke sant*. En utforsking lukkes når innsikten er skrevet og de nye kortene er laget, eller innsikten sier hvorfor det ikke ble noen: kortet flyttes til *Innsikt*. Da måler fremdriftslinjen på milepælen læring, ikke leveranse. En antakelse kan fortsatt flyttes til *Implementert* etterpå.
 
 ## 6. Visninger
 
@@ -131,7 +131,7 @@ Kolonnen blir rød når grensen overskrides. Grensene er startpunkter. Juster et
 
 Her samler vi det vi ikke vet ennå, og det vi har lært. Hvert kort er en antakelse vi tester, eller noe vi utforsker. Ingen kort er oppgaver.
 
-- **Tavlen:** <lenke til prosjektet>. Visningen *Det vi vet* viser beslutningene og innsikten.
+- **Tavlen:** <lenke til prosjektet>. Visningen *Det vi vet* viser beslutningene og innsikten. En Bet er en bevisst gjetning, og innsikt fra en utforsking er ikke testet.
 - **En antakelse:** «Vi tror at…» er påstanden, «Vi har rett hvis…» er linjen vi satte før testen, og «Beslutning og innsikt» er konklusjonen.
 - **En utforsking:** «Vi vil forstå…» er spørsmålet, «Vi er ferdige når…» er stoppregelen, og «Innsikt» er det vi så og de nye kortene det ga.
 - **Slik jobber vi:** [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md)

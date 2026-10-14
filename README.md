@@ -33,13 +33,13 @@ Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → 
                                        └→ Innsikt
 ```
 
-- To typer kort i samme flyt. **Antakelser** testes og ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. **Utforskinger** har en stoppregel og ender i *Innsikt*, med nye kort. Sammen er sluttkolonnene det dere vet, og visningen *Det vi vet* viser dem samlet.
+- To typer kort i samme flyt. **Antakelser** testes og ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. **Utforskinger** har en stoppregel og ender i *Innsikt*, med nye kort. Sammen viser sluttkolonnene det dere vet nå: hva som er testet, hva dere bevisst bygger på gjetning, og hva dere har sett, men ikke testet. Visningen *Det vi vet* viser dem samlet.
 - Alle åpne kort har en **oppfølgingsdato**: når vi senest ser på kortet igjen. Det er et signal, ikke en frist å bli målt på.
 - Kortene kan grupperes under **læringsmilepæler** som teamet lager selv: hva vi må vite, og innen når.
 - Kort kan **blokkere hverandre**, og leveranse-issuer i dev-repoet kan **blokkeres av** antakelsene de venter på.
 - Maks **3** kort under discovery, begge typene til sammen, og **5** i Neste opp.
 - Antakelser som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje).
-- Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking.
+- Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking, eller hvorfor det ikke ble noen.
 - Issuen lukkes når beslutningen er tatt eller innsikten er skrevet, så milepælens fremdrift måler læring.
 - «Trenger mer research» er en etikett, ikke en kolonne.
 - Start smått: Risikotype, Viktighet og Sikkerhet tar dere i bruk når backlogen blir så stor at dere trenger dem.

@@ -41,6 +41,7 @@ Milepælene lager teamet selv, når dere trenger dem. Malen definerer ingen. En 
 ```markdown
 **Det vi nå vet:** 
 **Det vi fortsatt gjetter (Bets):** 
+**Det vi har sett, men ikke testet:** 
 **Betydning for leveransen:** 
 ```
 
@@ -56,7 +57,7 @@ Milepælene lager teamet selv, når dere trenger dem. Malen definerer ingen. En 
 | Ikke sant | Bevis viser at antakelsen ikke holder. Vi dropper eller endrer retning | Ingen |
 | Innsikt | En avsluttet utforsking. Det vi så står på kortet, og de nye kortene er lenket | Ingen |
 
-Antakelser ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. Utforskinger ender i *Innsikt*. Sammen viser de fire sluttkolonnene det vi vet: hva som holder, hva som ikke holder, hva vi bygger på gjetning, og hva vi har forstått. Visningen *Det vi vet* viser dem samlet ([oppsett, steg 6](OPPSETT.md#6-visninger)). De er likevel egne kolonner, fordi innsikt fra en utforsking ikke er testet. Den gir grunnlag for nye antakelser, ikke bevis.
+Antakelser ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. Utforskinger ender i *Innsikt*. Sammen viser de fire sluttkolonnene det vi vet nå: hva som er testet og holder, hva som er testet og ikke holder, hva vi bevisst bygger på gjetning (Bet), og hva vi har sett, men ikke testet (Innsikt). Visningen *Det vi vet* viser dem samlet ([oppsett, steg 6](OPPSETT.md#6-visninger)). De er likevel egne kolonner, fordi innsikt fra en utforsking ikke er testet. Den gir grunnlag for nye antakelser, ikke bevis.
 
 ## Feltene
 
@@ -109,7 +110,7 @@ Tegn på at dere bør utforske:
 
 **En utforsking ender i innsikt og nye kort.** Fyll ut «Innsikt» på kortet, lag de nye kortene og lenk begge veier: «Kommer fra #7» på de nye kortene, og numrene deres under «Nye kort» på utforskingen. Lukk issuen og flytt den til *Innsikt*. Ga den ingen nye kort, skriv hvorfor. Det er også et svar.
 
-**Innsikt er ikke bevis.** Det dere så i seks samtaler, er et godt grunnlag for å tro noe, men ikke en test av det. Det dere skal bygge på, blir en antakelse som testes, eller en bevisst Bet.
+**Innsikt fra en utforsking er ikke bevis.** Det dere så i seks samtaler, er et godt grunnlag for å tro noe, men ikke en test av det. Det dere skal bygge på, blir en antakelse som testes, eller en bevisst Bet.
 
 **Spør om det folk faktisk gjorde.** «Fortell om sist du …» gir bedre svar enn «Ville du brukt …?». Det folk sier de vil gjøre, er en dårlig spådom om hva de gjør.
 
@@ -159,7 +160,7 @@ Når en utforsking avsluttes, fylles **Innsikt** ut:
 **Bevis:** lenke til oppsummeringen, med dato
 ```
 
-Fire ferdige eksempler, én utforsking og én antakelse for hver beslutning, ligger i [EKSEMPELKORT.md](EKSEMPELKORT.md).
+Fire ferdige eksempler, én utforsking og tre antakelser med hver sin beslutning, ligger i [EKSEMPELKORT.md](EKSEMPELKORT.md).
 
 ## Bevis og innsikt
 
@@ -186,7 +187,7 @@ Noen antakelser kan ikke testes før andre er avklart. «Brukere av leverandør 
 
 Hold discovery i eget repo og eget Project, og knytt det til utviklingen på tre måter:
 
-1. **Leveranse-issuen blokkeres av antakelsen.** I dev-repoet markerer dere issuen som *blocked by* kortet i discovery-repoet. Dev-tavlen viser *Blocked*-ikonet til beslutningen er tatt, så utviklerne ser discovery uten å åpne en annen tavle. Eksempel (GitHub CLI 2.94.0 eller nyere):
+1. **Leveranse-issuen blokkeres av antakelsen.** I dev-repoet markerer dere issuen som *blocked by* kortet i discovery-repoet. Bruk bare antakelser til dette. En utforsking gir nye antakelser, og det er dem leveransen venter på. Dev-tavlen viser *Blocked*-ikonet til beslutningen er tatt, så utviklerne ser discovery uten å åpne en annen tavle. Eksempel (GitHub CLI 2.94.0 eller nyere):
    ```bash
    gh issue edit 456 --repo org/app \
      --add-blocked-by https://github.com/org/discovery/issues/123
@@ -203,7 +204,7 @@ Når en Bet er lukket med bygging som beslutning, forsvinner blokkeringen, og le
 ## Syv avtaler
 
 1. **Alle kan legge til kort, i riktig form.** En antakelse starter med «Vi tror at…» og inneholder én konkret påstand. En utforsking starter med «Vi vil forstå…» og inneholder ett spørsmål.
-2. **Hent det som er viktig og usikkert.** Når backlogen er stor, sorter etter Viktighet og Sikkerhet. Viktig og lite risikabelt kan gå rett til *Klar for implementering* som `Bet`. Uviktig og usikkert slettes.
+2. **Hent det som er viktig og usikkert.** Når backlogen er stor, sorter etter Viktighet og Sikkerhet. En utforsking er usikker per definisjon, så der teller bare Viktighet. Viktig og lite risikabelt kan gå rett til *Klar for implementering* som `Bet`. Uviktig og usikkert slettes.
 3. **Ingen start uten en linje skrevet på forhånd.** «Vi har rett hvis…» for en antakelse, «Vi er ferdige når…» for en utforsking.
 4. **Maks 3 kort under discovery, begge typene til sammen.** En antakelse tar rundt én uke, en utforsking stopper når stoppregelen sier det. Ligger et kort over to uker, tar flere i teamet det sammen, deler det opp eller stopper det.
 5. **Alle åpne kort har en oppfølgingsdato.** Er den passert, avgjør teamet i ukesmøtet: ny dato, test, eller slett. For en utforsking under discovery er datoen stoppdatoen: da stopper dere og skriver det dere så.
