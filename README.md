@@ -75,3 +75,5 @@ Hold denne malen fri for kundedata. Kjør de ekte tavlene i private repoer. Legg
 ## Tilpass
 
 Dette er et startpunkt. Etter 3–4 uker: sjekk om grensene på 3 og 5 passer, spør hva dere gjør bare fordi dere må, og fjern kolonner, felt og avtaler dere ikke bruker.
+
+Et repo som er laget fra malen, får ikke senere endringer i malen. Vil dere ha med en forbedring, kopier den over for hånd. Historikken i malen viser hva som er endret.
