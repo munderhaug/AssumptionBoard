@@ -28,10 +28,11 @@ Tavlen er et arbeidsverktøy for å ta bedre beslutninger sammen. Den er ikke en
 
 ## Læringsmilepæler
 
-Milepælene lager teamet selv, når dere trenger dem. Malen definerer ingen. En læringsmilepæl sier hva vi må vite, og innen når. Kortene som avgjør svaret, hører til milepælen. Eksemplene her er bare eksempler.
+Milepælene lager teamet selv, når dere trenger dem. Malen definerer ingen. En læringsmilepæl er et læringsmål: hva vi må vite, innen når, og hvilket utfall det skal føre til. Kortene som avgjør svaret, hører til milepælen. Eksemplene her er bare eksempler.
 
 - **Formuler milepælen som et spørsmål vi skal kunne svare på.** For eksempel «Vi vet om automatisk fakturaimport er verdt å bygge (15. november)».
 - **Knytt den til leveransemilepælen den avgjør,** hvis dere har en. «Vi kan ikke love M2 før dette er avklart.» Her blir discovery synlig for kunden.
+- **Knytt hvert kort til milepælen det hjelper å svare på.** Velg den under *Milestone* i sidepanelet på kortet. Visningen *Milepæler* viser da fremdriften per læringsmål.
 - **Fremdriften måler læring, ikke leveranse.** En issue lukkes når beslutningen er tatt, ikke når noe er levert.
 - **Én milepæl per kort, ett repo per kunde.** En issue kan bare ha én milepæl. Hører en antakelse til to, velg den den blokkerer først.
 - **Avslutt milepælen med en oppsummering** i milepælens beskrivelse. Den er rapporten til kunden.

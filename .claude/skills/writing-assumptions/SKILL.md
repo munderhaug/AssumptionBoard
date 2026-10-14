@@ -45,6 +45,12 @@ If a similar card exists, show it and ask whether to use that one instead.
 - *Vi tester ved å…*: the cheapest test that could answer it, with a rough time estimate (see the table). If no test fits within a week, the card is too big: suggest splitting it.
 - *Vi har rett hvis…*: a draft pass/fail line. Say that the team owns the line and must settle it before the test starts.
 - Risikotype: Verdi, Brukbarhet, Gjennomførbarhet or Levedyktighet.
+- Learning milestone: the one this card helps answer. List the open milestones with `gh api 'repos/{owner}/{repo}/milestones' --jq '.[] | {title, due_on, description}'`. If none fits, say so. If the person asks for a new one, draft it (title: what we must know; due date; description: the outcome it should lead to) and create it only after an explicit yes:
+
+  ```bash
+  gh api 'repos/{owner}/{repo}/milestones' -f title="<what we must know>" \
+    -f due_on="<YYYY-MM-DD>T23:59:59Z" -f description="<the outcome, and what it decides>"
+  ```
 
 | Risikotype | Question | Cheap tests |
 | --- | --- | --- |
@@ -80,7 +86,8 @@ If a similar card exists, show it and ask whether to use that one instead.
 ```
 
 ```bash
-gh issue create --label antakelse --title "Vi tror at <short claim>" --body-file <file>
+gh issue create --label antakelse --title "Vi tror at <short claim>" --body-file <file> \
+  --milestone "<milestone title>"   # leave out --milestone if no milestone was chosen
 ```
 
 If the label `antakelse` does not exist, `scripts/setup.sh` has not been run: stop and say so. The project's auto-add workflow puts the new card in *Backlog*.
@@ -92,7 +99,7 @@ If the label `antakelse` does not exist, `scripts/setup.sh` has not been run: st
 When someone pastes a list of statements:
 
 1. Rewrite each as «Vi tror at…». Flag tasks, double claims and duplicates.
-2. Suggest groups that belong together, with one question per group that could become a learning milestone (læringsmilepæl). Do not create milestones.
+2. Suggest groups that belong together, and the existing learning milestone (læringsmilepæl) each group helps answer. Where no milestone fits, suggest one as a question we must be able to answer. Create it only if the person asks, after an explicit yes.
 3. Show the list and let the person choose which cards to create. A yes to the list covers only the cards on it.
 
 ## Example
@@ -121,6 +128,7 @@ Response (excerpt):
 ## Ask first
 
 - Creating the issue (step 6).
+- Creating a learning milestone (step 4).
 
 ## Never
 
@@ -131,5 +139,5 @@ Response (excerpt):
 - Never turn tasks, or things nobody is uncertain about, into cards.
 - Never invent facts about the customer, the users or the market, or numbers you were not given.
 - Never include personal data. If the text names interviewees or customer staff, suggest a role instead, for example «en regnskapsfører hos pilotkunde A».
-- Never create milestones.
+- Never create a milestone the person did not ask for.
 - Never lecture about the method. Show it with a concrete suggestion instead.

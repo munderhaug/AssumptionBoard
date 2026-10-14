@@ -174,7 +174,7 @@ Malen definerer ingen milepæler. Teamet oppretter dem selv når de trenger å g
 
 - **Tittel:** det vi må vite.
 - **Frist:** når vi må vite det.
-- **Beskrivelse:** hvilken leveransemilepæl den eventuelt avgjør.
+- **Beskrivelse:** hvilket utfall læringen skal føre til, og hvilken leveransemilepæl den eventuelt avgjør.
 
 Fra kommandolinjen:
 
@@ -182,8 +182,10 @@ Fra kommandolinjen:
 gh api repos/<eier>/<repo>/milestones \
   -f title="<det vi må vite>" \
   -f due_on="<ÅÅÅÅ-MM-DD>T23:59:59Z" \
-  -f description="<hva den avgjør>"
+  -f description="<utfallet, og hva den avgjør>"
 ```
+
+Kortene knyttes til milepælen under *Milestone* i sidepanelet, eller med `gh issue edit <nr> --milestone "<tittel>"`.
 
 En issue kan bare ha én milepæl, og milepæler hører til ett repo. Bruk derfor ett discovery-repo per kunde.
 

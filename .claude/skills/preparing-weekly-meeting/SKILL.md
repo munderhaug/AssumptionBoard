@@ -22,8 +22,9 @@ Copy this checklist and track progress:
 
 ```bash
 gh issue list --label antakelse --state all --limit 500 \
-  --json number,title,state,closedAt,updatedAt,labels,url,body,projectItems
+  --json number,title,state,closedAt,updatedAt,labels,milestone,url,body,projectItems
 gh project item-list <number> --owner <owner> --format json --limit 500
+gh api 'repos/{owner}/{repo}/milestones' --jq '.[] | {title, due_on}'
 date +%F
 ```
 
@@ -38,6 +39,7 @@ date +%F
 | Cards in *Under discovery* not updated for more than two weeks | Agreement 4 |
 | Cards in *Neste opp* or *Under discovery* without *Vi har rett hvis…* | Agreement 3 |
 | Open cards without Oppfølging | Agreement 5 |
+| Open cards without a learning milestone, if the repo has milestones | «Læringsmilepæler» |
 | Closed cards without a filled-in *Beslutning og innsikt*, without Basis, or Bets without a measurement | Agreement 6 |
 | Backlog size (roughly 15–40 is the agreement) and likely duplicates | Agreement 7 |
 | Blocked cards in *Under discovery*, with GitHub CLI 2.94.0 or newer: `gh issue view <number> --json blockedBy` | «Avhengigheter mellom kort» |
@@ -53,7 +55,7 @@ gh does not show when a card moved between columns. Use `updatedAt` as a signal,
 2. **Trenger mer research:** #17 «Vi tror at …»: skarpere test, Bet eller Ikke sant?
 3. **Nye beslutninger siden sist:** #8 Ikke sant, #9 Validert.
 4. **Plass til nye kort:** Under discovery 2 av 3, Neste opp 5 av 5. Kandidater: #21, #23.
-5. **Rydding:** 3 åpne kort uten oppfølgingsdato (#14, #15, #19). Mulig duplikat: #14 og #21.
+5. **Rydding:** 3 åpne kort uten oppfølgingsdato (#14, #15, #19). 2 åpne kort uten milepæl (#22, #24). Mulig duplikat: #14 og #21.
 ```
 
 If there is little to discuss, say so instead: «Lite å ta opp denne uka. Vurder et kort møte, eller å hoppe over det.»
