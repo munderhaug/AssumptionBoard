@@ -43,7 +43,7 @@ Antakelse:
 | Nothing beyond the line | What the team noticed outside the line is a new question or a new card, not a result. |
 | The implication fits the test | *Produktimplikasjon* does not claim more than was tested, such as more users, other segments or more features. |
 | Evidence can be found | *Bevis* links to a specific frame or file, with a date, and the numbers in *Det vi så* appear there. |
-| Bet | A Bet has a measurement and an Oppfølging date. |
+| Bet | A Bet says that it was not tested, and why the team builds on it anyway. Something to follow and an Oppfølging date are optional. Whether to test a Bet is the team's choice, not a check. |
 | Basis and Status match | Validert has Basis Validert, a Bet has Basis Bet, and Ikke sant is in the column *Ikke sant*. |
 
 Utforsking:
@@ -85,8 +85,8 @@ For an utforsking, use the same shape. For example:
 | «Det er åpenbart validert» | Then the line will show it. Ask which part of *Det vi så* meets it. |
 | «4 av 8 er nesten 5 av 8» | The line was set before the test so that close does not count. Bet and Ikke sant are honest outcomes too. |
 | «Vi lærte noe annet viktig» | Good. Suggest writing it as a new card. It is not a result of this test. |
-| «Demoen er i morgen» | The review takes minutes, and a Bet with a measurement can be shown in a demo just as well. |
-| «Vi vet jo nå at de vil betale» | The utforsking gave the team a belief, not a test. Write it as an antakelse, or make it a Bet with a measurement. |
+| «Demoen er i morgen» | The review takes minutes, and a Bet can be shown in a demo just as well, as long as it is marked. |
+| «Vi vet jo nå at de vil betale» | The utforsking gave the team a belief, not a test. Write it as an antakelse, or build on it as a marked Bet. |
 | «Vi trenger to uker til» | The stop rule is there so the team writes down what it saw. Write the Innsikt now, and make a new, narrower utforsking if more is needed. |
 
 ## Always

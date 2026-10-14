@@ -35,7 +35,7 @@ Copy this checklist and track progress:
 **1. Find the starting point.**
 
 - **A belief, or one question the team wants to understand:** go to step 2.
-- **A question, an idea, a feature about to be built, something already built, or a delivery issue:** follow [from-questions.md](from-questions.md) first. It ends with at most three cards the person chose. Take each of them through steps 2–8.
+- **A question, an idea, a feature about to be built, something already built, or a delivery issue:** follow [from-questions.md](from-questions.md) first. For something already built, it follows «Det som allerede er bygd» in `docs/HVORDAN-VI-JOBBER.md`. It ends with at most three cards the person chose. Take each of them through steps 2–8.
 - **A finished utforsking:** read it with `gh issue view <number> --json number,title,body,url`. Ask what the team believes now, after what it saw, and which of the questions under *Nye spørsmål* still matter. Take each one the person names through steps 2–8, and add «Kommer fra #<number>».
 - **Nothing yet:** ask «Hva tror du er sant, som vi ikke vet?», or «Hva er det dere må finne ut av?»
 
@@ -129,7 +129,7 @@ Antakelse:
 **Det vi så:**
 **Produktimplikasjon:**
 **Bevis:**
-**Hvis Bet, måling vi følger:**
+**Hvis Bet, det vi følger med på (valgfritt):**
 ```
 
 Utforsking:
@@ -168,7 +168,7 @@ If the label does not exist, stop and say which label is missing. `scripts/setup
 gh issue view <number> --json url,labels,milestone,projectItems
 ```
 
-Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off, or that its filter does not match the card's type (`docs/OPPSETT.md`, step 5). Someone must then add it by hand. Then give the link and remind the person to set Oppfølging on the board. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype, Viktighet and Sikkerhet are set only if the team uses them.
+Confirm that the card has the right label, the milestone you agreed on, and is on the board. If something did not happen, say exactly what. A card missing from the board usually means auto-add is off, or that its filter does not match the card's type (`docs/OPPSETT.md`, step 5). Someone must then add it by hand. Then give the link and remind the person to set Oppfølging on the board. For an utforsking, that is the date it stops at the latest once it is under discovery. Risikotype is set only if the team uses it.
 
 If the card came from an utforsking, remind the person to add its number under *Nye kort* on that utforsking. Do not edit the utforsking yourself.
 

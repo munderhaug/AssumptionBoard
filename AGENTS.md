@@ -22,7 +22,7 @@ gh repo view --json nameWithOwner,isTemplate,projectsV2
 gh issue list --state all --limit 500 \
   --json number,title,state,createdAt,closedAt,updatedAt,labels,milestone,url,body,projectItems
 
-# Board fields: Status, Oppfølging, Risikotype, Viktighet, Sikkerhet, Basis
+# Board fields: Status, Oppfølging, Risikotype, Basis, and Viktighet and Sikkerhet if the team added them
 gh project item-list <number> --owner <owner> --format json --limit 500
 
 # Learning milestones (open ones)
@@ -38,18 +38,19 @@ date +%F
 
 ## The method in brief
 
-The authority is `docs/HVORDAN-VI-JOBBER.md`. Read it when in doubt. Good cards are in `docs/EKSEMPELKORT.md`.
+The authority is `docs/HVORDAN-VI-JOBBER.md`, with the team's five agreements at the top. Read it when in doubt. Good cards are in `docs/EKSEMPELKORT.md`.
 
 - **Two card types, one flow.** Both share the Backlog, the columns and the limits. Neither is better: exploring and testing are both discovery.
 - **Antakelse:** one concrete claim that could turn out to be wrong. The title starts with «Vi tror at». Four sections: *Vi tror at…*, *Vi tester ved å…*, *Vi har rett hvis…* (the pass/fail line, written before the test starts) and *Beslutning og innsikt* (written when the card leaves discovery).
 - **Utforsking:** one question the team must understand before it knows what it believes. The title starts with «Vi vil forstå». Four sections: *Vi vil forstå…*, *Vi utforsker ved å…*, *Vi er ferdige når…* (the stop rule, written before it starts) and *Innsikt* (what was seen, the new cards, new questions and evidence, written when it ends).
 - **Which type:** if the team can write a «Vi har rett hvis…» line that could fail, it is an antakelse. If not, it explores first. A yes/no question usually hides a belief.
 - **Insight is not evidence.** What an utforsking saw gives grounds for new antakelser. It never validates anything.
+- **Where cards come from:** what is already built, and what the team knows it does not know. For something already built, the team writes what it believed when it built it. Evidence the team can show can make it Validert, no evidence makes it a Bet, and something nobody understands becomes an utforsking.
 - **Status** (the columns, in order): Backlog, Neste opp, Under discovery, Klar for implementering, Implementert, Ikke sant and Innsikt. Antakelser end in *Klar for implementering*, *Implementert* or *Ikke sant*. Utforskinger end in *Innsikt*. Together, the end columns show what the team knows now: what was tested and holds (Validert) or does not hold (Ikke sant), what it builds on as a deliberate guess (Bet), and what it has seen but not tested (Innsikt). The view *Det vi vet* shows them together. Never present a Bet or an Innsikt as tested. Limits: 3 in *Under discovery* (both types together), 5 in *Neste opp*.
-- **Fields:** Oppfølging (a date: when we next look at the card, and for an utforsking under discovery the date it stops at the latest; a signal, not a deadline), Risikotype (Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet), Viktighet (Høy, Middels, Lav), Sikkerhet (Lav, Middels, Høy, on antakelser only) and Basis (Validert, Bet, on antakelser only).
+- **Fields:** Oppfølging (a date: when we next look at the card, and for an utforsking under discovery the date it stops at the latest; a signal, not a deadline), Risikotype (Verdi, Brukbarhet, Gjennomførbarhet, Levedyktighet) and Basis (Validert, Bet, on antakelser only). Some teams add Viktighet (Høy, Middels, Lav) and Sikkerhet (Lav, Middels, Høy, on antakelser only).
 - **Learning milestone** (læringsmilepæl): a GitHub milestone that is a learning goal: what we must know, by when, and the outcome it should lead to. Each card belongs to the one milestone it helps answer. The team creates the milestones.
 - **Label** `trenger-mer-research`: the test gave no answer. It is a label, not a column.
-- **Bet:** an antakelse the team builds on without testing, on purpose, with a measurement and an Oppfølging date.
+- **Bet:** an antakelse the team builds on without testing, on purpose. It is fine as long as it is marked. Something to follow and an Oppfølging date are optional, and the team may choose to test or explore a Bet later, for example when the customer asks. The team decides whether a Bet is ever tested. You may point out a Bet that looks important, once, as a question.
 - **Closing:** an antakelse is closed when the decision is made, not when something ships. An utforsking is closed when *Innsikt* is written and the new cards exist, each with «Kommer fra #<number>», or *Innsikt* says why there are none.
 - **Delivery** issues in the dev repository are blocked only by antakelser, never by an utforsking.
 - **Evidence** may live in Miro, Figma or similar tools. The conclusion is written on the card.

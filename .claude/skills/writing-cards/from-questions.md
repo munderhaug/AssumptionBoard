@@ -21,7 +21,7 @@ Ask one question per message, with your guess attached («Mitt gjett: …»), an
 | Technology | Gjennomførbarhet | What do we depend on that we have not tried, such as integrations, data, performance or other teams? What would be expensive to change later? |
 | Business | Levedyktighet | Who pays, and what does it cost to run and support? Are there legal, security or contract limits? What do sales and support expect? |
 
-For something already built, ask: «Hva antok vi da vi bygde det, og hva vet vi nå?» Usage data and support requests are often the cheapest evidence.
+For something already built, ask: «Hva antok vi da vi bygde det, og hva vet vi nå?» Then ask whether the team can show evidence for it. The method is «Det som allerede er bygd» in `docs/HVORDAN-VI-JOBBER.md`: evidence the team can show, data nobody has looked at yet (write the line first), no evidence (a Bet, which is fine when it is marked), or something nobody understands (an utforsking). Usage data and support requests are often the cheapest evidence.
 
 Listen for answers that sound right but say nothing, such as «brukervennlig», «skalerbart» or «sånn gjør alle det». Ask: «Hvis du ikke måtte begrunne det for noen, hva tror du egentlig?» or «Hva ville du sett hvis det var sant?»
 
@@ -37,14 +37,14 @@ If the team has no belief yet, the point is a candidate for an utforsking: «Vi 
 
 Check for existing cards with `gh issue list --state all --search "<keywords>" --json number,title,state,labels,url`. Then sort each point:
 
-- **Known:** there is evidence or a card already. Link it. No new card.
+- **Known:** there is a card already. Link it. No new card. For something already built, evidence the team can show still becomes a card, so the knowledge is visible on the board.
 - **Important and uncertain:** a candidate for an antakelse.
-- **Important and fairly certain:** a candidate for a Bet.
+- **Important and fairly certain, or already built without evidence:** a candidate for a Bet.
 - **Important, and the team has no belief yet:** a candidate for an utforsking.
 - **Someone can simply answer it:** ask them. No card.
 - **Unimportant:** leave it.
 
-Pick at most three candidates of both types together, the ones where being wrong or not knowing would cost the most, and say why you picked them. More cards than that fill the Backlog without helping anyone decide.
+Pick at most three candidates at a time, of both types together, the ones where being wrong or not knowing would cost the most, and say why you picked them. More cards than that fill the Backlog without helping anyone decide.
 
 ## 5. Restate and get an explicit yes
 

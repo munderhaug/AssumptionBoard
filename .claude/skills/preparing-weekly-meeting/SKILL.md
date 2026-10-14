@@ -28,21 +28,22 @@ gh api 'repos/{owner}/{repo}/milestones' --jq '.[] | {title, due_on}'
 date +%F
 ```
 
-**2. Run the checks.** The agreements are in `docs/HVORDAN-VI-JOBBER.md`, section «Syv avtaler».
+**2. Run the checks.** The agreements are in `docs/HVORDAN-VI-JOBBER.md`, section «Fem avtaler».
 
 | Check | Source in HVORDAN-VI-JOBBER.md |
 | --- | --- |
-| Open cards, and Bets, with Oppfølging today or earlier. For an utforsking under discovery, the date is its stop date | Agreement 5; «Når en Bet skal følges opp»; «Utforske og teste» |
+| Open cards, and Bets that have a date, with Oppfølging today or earlier. For an utforsking under discovery, the date is its stop date | Agreement 4; «Bets»; «Utforske og teste» |
 | Cards labelled `trenger-mer-research` | «Når en test ikke gir svar» |
-| Cards closed in the last 7 days: antakelser with their Beslutning, utforskinger with their new cards | Agreement 6 |
-| Cards in *Under discovery* (max 3, both types together) and *Neste opp* (max 5, labelled cards included), with how many of each type | Agreement 4 and the column limits |
-| Cards in *Under discovery* not updated for more than two weeks | Agreement 4 |
-| Antakelser in *Neste opp* or *Under discovery* without *Vi har rett hvis…*, and utforskinger there without *Vi er ferdige når…* | Agreement 3 |
-| Open cards without Oppfølging | Agreement 5 |
+| Cards closed in the last 7 days: antakelser with their Beslutning, utforskinger with their new cards | Agreement 5 |
+| Cards in *Under discovery* (max 3, both types together) and *Neste opp* (max 5, labelled cards included), with how many of each type | Agreement 3 |
+| Cards in *Under discovery* not updated for more than two weeks | Agreement 3 |
+| Antakelser in *Neste opp* or *Under discovery* without *Vi har rett hvis…*, and utforskinger there without *Vi er ferdige når…* | Agreement 2 |
+| Open cards without Oppfølging | Agreement 4 |
 | Open cards without a learning milestone, if the repo has milestones | «Læringsmilepæler» |
-| Closed antakelser without a filled-in *Beslutning og innsikt*, without Basis, or Bets without a measurement. Closed utforskinger without a filled-in *Innsikt*, or without new cards and no reason given | Agreement 6 |
+| Closed antakelser without a filled-in *Beslutning og innsikt* or without Basis. Closed utforskinger without a filled-in *Innsikt*, or without new cards and no reason given | Agreement 5 |
 | On a board older than six weeks: no utforsking created or closed in the last six weeks. On any board: utforskinger closed without new cards and no reason given | «Utforske og teste», «Tegn på ubalanse» |
-| Backlog size (roughly 15–40 is the agreement) and likely duplicates | Agreement 7 |
+| Backlog size (roughly 15–40) and likely duplicates | «Rutiner», the weekly row |
+| Cards in *Klar for implementering* not updated for more than four weeks: are they delivered? | «Rutiner», the weekly row |
 | Blocked cards in *Under discovery*, with GitHub CLI 2.94.0 or newer: `gh issue view <number> --json blockedBy` | «Avhengigheter mellom kort» |
 
 gh does not show when a card moved between columns. Use `updatedAt` as a signal, and say it is an estimate. The balance between testing and exploring is a signal, not a rule: mention it once, as a question, and only when the board shows it plainly. If there is room in the columns and the team uses Viktighet and Sikkerhet, point to Backlog antakelser with Høy viktighet and Lav sikkerhet, and utforskinger with Høy viktighet, as candidates. A conclusion section with only the prefilled labels counts as not filled in.

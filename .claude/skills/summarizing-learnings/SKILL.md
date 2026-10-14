@@ -49,7 +49,7 @@ gh project item-list <number> --owner <owner> --format json --limit 500
 
 **3. Read the conclusion** on each closed card. Leave out cards without a filled-in conclusion (see step 6). A section with only the prefilled labels counts as empty.
 
-- **Antakelse:** read *Beslutning og innsikt*: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, the measurement. Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
+- **Antakelse:** read *Beslutning og innsikt*: Beslutning, Det vi så, Produktimplikasjon, Bevis and, for Bets, what the team follows, if anything. Separate what answers the card's «Vi har rett hvis…» line from everything else the card mentions. Only the first is a result.
 - **Utforsking:** read *Innsikt*: Det vi så, Nye kort, Nye spørsmål and Bevis. An utforsking has no line and tests nothing. Report what it saw as what was seen, with its counts, and name the new cards it led to.
 
 **4. Draft the letter** from the template that fits. Use one or two lines per card: what we believed or wanted to understand, what we saw, what it means. Skip empty sections. Under «Det som stemte» and «Det som ikke stemte», write only what answers the card's «Vi har rett hvis…» line. Anything else the team noticed goes under «Nye spørsmål».
@@ -66,7 +66,7 @@ For a period:
 - Vi trodde at … Vi så at … Dermed slapp vi å … ([#8](<url>))
 
 **Det vi bygger på uten å ha testet (Bets)**
-- … Vi følger med på … og ser på det igjen <dato>. ([#9](<url>))
+- Vi bygger på at … uten å ha testet det, fordi … ([#9](<url>))
 
 **Det vi har utforsket (sett, men ikke testet)**
 - Vi ville forstå … Vi så at … Det ga nye kort: … ([#7](<url>))
