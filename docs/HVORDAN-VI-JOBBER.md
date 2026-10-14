@@ -173,22 +173,6 @@ På oppfølgingsdatoen ser teamet på målingen og velger én av tre:
 
 **Roller:** kortets eier (hvilket som helst fag) kjører testen og skriver konklusjonen. Tavleholderen (produkteieren) holder ukesmøtet og hjelper teamet å holde tavlen levende, men eier ikke kortene. Produkttrioen (produkt, design, tech lead) avgjør prioritering ved uenighet. Kunden har lesetilgang og en plass i demoen.
 
-## Kom i gang med teamet
-
-Start med en 60 minutters workshop der teamet fyller tavlen sammen. Milepælene lager dere underveis, ut fra det dere trenger å vite.
-
-1. Forklar tavlen og prinsippene, og vis de tre eksempelkortene (10 min).
-2. Alle skriver antakelser stille, hver for seg, på tvers av fag: «Hva må være sant for at vi lykkes med det vi skal gjøre nå?» (15 min).
-3. Skriv dem om til «Vi tror at…» og legg dem inn som kort. Grupper de som hører sammen, og gi gruppene en læringsmilepæl: hva vi må vite, og når (15 min).
-4. Sett oppfølgingsdato på alle kortene. Sett Risikotype, Viktighet og Sikkerhet bare hvis dere trenger dem allerede (10 min).
-5. Velg inntil 3 kort som går til *Under discovery*, og skriv «Vi har rett hvis…» for hver (10 min).
-
-Tips: be en utvikler eie det første gjennomførbarhetskortet og vis resultatet av spiken i ukesmøtet. Da blir det tydelig at teknisk utforsking er discovery.
-
-Vil dere se alle antakelsene samlet etter viktighet og sikkerhet, tegn et 2×2-kart (viktig–uviktig mot sikker–usikker) i Miro eller FigJam under steg 3. GitHub Projects kan ikke vise et slikt kart. Hjørnet viktig og usikker er kandidatene til *Neste opp*.
-
-Etter 3–4 uker: er grensene riktige? Hva gjør vi bare fordi vi må? Hvilke kolonner og felt brukes ikke? Juster.
-
 ## Kilder
 
 - [The Hypothesis Prioritization Canvas, Jeff Gothelf](https://jeffgothelf.com/blog/the-hypothesis-prioritization-canvas/)

@@ -1,6 +1,6 @@
 ---
 name: writing-assumptions
-description: Coaches a team member in turning a loose belief («jeg tror…», «jeg er ikke sikker på…») into a well-formed card on the assumption board (antakelsestavle). Challenges the claim, suggests the cheapest test, drafts the «Vi har rett hvis…» line, and creates the GitHub issue only after an explicit yes. Use when someone wants to add an assumption, write or improve a card, or turn a list of statements from a workshop into cards.
+description: Coaches a team member in turning a loose belief («jeg tror…», «jeg er ikke sikker på…») into a well-formed card on the assumption board (antakelsestavle). Challenges the claim, suggests the cheapest test, drafts the «Vi har rett hvis…» line, and creates the GitHub issue only after an explicit yes. Use when someone wants to add an assumption, write or improve a card, or turn several statements into cards at once.
 ---
 
 # Writing assumptions
@@ -87,7 +87,7 @@ If the label `antakelse` does not exist, `scripts/setup.sh` has not been run: st
 
 **7. Hand over.** Give the link and remind the person to set Oppfølging on the board. Risikotype, Viktighet and Sikkerhet are set only if the team uses them.
 
-## Workshop mode
+## Several statements at once
 
 When someone pastes a list of statements:
 

@@ -1,6 +1,6 @@
 # Oppsett steg for steg
 
-Slik setter du opp en antakelsestavle for en ny kunde, fra tomt repo til en tavle teamet kan bruke i workshopen. Regn med ca. 20 minutter. Gjør stegene i rekkefølge, siden flere bygger på de forrige.
+Slik setter du opp en antakelsestavle for en ny kunde, fra tomt repo til en tavle teamet kan bruke. Regn med ca. 20 minutter. Gjør stegene i rekkefølge, siden flere bygger på de forrige.
 
 Menynavn i GitHub kan endre seg litt mellom oppdateringer. Hvis noe ikke stemmer, se prosjektets innstillinger (*Settings*) og GitHubs dokumentasjon for Projects.
 
@@ -160,7 +160,7 @@ Lag et kort: *Issues* → *New issue* → *Antakelse*. Sjekk at:
 
 Sett dagens dato i Oppfølging og sjekk at kortet vises i *Til oppfølging*. Slett testkortet etterpå (*Delete issue* nederst i sidepanelet på issuen).
 
-Nå er tavlen klar. Hold workshopen som beskrevet i [Kom i gang med teamet](HVORDAN-VI-JOBBER.md#kom-i-gang-med-teamet).
+Nå er tavlen klar. Hvordan teamet jobber med den, står i [HVORDAN-VI-JOBBER.md](HVORDAN-VI-JOBBER.md).
 
 ## Når dere er i gang
 
@@ -168,7 +168,7 @@ Dette trenger ikke settes opp på forhånd.
 
 ### Læringsmilepæler (teamet lager dem selv)
 
-Malen definerer ingen milepæler. Teamet oppretter dem selv når de trenger å gruppere kort rundt noe de må vite, for eksempel i workshopen. De bruker GitHubs egne milepæler i repoet (*Issues* → *Milestones* → *New milestone*):
+Malen definerer ingen milepæler. Teamet oppretter dem selv når de trenger å gruppere kort rundt noe de må vite. De bruker GitHubs egne milepæler i repoet (*Issues* → *Milestones* → *New milestone*):
 
 - **Tittel:** det vi må vite.
 - **Frist:** når vi må vite det.
