@@ -12,7 +12,9 @@ Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som se
 
 ## Kom i gang
 
-1. **Lag ditt eget repo fra malen.** Trykk *Use this template* → *Create a new repository* på GitHub, og gjør det **privat**. Bruk ett repo per kunde. Skal kunden bare ha lesetilgang, må repoet eies av en organisasjon, se [Tilgang](docs/OPPSETT.md#7-tilgang). Alternativt: klon dette repoet og push det til et nytt.
+Her er kortversjonen. Hele oppsettet steg for steg, også installasjon av GitHub CLI, står i [docs/OPPSETT.md](docs/OPPSETT.md).
+
+1. **Lag ditt eget repo fra malen.** Trykk *Use this template* → *Create a new repository* på GitHub, og gjør det **privat**. Bruk ett repo per kunde. Skal kunden bare ha lesetilgang, må repoet eies av en organisasjon, se [Tilgang](docs/OPPSETT.md#8-tilgang). Alternativt: klon dette repoet og push det til et nytt.
 2. **Kjør oppsettsskriptet** fra en lokal kopi av det nye repoet. Det krever [GitHub CLI](https://cli.github.com):
    ```bash
    gh repo clone <eier>/<repo> && cd <repo>
@@ -20,7 +22,7 @@ Repoet gir deg issue-skjema, PR-mal, eksempelkort, etiketter og et skript som se
    ./scripts/setup.sh <eier> <repo>
    ```
    `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet på det nye repoet. Skriptet lager etikettene, et Project med fem felt og kobler det til repoet.
-3. **Gjør de manuelle stegene** i [docs/OPPSETT.md](docs/OPPSETT.md): kolonner, grenser, automatisering, visninger, tilgang og kobling til dev-repoet.
+3. **Gjør resten for hånd** i [docs/OPPSETT.md](docs/OPPSETT.md), fra steg 4: kolonner, automatisering, visninger, grenser, tilgang, kobling til dev-repoet og et testkort.
 4. **Hold en kort workshop** og fyll tavlen sammen. Oppskrift i [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md), og bruk [eksempelkortene](docs/EKSEMPELKORT.md) til å vise hvordan et godt kort ser ut.
 
 ## Tavlen i korte trekk
@@ -47,7 +49,7 @@ Backlog → Neste opp → Under discovery → Klar for implementering → Implem
 .github/ISSUE_TEMPLATE/config.yml      Slår av tomme issues, så alle bruker skjemaet
 templates/dev-repo/pull_request_template.md   PR-mal som kopieres til dev-repoet
 scripts/setup.sh                       Oppretter etiketter, Project og felt
-docs/OPPSETT.md                        Manuelle steg i GitHub Projects
+docs/OPPSETT.md                        Oppsett steg for steg
 docs/HVORDAN-VI-JOBBER.md              Prinsipper, avtaler, rutiner, avhengigheter og kobling til dev
 docs/EKSEMPELKORT.md                   Tre ferdig utfylte kort: Validert, Ikke sant og Bet
 ```
