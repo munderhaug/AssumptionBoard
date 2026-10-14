@@ -185,6 +185,8 @@ Start med en 60 minutters workshop der teamet fyller tavlen sammen. Milepælene 
 
 Tips: be en utvikler eie det første gjennomførbarhetskortet og vis resultatet av spiken i ukesmøtet. Da blir det tydelig at teknisk utforsking er discovery.
 
+Vil dere se alle antakelsene samlet etter viktighet og sikkerhet, tegn et 2×2-kart (viktig–uviktig mot sikker–usikker) i Miro eller FigJam under steg 3. GitHub Projects kan ikke vise et slikt kart. Hjørnet viktig og usikker er kandidatene til *Neste opp*.
+
 Etter 3–4 uker: er grensene riktige? Hva gjør vi bare fordi vi må? Hvilke kolonner og felt brukes ikke? Juster.
 
 ## Kilder
