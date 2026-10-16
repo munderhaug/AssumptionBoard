@@ -13,10 +13,10 @@ It is built for teams that know kanban but are new to structured discovery, incl
 | Open questions that matter for a decision ahead | Working beliefs, not yet established | Committed: has people and a next checkpoint | Learning under way, three cards at most | The best current understanding, scoped to the evidence | Proceeding despite uncertainty, on purpose |
 
 - **Two ways in:** a **Question** («How do bookkeepers find missing invoices at month end?») or a **Belief** («We believe clients will upload invoices themselves»).
-- **The card changes shape with its state.** It starts with a title, why it matters and what would be enough to update our understanding. When it becomes *What we currently know*, its title is rewritten to state the understanding and the evidence it rests on.
+- **The card changes shape with its state.** It starts with a title, why it matters and a criterion: what would be enough to update our understanding. When it becomes *What we currently know*, its title is rewritten to state the understanding and the evidence it rests on.
 - **Knowledge and action are separate.** *What we currently know* means the team knows enough within the current scope. *Informed bet* means it does not, and proceeds anyway, knowingly.
 - **Changed minds are visible.** Concluded beliefs get an Outcome. The view *Changed our mind* shows the ones that did not hold or had to be refined.
-- **A weekly review** of 20 to 30 minutes keeps the board alive and decides what the team is willing to call current understanding.
+- **A weekly review** of 20 to 30 minutes keeps the board alive. The team decides there what it is willing to call current understanding, and moves those cards.
 
 The method is in [docs/working-model.md](docs/working-model.md). Good cards are in [docs/examples.md](docs/examples.md).
 
@@ -39,7 +39,7 @@ The full setup, including installing GitHub CLI, is in [docs/setup.md](docs/setu
 ```
 .github/ISSUE_TEMPLATE/question.yml        The Question form
 .github/ISSUE_TEMPLATE/belief.yml          The Belief form
-.github/ISSUE_TEMPLATE/config.yml          Turns off blank issues
+.github/ISSUE_TEMPLATE/config.yml          Hides blank issues from readers
 docs/working-model.md                      The method
 docs/examples.md                           Example cards in each state
 docs/setup.md                              Setup, step by step
@@ -47,7 +47,7 @@ scripts/setup.sh                           Creates labels, project, fields and v
 templates/dev-repo/pull_request_template.md  For the delivery repository: which learning a change builds on
 AGENTS.md                                  Instructions for AI assistants
 .claude/skills/discovery-assistant/        The AI assistant's four jobs
-.claude/settings.json                      Which GitHub commands the assistant may run without asking
+.claude/settings.json                      Which GitHub commands Claude Code may run without asking
 ```
 
 ## The AI assistant (optional)

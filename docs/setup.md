@@ -56,7 +56,7 @@ Run it only once per board: it creates a new project every time. If it stops wit
 | Status | What we need to know, What we think we know, Prioritized, Investigating, What we currently know, Informed bet | The six states |
 | Primary lens | People, Business, Technology, Product | Orientation and filtering |
 | Outcome | Supported, Refined, Did not hold, Inconclusive | Concluded beliefs. Feeds *Changed our mind* |
-| Next checkpoint | Date | Prioritized and investigating cards, and informed bets |
+| Next checkpoint | Date | When the team next looks at a prioritized or investigating card, and an informed bet's revisit date. Not a deadline |
 
 Assignees, milestones, sub-issues and dependencies are GitHub's own features and need no setup.
 
@@ -76,9 +76,9 @@ GitHub's API cannot set workflows, column limits, sorting or grouping. Open the 
 | Auto-archive items | On, filter `is:closed reason:"not planned"` |
 | Pull request linked, Pull request merged, Code changes requested, Code review approved | Off |
 
-Why: closing a card and moving it to *What we currently know* become the same action, from either direction. Duplicates and irrelevant cards are closed as not planned and archived, so they never show up as knowledge. On GitHub Free a project can only have one auto-add workflow, so it adds all issues; the repository is only used for cards. Auto-add does not pick up issues that existed before you turned it on.
+Why: closing a card and moving it to *What we currently know* become the same action, from either direction. The reverse is not automatic: moving a card out of *What we currently know* does not reopen it, so reopen the issue first. *Item closed* also moves cards closed as not planned to *What we currently know*, and auto-archive is what removes them, so it must be on. Close duplicates as not planned too: a card closed with *Close as duplicate* is not archived. On GitHub Free a project can only have one auto-add workflow, so it adds all issues; the repository is only used for cards. Auto-add does not pick up issues that existed before you turned it on.
 
-**Column limit:** in *Board*, open the menu on *Investigating* → *Set limit* → 3. The limit only highlights; it does not block.
+**Column limit:** in *Board*, open the menu next to *Investigating* → *Set column limit*, type 3 and click *Save*. The limit only highlights; it does not block.
 
 **Views** (open each one):
 
@@ -86,7 +86,7 @@ Why: closing a card and moving it to *What we currently know* become the same ac
 | --- | --- |
 | Board | Board layout with Status as columns. Show Labels, Assignees and Next checkpoint on the cards. |
 | Learning now | Filter `status:Prioritized,Investigating`. Sort by Next checkpoint. Show Assignees and Next checkpoint. |
-| Ready for action | Board, filter `status:"What we currently know","Informed bet" -reason:"not planned"`. Show Outcome. |
+| Ready for action | Board layout, filter `status:"What we currently know","Informed bet" -reason:"not planned"`. Show only the columns *What we currently know* and *Informed bet* (scroll to the right of the columns and click +). Show Outcome. |
 | Changed our mind | Filter `outcome:"Did not hold",Refined`. Show Outcome. |
 | By milestone | Group by Milestone. |
 | My learning | Filter `assignee:@me is:open`. |
@@ -110,7 +110,10 @@ This repository holds the team's shared map of learning: what we need to know, w
 - **The board:** <link to the project>. Start with the views *Ready for action*, *Learning now* and *Changed our mind*.
 - **How we work:** [docs/working-model.md](docs/working-model.md)
 - **Cards in «What we currently know»** have titles that state the understanding and the evidence it rests on. Informed bets are deliberate choices to proceed without enough evidence.
+- **Questioning a card?** Comment on it. The team takes it up in the weekly review.
 ```
+
+The `LICENSE` file covers the template itself. Delete it in your board if it does not suit your project.
 
 ## 7. Link to the delivery repository
 
@@ -121,27 +124,28 @@ This repository holds the team's shared map of learning: what we need to know, w
      --add-blocked-by https://github.com/<owner>/<discovery-repo>/issues/<number>
    ```
    Never block delivery on an informed bet. The bet is the decision to proceed.
-3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides.
+3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides. Never write «Closes» or «Fixes» before a card: closing it would mark it as current understanding.
 
 ## 8. Try it
 
 1. *Issues* → *New issue* → **Question**. Check that the card gets the label `question` and appears in *What we need to know*.
 2. *Issues* → *New issue* → **Belief**. Check that the title starts with «We believe», that it gets the label `belief`, and move it to *What we think we know*.
 3. Give the belief an assignee and a Next checkpoint, and move it to *Prioritized*. Check that it shows in *Learning now*.
-4. Rewrite its title as an understanding, set Outcome to *Did not hold* and close it. Check that it lands in *What we currently know* and shows in *Changed our mind*.
-5. Close the question as *not planned*. Check that it is archived and does not show as knowledge.
-6. Delete both test issues (*Delete issue* at the bottom of the issue's sidebar).
+4. Rewrite its title as an understanding, set Outcome to *Did not hold* and drag it to *What we currently know*. Check that the issue closes and shows in *Changed our mind*.
+5. Reopen it. Check that it moves to *What we think we know*, if your project has *Item reopened*. Then close it from the issue page and check that it moves back to *What we currently know*.
+6. Close the question with *Close as not planned*. Check that it is archived and does not show in *Ready for action*.
+7. Delete both test issues (*Delete issue* in the issue's sidebar). In an organization this needs admin access, and an owner must first allow deleting issues. If you cannot delete them, reopen the belief and close it as not planned too, so both are archived.
 
 ## 9. Start
 
 - **A new project** starts with an empty board.
 - **A project that is already running** starts with the current-state mapping in [working-model.md](working-model.md#where-to-start).
 
-Then book the weekly review.
+Then book the weekly review. Cards move to *What we currently know* and *Informed bet* there, so the first review comes soon after the board starts.
 
 ## Template project (for whoever maintains the template)
 
-A template project is a fully configured project that `scripts/setup.sh` copies instead of building one. New boards then get the workflows, column limit, sorting and grouping without step 4. Set it up once:
+A template project is a fully configured project that `scripts/setup.sh` copies instead of building one. New boards then get the views, fields, workflows except auto-add, and the sorting and grouping, so most of step 4 is done. Turn on auto-add and check the column limit by hand. Set it up once:
 
 1. Create a test repository from the template, run `scripts/setup.sh` against it and do step 4. Name the project «Discovery board template».
 2. Make sure everyone who runs the script can read it. In an organization you can also run `gh project mark-template <number> --owner <organization>` so it shows under *New project*.
@@ -161,7 +165,7 @@ According to GitHub's documentation on [copying projects](https://docs.github.co
 - [ ] Team has write access, stakeholders read access, on both the repository and the project
 - [ ] README replaced
 - [ ] Pull request template copied to the delivery repository
-- [ ] Test cards behaved as in step 8 and are deleted
+- [ ] Test cards behaved as in step 8, and are deleted or closed as not planned
 - [ ] Weekly review booked
 
 ## Not yet verified against GitHub
@@ -173,4 +177,5 @@ As of 16 October 2026, the setup script has been tested offline only, with a fak
 - The *Item reopened* workflow exists in your project. If it does not, move reopened cards by hand.
 - *Auto-close issue* closes the issue when a card is dragged to *What we currently know*.
 - The filters work as written, including `outcome:"Did not hold",Refined` and `assignee:@me`.
-- Auto-archive with `is:closed reason:"not planned"` archives cards closed as not planned.
+- Auto-archive with `is:closed reason:"not planned"` archives cards closed as not planned, soon after *Item closed* has moved them to *What we currently know*.
+- *Ready for action* keeps only its two columns after you hide the others.

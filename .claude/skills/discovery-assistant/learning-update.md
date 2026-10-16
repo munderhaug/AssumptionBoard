@@ -14,9 +14,12 @@ Draft a short learning update for stakeholders who do not follow the board. It b
 
 **1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone.
 
-**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period, cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate), and the cards in *Investigating* and *Informed bet* now.
+**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since Outcome has no date), and the cards in *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
 
-Leave out a card in *What we currently know* whose *Current understanding* section is empty, and list it separately in step 5.
+Leave out, and list separately in step 5:
+
+- a card in *What we currently know* whose *Current understanding* section is empty, or whose title is still a question or starts with «We believe»,
+- a card in *Informed bet* whose *Informed bet* section is empty.
 
 **3. Draft the update:**
 
@@ -36,12 +39,15 @@ Leave out a card in *What we currently know* whose *Current understanding* secti
 - <investigating cards>. ([#18](<url>))
 
 **What this affects**
-- <decisions linked from the cards>
+- <decision> (rests on current understanding, [#12](<url>))
+- <decision> (rests on an informed bet, [#9](<url>))
 ```
 
-Skip empty sections. Keep each line to what the card says, in the team's words. Present *Did not hold* as a good result: the team avoided building on something that was not true.
+Skip empty sections. Keep each line to what the card says, in the team's words. Present *Did not hold* as a useful result, in the card's words. Do not say the team avoided building on it unless the card says so.
 
-For one milestone instead of a period, use the milestone's three parts: what the desired learning was, what is now understood, and whether «reached when» is met, according to the cards.
+The old belief for «What changed» is in the title history, since the title was rewritten. Read it on the issue page, or with `gh api repos/{owner}/{repo}/issues/<number>/events --jq '[.[] | select(.event == "renamed")][0].rename.from'`, which Claude Code asks before running. If you cannot get it, ask. Never reconstruct it from the new title.
+
+For one milestone instead of a period, use the milestone's three parts: what the desired learning was, what is now understood, and what the cards show against «reached when». Say that it is reached only if the team has closed the milestone or said so.
 
 **4. Check every line against its card.** The understanding, numbers and scope must appear on the card. Remove anything that does not.
 

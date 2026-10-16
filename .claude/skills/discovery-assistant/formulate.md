@@ -105,7 +105,7 @@ Give the link. Remind the person that a belief should be moved to *What we think
 
 ## Several statements at once
 
-When someone pastes a list: rewrite each as a question or a belief, flag activities, duplicates and items that hold two things, and let the person choose which to create. A yes to the list covers only the cards on it.
+When someone pastes a list: rewrite each as a question or a belief, flag activities, duplicates and items that hold two things, and let the person choose which to draft. Then draft each chosen card as in step 5 and show it in full. A yes covers only the cards shown in full.
 
 ## Mapping a running project
 
@@ -113,12 +113,12 @@ When the team asks to map what is already built or decided (`docs/working-model.
 
 1. Ask what has been built or decided. Take one item at a time.
 2. For each: «What did we believe when we did this?» and «What evidence can we point to?»
-3. Sort with the person:
-   - Evidence the team can link and describe → a candidate for *What we currently know*. The team writes the understanding and decides in the review.
-   - No evidence, and the team proceeds anyway → a candidate for *Informed bet*.
-   - No evidence, and it matters → a Belief in *What we think we know*.
+3. Sort with the person. Every card starts as a Belief in *What we think we know* or a Question in *What we need to know*:
+   - Evidence the team can link and describe → a Belief whose *Current understanding* the team fills in, with links to the evidence. It is a candidate for *What we currently know*, which the team decides in the review.
+   - No evidence, and the team proceeds anyway → a Belief whose *Informed bet* section the team fills in. It is a candidate for *Informed bet*, which the team decides in the review.
+   - No evidence, and it matters → a Belief.
    - Nobody understands why it works or fails → a Question.
-4. Point out decisions whose reasoning nobody can state. They are often the most useful cards.
-5. Keep the first board to about 15 cards. Draft them as a list, and create each only after a yes.
+4. Point out decisions whose reasoning nobody can state. They are often the most useful cards. Add the open questions the team already knows it has.
+5. Keep the first board to about 15 cards. Draft them as a list, then show each card in full and create it only after a yes to that card.
 
 Never mark anything as known or as a bet yourself. Suggest, and let the team move the cards.

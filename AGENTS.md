@@ -28,8 +28,8 @@ date +%F
 
 - If a result count equals `--limit`, raise the limit so no cards are missed.
 - Card bodies have the sections `### Why it matters`, `### What would be enough to update our understanding?` (questions) or `### What evidence would strengthen or challenge it?` (beliefs), `### Existing material` (or `### Existing material and indications`), `### Current understanding`, `### Informed bet` and `### Decisions informed`. Empty fields read `_No response_`. The *Current understanding* and *Informed bet* sections start prefilled with bold labels and HTML comments; a section with only those counts as empty.
-- Every issue should be a card with the label `question` or `belief`. Blank issues are turned off in the browser, but issues created from the command line skip the forms. If an issue has neither label, say so and leave it alone.
-- Cards closed as *not planned* are duplicates or irrelevant, never knowledge. Ignore them unless asked.
+- Every issue should be a card with the label `question` or `belief`. The browser hides blank issues only from people with read access: the team can still open one, and issues created from the command line skip the forms. If an issue has neither label, say so and leave it alone.
+- Cards closed as *not planned* or as *duplicate* are duplicates or irrelevant, never knowledge. Ignore them unless asked. When asked to close a duplicate or irrelevant card, close it as not planned, since only that reason is archived: `gh issue close <number> --reason "not planned" --comment "Duplicate of #<number>"` (the comment only for a duplicate). Remove its milestone first.
 
 ## The method in brief
 
@@ -37,18 +37,18 @@ The authority is `docs/working-model.md`. Read it when in doubt. Good cards are 
 
 - **A card is something to learn or something understood, never an activity.** «Interview five users» is a way of learning, not a card.
 - **Two card types:** a **Question** (label `question`, the title is the question) and a **Belief** (label `belief`, the title starts with «We believe»).
-- **Six states** (the Status field, in order): *What we need to know*, *What we think we know*, *Prioritized*, *Investigating*, *What we currently know*, *Informed bet*. They describe the epistemic status of a card, not progress on work.
+- **Six states** (the Status field, in order): *What we need to know*, *What we think we know*, *Prioritized*, *Investigating*, *What we currently know*, *Informed bet*. They describe how well the team understands something, not progress on work.
 - **Fields:** Primary lens (People, Business, Technology, Product), Next checkpoint (date), Outcome (Supported, Refined, Did not hold, Inconclusive).
-- **Prioritized and Investigating** cards have assignees and a Next checkpoint. Keep *Investigating* to three cards or fewer.
-- **What we currently know** is the team's best current understanding, scoped to the evidence. Its title is rewritten to state the understanding, with the basis in parentheses. The rule: a card only gets there when the team will use the statement in a real decision and can explain what evidence it rests on, who or what that evidence represents, and where it may not apply. The team decides this in the weekly review.
+- **Prioritized and Investigating** cards have assignees and a Next checkpoint: the date the team next looks at what has been learned, not a deadline. Informed bets carry their revisit date as Next checkpoint. Keep *Investigating* to three cards or fewer.
+- **What we currently know** is the team's best current understanding, scoped to the evidence. Its title is rewritten to state the understanding, with the basis in parentheses. The rule: a card only gets there when the team will use the statement in a real decision and can explain what evidence it rests on, who or what that evidence represents, and where it may not apply. The team decides this in the weekly review and moves the card there. Until then, a *Current understanding* section on an open card is a draft.
 - **Research coverage is not knowledge.** «We interviewed four roles» never belongs in *What we currently know*.
-- **Informed bet** is a deliberate decision to proceed despite uncertainty: what we proceed with, why it is reasonable now, the consequence if wrong, and when to revisit. It is a basis for action, never knowledge, and it stays open.
-- **Outcome** is set when a belief is concluded. *Did not hold* and *Refined* show in the view *Changed our mind*, which is a sign of healthy discovery.
-- **Closing:** a card is closed when it reaches *What we currently know*. It is reopened when the understanding is challenged.
+- **Informed bet** is a deliberate decision by the team to proceed despite uncertainty: what we proceed with, why it is reasonable now, the consequence if wrong, and when to revisit. It is a basis for action, never knowledge, and it stays open. The title stays as it is. Revisiting means keeping the bet, investigating it, or concluding it.
+- **Outcome** is set on beliefs only, when they are concluded. *Did not hold* and *Refined* show in the view *Changed our mind*, which is a sign of healthy discovery.
+- **Closing:** a card is closed when the team moves it to *What we currently know*, never because the work on it is done. It is reopened when the understanding is challenged; moving it out of the column does not reopen it.
 - **Threads** are parent issues with sub-issues, only when the hierarchy adds meaning.
 - **Milestones** are learning objectives: desired learning, what needs to be understood, reached when.
 - **Evidence stays in its source system** (Miro, Figma, documents, code). The card holds the conclusion and links to the source.
-- **Decisions informed** are optional links to product, design or technical decisions. Delivery issues may be blocked by questions or beliefs, never by informed bets.
+- **Decisions informed** are optional links to product, design or technical decisions. Delivery issues may be blocked by questions or beliefs, never by informed bets. When a blocking card becomes a bet, the link is removed.
 
 ## Boundaries
 
@@ -69,7 +69,7 @@ The authority is `docs/working-model.md`. Read it when in doubt. Good cards are 
 ### Never
 
 - Never write to GitHub without that explicit yes.
-- Never decide for the team: do not move a card to *What we currently know* or *Informed bet* on your own initiative, do not set Outcome, and do not write the *Current understanding* or *Informed bet* sections without being asked. When asked to draft them, mark the draft as yours and use only what the card and its linked sources say.
+- Never decide for the team: do not move a card to *What we currently know* or *Informed bet*, or set Outcome, on your own initiative, and do not write the *Current understanding* or *Informed bet* sections without being asked. When asked to draft them, mark the draft as yours and use only what the card and its linked sources say.
 - Never declare something current understanding, decide that a bet is acceptable, or make product, design or architectural decisions.
 - Never invent results, numbers, quotes or evidence. If it is not on the card or in a linked source, say it is missing.
 - Never answer as a user, client or stakeholder, and never present model output as evidence. Asking an AI is not research.
@@ -92,7 +92,7 @@ One skill, `.claude/skills/discovery-assistant/SKILL.md`, covers the four jobs A
 | Prepare the review | Before the weekly review |
 | Communicate | Draft the stakeholder learning update |
 
-Claude Code and GitHub Copilot load skills from `.claude/skills/` automatically. In other tools, ask the agent to read and follow the file.
+Claude Code and GitHub Copilot load skills from `.claude/skills/` automatically. In other tools, ask the agent to read and follow the file. `.claude/settings.json` makes Claude Code ask before every GitHub write. Other tools do not read it, so there these rules are the only safeguard.
 
 Searching Miro, Figma or document tools for existing evidence is not part of the assistant until those tools are connected (for example through MCP servers added to the repository). Until then, say that you cannot search them.
 

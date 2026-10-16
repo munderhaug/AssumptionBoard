@@ -35,7 +35,7 @@ Support tickets tagged «missing invoice», summarised in the team's research fo
 Self-service upload is the main intake flow in the plan for the next release. If clients keep emailing invoices, the bookkeepers' manual work does not go away.
 
 **What evidence would strengthen or challenge it?**
-Strengthen: most clients in a one-week trial upload at least one invoice themselves, next to email. Challenge: they keep emailing, or upload only when reminded.
+Strengthen: most clients in a one-week trial upload at least one invoice themselves, alongside email. Challenge: they keep emailing, or upload only when reminded.
 
 **Existing material and indications**
 Two clients asked for an upload page in support conversations (August).
@@ -48,26 +48,26 @@ The card stays the same. The team adds:
 
 **Assignees:** a designer and a developer · **Next checkpoint:** 24 October · **Milestone:** Intake is understood
 
-The trial itself runs in the product and its analytics. The card links to the trial setup.
+The trial itself runs in the product and its analytics. The card links to the trial setup under *Existing material and indications*. Before the weekly review after the trial, the designer fills in *Current understanding*. The team agrees on it in the review and moves the card.
 
 ---
 
 ## «What we currently know», Outcome: Supported
 
-**Title:** Most pilot clients uploaded invoices themselves once a simple upload page existed (6 of 8, one-week trial, October)
+**Title:** Most pilot clients uploaded invoices themselves when upload took under a minute (6 of 8 clients, one-week trial, October)
 
 **Label:** `belief` · **Outcome:** Supported · **Primary lens:** Product · closed
 
 **Current understanding**
-- **What we found:** 6 of 8 users at pilot clients uploaded at least one invoice themselves during the trial week, alongside email. The two who did not have a bookkeeper who collects invoices for them.
+- **What we found:** 6 of 8 pilot clients uploaded at least one invoice themselves during the trial week, alongside email. Every upload in the trial took under a minute, about 40 seconds on average. The two clients that did not upload have a bookkeeper who collects their invoices for them.
 - **So this means:** Upload becomes the main intake flow in the next release. Email stays as a fallback.
 - **Evidence and sources:** Upload page analytics and the trial summary in Miro, frame «Upload trial week 41», 14 October.
-- **Applies to:** Small clients with fewer than 20 invoices a month, over one week, with email still available. Not tested with larger clients or over a longer period.
+- **Applies to:** Small clients with fewer than 20 invoices a month, over one week, with email still available. Not tested with larger clients, over a longer period, or with uploads that take longer.
 
 **Decisions informed**
 org/app#456 Upload as the main intake flow
 
-> The title changed from «We believe clients will upload invoices themselves if it takes less than a minute». The old title is in the issue history. The new title claims no more than the trial showed: it does not say «clients upload when it takes less than a minute», because upload time was never varied.
+> The title changed from «We believe clients will upload invoices themselves if it takes less than a minute». The old title is in the issue history. The new title claims no more than the trial showed: clients uploaded when it took under a minute, not that the time is why they did, because upload time was never varied. The Outcome is Supported because the trial met the criterion and nothing in it contradicted the belief within its scope.
 
 ---
 
@@ -80,7 +80,7 @@ This card shows up in the view *Changed our mind*.
 **Label:** `belief` · **Outcome:** Did not hold · **Primary lens:** Technology · closed
 
 **Why it matters** (written when the card was created)
-We planned automatic import as the main promise of the next release, based on the belief that we could import 80 % of invoices automatically.
+We planned automatic import as the main promise of the next release, based on the belief that we could import 80 % of export files automatically.
 
 **What evidence would strengthen or challenge it?** (written before the test)
 At least 24 of 30 real export files from three pilot clients import without manual field mapping.
@@ -108,17 +108,17 @@ The icons are already built and in use. Adding help text later is cheap, so the 
 - **If we are wrong:** More support requests about invoice status, and some users trust the wrong status.
 - **Revisit when:** 1 December, or earlier if support gets more than five requests about invoice status in a month.
 
-> The bet stays open. It is a basis for action, not knowledge.
+> The bet stays open. It is a basis for action, not knowledge. The title stays as it is, and the revisit date is also the Next checkpoint, so the board shows when it is due.
 
 ---
 
 ## A thread
 
-**Parent:** How do invoices get from clients to the bookkeeper today?
+**Parent:** How do invoices get from clients to the bookkeeper?
 
-**Sub-issues:**
-- How do clients send invoices today, and why that way? (`question`, What we currently know)
-- We believe clients will upload invoices themselves if it takes less than a minute (`belief`, became the Supported card above)
+**Sub-issues**, as GitHub lists them with their current titles:
+- How do clients send invoices today, and why that way? (`question`, Investigating)
+- Most pilot clients uploaded invoices themselves when upload took under a minute (6 of 8 clients, one-week trial, October) (`belief`, What we currently know: the Supported card above)
 - How do bookkeepers find out which client invoices are missing at month end? (`question`, What we need to know)
 
 The parent is a broader learning question. Each child is a distinct part of it, with its own lens and state.

@@ -52,10 +52,10 @@ fi
 STATUS_OPTIONS='mutation($fieldId: ID!) {
   updateProjectV2Field(input: {fieldId: $fieldId, singleSelectOptions: [
     {name: "What we need to know", color: GRAY, description: "A genuine open question that matters for a decision ahead."},
-    {name: "What we think we know", color: YELLOW, description: "A working belief with some basis. Not established understanding."},
+    {name: "What we think we know", color: YELLOW, description: "A working belief or assumption, with or without indications. Not established understanding."},
     {name: "Prioritized", color: BLUE, description: "We have committed to reduce this uncertainty. Has people and a next checkpoint."},
     {name: "Investigating", color: ORANGE, description: "Learning is under way in the right tools. Keep this to three cards or fewer."},
-    {name: "What we currently know", color: GREEN, description: "Our best current understanding, scoped to the evidence. The title states it."},
+    {name: "What we currently know", color: GREEN, description: "Our best current understanding, scoped to the evidence. Moved here in the weekly review."},
     {name: "Informed bet", color: PURPLE, description: "We proceed despite uncertainty, on purpose. Not knowledge."}
   ]}) { projectV2Field { ... on ProjectV2SingleSelectField { id } } }
 }'
@@ -64,8 +64,8 @@ LENS_FIELD='mutation($projectId: ID!) {
   createProjectV2Field(input: {projectId: $projectId, dataType: SINGLE_SELECT, name: "Primary lens", singleSelectOptions: [
     {name: "People", color: PINK, description: "Users, roles, needs, goals, behaviour and work practice."},
     {name: "Business", color: ORANGE, description: "Value, workflows, governance, responsibilities, rules and organisational context."},
-    {name: "Technology", color: BLUE, description: "Systems, data, architecture, integrations, constraints and source authority."},
-    {name: "Product", color: GREEN, description: "Product role, capabilities, interaction, information and user experience."}
+    {name: "Technology", color: BLUE, description: "Systems, data, architecture, integrations, constraints and which system is the source of truth."},
+    {name: "Product", color: GREEN, description: "What the product is for, its capabilities, interaction, information and user experience."}
   ]}) { projectV2Field { ... on ProjectV2SingleSelectField { id } } }
 }'
 
@@ -210,9 +210,10 @@ if [ -n "$TEMPLATE_PROJECT" ]; then
   echo "  - Check that the states, fields, views, workflows and column limit came with the copy"
   echo "  - Turn on auto-add with the filter is:issue (it is never copied)"
 else
-  echo "  - Workflows: auto-add, item added, item closed, auto-close and auto-archive"
+  echo "  - Workflows: auto-add, item added, item closed, auto-close, item reopened and auto-archive;"
+  echo "    turn the pull request workflows off"
   echo "  - Column limit: 3 on «Investigating»"
-  echo "  - Sorting and grouping in «Learning now» and «By milestone»"
+  echo "  - Sorting and grouping in «Learning now» and «By milestone», and the two columns in «Ready for action»"
   if [ "$VIEW_PROBLEMS" -ne 0 ]; then
     echo "  - The views reported above"
   fi

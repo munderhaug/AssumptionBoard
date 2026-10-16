@@ -1,6 +1,6 @@
 # Challenge
 
-Before a card becomes *What we currently know* or an *Informed bet*, question it so the team can decide well. You never approve it. A challenged card is not an approved card.
+Before a card becomes *What we currently know* or an *Informed bet*, question it so the team can decide well in the weekly review. You never approve it. A challenged card is not an approved card. If the card has already been moved, challenge it the same way: the team can confirm it in the review or reopen it.
 
 ## Checklist
 
@@ -17,7 +17,7 @@ Before a card becomes *What we currently know* or an *Informed bet*, question it
 gh issue view <number> --json number,title,body,state,stateReason,labels,assignees,milestone,url,projectItems
 ```
 
-Take Status, Outcome and Next checkpoint from `projectItems`, or from `gh project item-list` if needed.
+Take Status from `projectItems`. Outcome and Next checkpoint are not in it: take them from `gh project item-list <number> --owner <owner> --format json --limit 500`.
 
 **2. Read the evidence first.** Read the criterion («What would be enough…» or «What evidence would…»), *What we found* and the linked sources before you read *So this means* and the proposed title. Form your own view of what the evidence shows, so the team's conclusion does not steer your reading. If a linked source is a whole board or a folder rather than a specific frame or document, or you cannot open it, say so.
 
@@ -30,7 +30,7 @@ For *What we currently know*:
 | Check | What to look for |
 | --- | --- |
 | Supported | Does *What we found* actually show what the statement claims? |
-| Criterion | Was the criterion written before the investigation, and is it met? If it was written afterwards, or is missing, say so. |
+| Criterion | Is there a criterion, and does *What we found* meet it? gh does not show when the criterion was written. If it matters, ask the team or point to the edit history on the issue page. Do not state it yourself. |
 | Scope | Who and what does the evidence represent: which roles, scenarios, systems, how many, over what time? Is the wording no broader than that? |
 | Applies to | Does the card say where the understanding may not apply? |
 | Counterexamples | Do the sources or other cards contain cases that do not fit? Are conflicts surfaced rather than smoothed over? |
@@ -38,7 +38,7 @@ For *What we currently know*:
 | Strong enough | Is it strong enough for the decision it is meant to inform now? |
 | Knowledge, not coverage | Is it about users, work, domain, product or technology, not about the research itself («we interviewed…»)? |
 | Title | Does the title state the understanding, with its basis in parentheses, not the original question or belief? |
-| Outcome | For a belief: does Outcome (Supported, Refined, Did not hold) match what was found? |
+| Outcome | For a belief: does Outcome (Supported, Refined, Did not hold) match what was found? A question has no Outcome. |
 | Sources | Do the links point to specific summaries with dates? Do the numbers in the card appear there? |
 
 For *Informed bet*:
@@ -47,8 +47,8 @@ For *Informed bet*:
 | --- | --- |
 | All four parts | *We proceed with*, *Why it is reasonable now*, *If we are wrong* and *Revisit when* are filled in. |
 | Not disguised knowledge | Nothing in the card presents the bet as evidence-backed. |
-| Revisit | The date or trigger is concrete enough that someone will notice it. |
-| Delivery | No delivery issue is blocked by this card. A bet is the decision to proceed. |
+| Revisit | The date or trigger is concrete enough that someone will notice it, and a revisit date is also set as Next checkpoint. |
+| Delivery | No delivery issue should be blocked by a bet: the bet is the decision to proceed. gh does not show relationships, so ask the team to check the card's *Relationships*. |
 
 **4. Write the challenge** in this shape. One line per check that needs attention, quoting the card word for word. List what looks fine in one line at the end.
 
@@ -56,11 +56,11 @@ For *Informed bet*:
 **Challenge of #12 «<title>»**
 These are questions for the team, not an approval. The team decides.
 
-- **Scope:** the title says «clients upload invoices themselves». *What we found* covers 8 users at pilot clients over one week. Should the title say so?
+- **Scope:** the title says «clients upload invoices themselves». *What we found* covers 8 pilot clients over one week. Should the title say so?
 - **Say or do:** «would prefer to upload» describes an intention. Did anyone actually upload?
 - **Sources:** the link goes to a whole Miro board. Which frame holds the summary?
 
-Looks fine: the criterion was written before the trial, and the Outcome matches.
+Looks fine: the Outcome matches *What we found*, and *Applies to* names what was not tested.
 ```
 
 ## When someone pushes back
@@ -70,7 +70,7 @@ Looks fine: the criterion was written before the trial, and the Outcome matches.
 | «It is obviously true» | Then the evidence will show it. Which part of *What we found* shows it? |
 | «We need it for the demo tomorrow» | An informed bet can be shown in a demo just as well, as long as it is called a bet. |
 | «We learned something else important» | Good. Make it a new card. It is not what this card investigated. |
-| «It is close enough» | The criterion was agreed before the investigation so that close would not count. Refined and Inconclusive are honest outcomes too. |
+| «It is close enough» | Put what the criterion asked for next to what was found. If it falls short, Refined or Inconclusive may be the honest outcome. The team decides. |
 
 ## Never
 

@@ -24,25 +24,25 @@ A card is never an activity. «Interview five users», «Run a workshop» and «
 
 - a question: *How does a support agent decide whether a refund can start?*
 - a belief: *We believe clients will upload invoices themselves if it takes less than a minute.*
-- an understanding: *Most pilot clients uploaded invoices themselves once a simple upload page existed (6 of 8, one-week trial).*
-- an informed bet: *We keep the current status icons without help text until support volume shows otherwise.*
+- an understanding: *Most pilot clients uploaded invoices themselves when upload took under a minute (6 of 8 clients, one-week trial, October).*
+- an informed bet: *We believe users understand the invoice status icons without help text*, in the *Informed bet* column, with the decision to keep the icons as they are until support requests show otherwise.
 
 The board answers «What are we trying to learn, and what do we currently understand?», not «Which research tasks are done?».
 
 ## The six states
 
-The columns describe the epistemic status of a card, not progress on work.
+The columns describe how well the team understands something, not progress on work.
 
 | State | Means | The card has |
 | --- | --- | --- |
-| **What we need to know** | A genuine open question that matters for a decision ahead. Not everything that could be researched. | Title as a question. Why it matters. What would be enough to update our understanding. |
-| **What we think we know** | A working belief or hypothesis. There may be indications, but the team does not present it as established. This is where assumptions become visible instead of silently becoming requirements. | Title as a belief. Why it matters. What evidence would strengthen or challenge it. |
+| **What we need to know** | A genuine open question that matters for a decision ahead. Not everything that could be researched. | Title as a question. Why it matters. The criterion: what would be enough to update our understanding. |
+| **What we think we know** | A working belief or hypothesis. There may be indications, but the team does not present it as established. This is where assumptions become visible instead of silently becoming requirements. | Title as a belief. Why it matters. The criterion: what evidence would strengthen or challenge it. |
 | **Prioritized** | The team has committed to reduce this uncertainty. A commitment, not just importance. | People and a next checkpoint added. |
-| **Investigating** | Active learning is happening somewhere: conversations, scenario walkthroughs, concept tests, technical exploration, data, document review. Keep it to three cards or fewer. | The same, plus links to where the work happens. |
+| **Investigating** | Active learning is happening somewhere: conversations, scenario walkthroughs, concept tests, technical exploration, data, document review. Keep it to three cards or fewer. | The same, plus links to where the work happens, under *Existing material*. |
 | **What we currently know** | The team's best current usable understanding, scoped to the evidence. Not permanent fact. | The title rewritten as the understanding. What we found, so this means, evidence and sources, applies to. Outcome set for beliefs. |
-| **Informed bet** | The team proceeds on purpose before the uncertainty is resolved. A valid basis for action, never presented as knowledge. | What we proceed with, why it is reasonable now, the consequence if we are wrong, when to revisit. |
+| **Informed bet** | The team proceeds on purpose before the uncertainty is resolved. A valid basis for action, never presented as knowledge. | What we proceed with, why it is reasonable now, the consequence if we are wrong, when to revisit. The revisit date as Next checkpoint. |
 
-A question can move from *What we need to know* straight to *Prioritized* when the team commits to it. A belief starts in *What we think we know*. Both can end in *What we currently know* or *Informed bet*, and both can return to an earlier state when new evidence challenges them.
+The first two columns are two starting points, not two steps: a question starts in *What we need to know*, a belief in *What we think we know*. The project adds every new card to *What we need to know*, so move a belief across after creating it. Either moves to *Prioritized* when the team commits to it. Both can end in *What we currently know* or *Informed bet*, and both can return to an earlier state when new evidence challenges them.
 
 ## Two ways in
 
@@ -51,7 +51,7 @@ Every card starts as one of two issue forms:
 - **Question** (label `question`): something the team needs to understand. The title is the question.
 - **Belief** (label `belief`): something the team believes but has not established. The title starts with «We believe».
 
-The only thing to write on day one is the title, why it matters, and what would be enough to update the team's understanding. Everything else is added when the card gets there.
+On day one, write the title, why it matters and, if you can, the criterion: what would be enough to update our understanding (for a belief: what evidence would strengthen or challenge it). Agree on the criterion before anyone starts investigating. Everything else is added when the card gets there.
 
 A broader learning question with several distinct parts becomes a **thread**: a parent issue with sub-issues. Any question can be a parent. See [Threads](#threads).
 
@@ -59,10 +59,12 @@ A broader learning question with several distinct parts becomes a **thread**: a 
 
 | State | What the team adds |
 | --- | --- |
-| What we need to know, What we think we know | Title, why it matters, what would be enough to update our understanding, optional links to existing material |
-| Prioritized, Investigating | People (assignees) and a next checkpoint. The research itself stays in Miro, Figma, documents or code. |
-| What we currently know | A new title that states the understanding, the *Current understanding* section, and Outcome for beliefs |
-| Informed bet | The *Informed bet* section |
+| What we need to know, What we think we know | Title, why it matters, the criterion, optional links to existing material |
+| Prioritized, Investigating | People (assignees) and a next checkpoint. The research itself stays in Miro, Figma, documents or code, linked under *Existing material*. |
+| What we currently know | The *Current understanding* section, filled in before the weekly review. In the review: a new title that states the understanding, and Outcome for beliefs. |
+| Informed bet | The *Informed bet* section, and its revisit date as Next checkpoint. The title stays as it is. |
+
+The **next checkpoint** is the date the team next looks at what has been learned and decides to conclude, continue or stop. It is not a deadline for finishing.
 
 The later sections are already in the card from the start, with short hints that show when someone edits the card. GitHub keeps the old title and every edit in the issue's history, so nothing is lost when the title is rewritten.
 
@@ -87,9 +89,11 @@ This judgement cannot be reduced to filled-in fields. It happens in the weekly r
 2. Is the wording no broader than the evidence?
 3. Would we be comfortable explaining this basis to someone outside the team?
 
+So the team moves cards here in the review, not when the work on them is done. Before the review, whoever investigated fills in *Current understanding* while the card is still open, in whatever state it is in. In the review, the team asks the three questions, agrees on the new title, sets Outcome for a belief and moves the card, which closes it. A card that was moved or closed between reviews is checked in the next one, and reopened if it does not hold up.
+
 For a closer look, the AI assistant (or a colleague) can also ask: who does the evidence represent, are there meaningful counterexamples, and is it strong enough for the decision being made now? The team does not need certainty. It needs confidence that is scoped to the evidence.
 
-### It stays canonical
+### One card per topic
 
 A card in *What we currently know* is the current best formulation for its topic, not an archive of everything ever learned. When new evidence arrives, the team strengthens, refines, challenges or replaces the understanding on the same card. Earlier versions stay in the issue history.
 
@@ -106,7 +110,9 @@ Two things can both be a basis for action:
 
 Keeping them apart lets the team move fast without rewriting uncertainty as certainty, and makes it possible to trace later which decisions rested on evidence and which on a bet.
 
-An informed bet usually grows out of an existing question or belief: the team fills in the *Informed bet* section and moves the card. It stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence.
+An informed bet usually grows out of an existing question or belief. The team decides on it together, usually in the weekly review: it fills in the *Informed bet* section, sets the revisit date as Next checkpoint, and moves the card. The title stays as it is. When a decision cannot wait for the review, decide with the people involved and take it up in the next review.
+
+A bet stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence. Revisiting means keeping the bet, moving the card to *Prioritized* to investigate it, or concluding it if evidence has arrived.
 
 ## Outcome: making changed minds visible
 
@@ -119,7 +125,7 @@ Beliefs get an **Outcome** when they are concluded:
 | Did not hold | The evidence contradicted what we believed. |
 | Inconclusive | The investigation did not give a usable answer. |
 
-A question gets an Outcome only when its answer overturned or narrowed something the team believed.
+Questions do not get an Outcome.
 
 The view **Changed our mind** shows every card with *Did not hold* or *Refined*. It is one of the most useful views in a stakeholder conversation: it shows that the team is genuinely learning, not making everything look inevitable afterwards. A card that did not hold still moves to *What we currently know*, with a title that states what the team understands now. When nothing better is known yet, the title can say what did not hold: *The belief that store staff own the full return process did not hold (5 of 6 stores observed)*.
 
@@ -127,16 +133,16 @@ An *Inconclusive* card goes back to *What we think we know* or *What we need to 
 
 ## Closing and reopening
 
-- A card is closed when it reaches *What we currently know*. The project moves closed cards there automatically.
+- A card is closed when the team moves it to *What we currently know* in the weekly review. The project closes it automatically, and a card closed any other way moves there automatically. So never close a card because the work on it is done, an investigation has ended or a feature has shipped, and never write «Closes» or «Fixes» before a card in a pull request.
 - An informed bet stays open. It is a basis for action, not knowledge, and closing it would make milestone progress look like learning that never happened.
-- When an understanding is challenged, reopen the card and move it back to the state that fits.
-- Cards that turn out to be duplicates or irrelevant are closed as **not planned** (for a duplicate, comment «Duplicate of #12»). They are archived automatically and never appear as knowledge.
+- When an understanding is challenged, reopen the card. The project then puts it in *What we think we know* (if it has the *Item reopened* workflow): what the team understood is a belief again. Move it on if another state fits better. Dragging a card out of *What we currently know* does not reopen it, so reopen it first.
+- Cards that turn out to be duplicates or irrelevant: remove their milestone, then choose **Close as not planned**, also for a duplicate (comment «Duplicate of #12»). Do not use *Close as duplicate*. The project archives only cards closed as not planned, and treats every other closed card as knowledge.
 
 ## Threads
 
 Use a parent issue with sub-issues only when the hierarchy adds meaning:
 
-- A parent is a broader learning question. Its children are distinct questions that help answer it.
+- A parent is a broader learning question. Its children are distinct questions or beliefs that help answer it.
 - No parent for a single child, no parent and child with the same scope, and no parent that is just a folder.
 - Standalone questions are valid and expected.
 - Children can have different lenses and be in different states.
@@ -149,8 +155,8 @@ Each card can have one **Primary lens** for orientation and filtering:
 
 - **People:** users, roles, needs, goals, behaviour and work practice.
 - **Business:** value, workflows, governance, responsibilities, rules and organisational context.
-- **Technology:** systems, data, architecture, integrations, constraints and source authority.
-- **Product:** product role, capabilities, interaction, information and user experience.
+- **Technology:** systems, data, architecture, integrations, constraints and which system is the source of truth.
+- **Product:** what the product is for, its capabilities, interaction, information and user experience.
 
 Many questions cut across lenses. Pick the one that best orients the card and mention the others in the text when they matter. Technical and information-architecture questions are discovery questions as much as user questions, whenever they involve uncertainty that can affect the product.
 
@@ -158,7 +164,7 @@ Many questions cut across lenses. Pick the one that best orients the card and me
 
 - **Dependencies:** when one question really cannot be answered before another, mark it as *blocked by* the other (the issue's *Relationships* sidebar). Use it for discovery relationships, not feature dependencies, and only when the order matters.
 - **Decisions informed:** link the product, design or technical decisions a card informs, for example an issue or an architecture decision record in the delivery repository. One card can inform several decisions, and one decision can rest on several cards. A decision may also rest on constraints, requirements or policy rather than research. The point is to make its basis visible, not to build a decision system.
-- **Delivery issues** can be marked as *blocked by* a question or belief that must be resolved first. Never block delivery on an informed bet: the bet is the decision to proceed.
+- **Delivery issues** can be marked as *blocked by* a question or belief that must be resolved first. Never block delivery on an informed bet: the bet is the decision to proceed. When a blocking card becomes an informed bet, remove the *blocked by* link.
 
 ## Milestones are learning objectives
 
@@ -193,7 +199,7 @@ This is not a gate. It is a way to avoid repeating research and to sharpen the q
 
 Generic role research («What does this role need?») gives vague answers. More useful framing: *How does this role work with the problem in this specific situation?* and *How do different disciplines evaluate the same situation differently?*
 
-The scenario × discipline × decision matrix belongs in synthesis work, for example in Miro. The insight it produces belongs on the board, as a question or an understanding such as *How does responsibility move from operations to support when a case falls outside the standard flow?*
+A scenario × discipline × decision matrix is a grid of the situations the product must handle, the disciplines or roles involved, and the decisions each of them makes there. It belongs in synthesis work, for example in Miro. The insight it produces belongs on the board, as a question or an understanding such as *How does responsibility move from operations to support when a case falls outside the standard flow?*
 
 Choosing which scenarios to understand first is a prioritisation decision. It frames discovery, but it should not dominate the board.
 
@@ -201,7 +207,7 @@ Choosing which scenarios to understand first is a prioritisation decision. It fr
 
 **A new project** can start with an empty board.
 
-**A project that is already running** starts with a current-state mapping of about 90 minutes, before inventing any new questions. Ask:
+**A project that is already running** starts with a current-state mapping of about 90 minutes, alongside the open questions the team already knows it has. Ask:
 
 1. What have we already built or decided?
 2. What did we believe when we did it, and what do we believe now?
@@ -210,17 +216,17 @@ Choosing which scenarios to understand first is a prioritisation decision. It fr
 5. Where are we already proceeding as bets?
 6. Which important decisions have weak or invisible reasoning?
 
-The output is the first board state: beliefs in *What we think we know*, understandings with evidence in *What we currently know*, and bets in *Informed bet*. Limit it to about 15 cards that matter for the direction ahead. The exercise usually surfaces exactly the problem the board exists for: assumptions that have quietly become accepted facts.
+The output is the first board state: beliefs in *What we think we know* and open questions in *What we need to know*. Beliefs with evidence the team can point to get their *Current understanding* filled in, and beliefs the team already proceeds on get their *Informed bet* section filled in. The first weekly review decides which of them become *What we currently know* or *Informed bet*. Limit it to about 15 cards that matter for the direction ahead. The exercise usually surfaces exactly the problem the board exists for: assumptions that have quietly become accepted facts.
 
 ## The weekly review
 
-The board alone is not enough. A short weekly review, 20 to 30 minutes and preferably taken from a meeting the team already has, keeps it alive. The whole team owns it. One person, the board keeper, runs it and keeps the board tidy, but does not own the cards.
+The board alone is not enough. A short weekly review, 20 to 30 minutes and preferably as part of a meeting the team already has, keeps it alive. The whole team owns it. One person, the board keeper, runs it and keeps the board tidy, but does not own the cards.
 
 1. What did we learn since the last review?
-2. Can any active investigations be concluded?
-3. Did anything strengthen, refine or challenge what we currently know? For each card about to become current understanding, ask the three questions in [The rule](#the-rule).
+2. Can any investigations be concluded, and are any informed bets due for a revisit? For each card about to become current understanding, ask the three questions in [The rule](#the-rule), agree on the new title, set Outcome for a belief, and move the card. For each card about to become an informed bet, check that its four parts are filled in. A bet due for a revisit is kept, investigated or concluded.
+3. Did anything strengthen, refine or challenge what we currently know? Reopen cards whose understanding no longer holds, and take up comments that question a card.
 4. Which uncertainties matter most for the decisions coming up? Sort new cards: beliefs that landed in *What we need to know* move to *What we think we know*.
-5. Do prioritized and investigating cards have people and a next checkpoint?
+5. Do prioritized and investigating cards have people, a next checkpoint and a criterion?
 6. Which product or technical decisions are affected?
 7. What should we tell stakeholders?
 
@@ -230,7 +236,7 @@ When there is little to discuss, keep it short. Do not skip it two weeks in a ro
 
 Choose one of two modes, or both:
 
-- **Stakeholders read the board.** Give them read access to the repository and the project, and point them to *Ready for action*, *Learning now* and *Changed our mind*. They should not have to read the open questions. Read-only access needs a repository owned by an organization (a free one is enough).
+- **Stakeholders read the board.** Give them read access to the repository and the project, and point them to *Ready for action*, *Learning now* and *Changed our mind*. They do not need to read the whole list of open questions. A stakeholder who questions a card comments on it, and the team takes it up in the next weekly review. Read-only access needs a repository owned by an organization (a free one is enough).
 - **Stakeholders get a weekly learning update.** After the review, send a short update: what we learned, what changed, what remains uncertain, what we are learning now, and which decisions it affects. Each item links to its card. The AI assistant can draft it, and a person reviews and sends it.
 
 ## The role of AI

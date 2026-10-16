@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Write one belief as the title, for example «We believe clients will upload invoices themselves if it takes less than a minute». One belief per card, concrete enough that evidence could challenge it.
-        After you submit, move the card to «What we think we know» on the board. Leave the sections at the bottom as they are until the card gets there.
+        After you submit, move the card to «What we think we know» on the board. Leave «Current understanding» and «Informed bet» as they are until the card gets that far.
   - type: textarea
     id: why
     attributes:
@@ -24,12 +24,12 @@ body:
     id: existing
     attributes:
       label: Existing material and indications
-      description: Optional. Links to what the belief rests on today, and to anything that may already answer it.
+      description: Optional. Links to what the belief rests on today, and to anything that may already answer it. Later, also links to where the investigation happens.
   - type: textarea
     id: understanding
     attributes:
       label: Current understanding
-      description: Filled in when the card moves to «What we currently know». Then rewrite the title as the understanding itself and set Outcome.
+      description: Filled in before the weekly review in which the team decides to move the card to «What we currently know». In the review, rewrite the title as the understanding itself and set Outcome.
       value: |
         **What we found:** <!-- 1–3 sentences about users, work, domain, product or technology. Not about research progress. -->
         **So this means:** <!-- what it changes for the product or for our next decisions -->
@@ -39,7 +39,7 @@ body:
     id: bet
     attributes:
       label: Informed bet
-      description: Filled in only if the team decides to proceed before the belief is established.
+      description: Filled in only if the team decides to proceed before the belief is established. Set the revisit date as Next checkpoint too.
       value: |
         **We proceed with:** <!-- what we are choosing to do -->
         **Why it is reasonable now:**
