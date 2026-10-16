@@ -12,7 +12,7 @@ Draft a short learning update for stakeholders who do not follow the board. It b
 - [ ] 5. Show the draft and what was left out
 ```
 
-**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone. The update follows the weekly review. Unless the person has said when the last review was, ask. If it has not happened yet, say so, and in step 5 list the cards closed since the last review separately, as not yet checked in a review.
+**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone. The update follows the weekly review. Unless the person has said when the last review was, ask. If this week's review has not happened yet, say so. In step 5, list the cards closed after the last review separately, as not yet checked in a review.
 
 **2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since `gh project item-list` shows no date for Outcome), and the cards in *Prioritized*, *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
 
@@ -54,7 +54,7 @@ For one milestone instead of a period, use the milestone's three parts: what the
 
 **4. Check every line against its card.** The understanding, numbers and scope must appear on the card. Remove anything that does not.
 
-**5. Show the draft**, and list separately any cards left out for a missing conclusion.
+**5. Show the draft**, and list separately the cards left out in step 2 and the cards not yet checked in a review (step 1).
 
 ## Never
 
