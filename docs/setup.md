@@ -14,7 +14,7 @@ Once per machine:
    gh auth login
    gh auth refresh -s project
    ```
-3. On Windows, run the script in Git Bash or WSL.
+3. On Windows, run the script in Git Bash. To use WSL instead, install GitHub CLI inside WSL and run `gh auth login` and `gh auth refresh -s project` there too.
 
 **Decide who owns the repository.** Use one repository per product or client. If stakeholders should only read the board, the repository must be owned by an **organization** (a free one is enough). On a personal account, everyone you invite gets write access. Projects are owned by the same account as the repository.
 
@@ -96,7 +96,7 @@ Hide fields a view does not need (*Fields* in the view menu). Save each view aft
 ## 5. Access
 
 - **Repository:** *Settings* → *Collaborators* (or *Collaborators and teams* in an organization). The team gets write access. Stakeholders get read access, which only exists in organizations.
-- **Project:** the project's *Settings* → *Manage access*. Give the same people the same level. A private repository's issues are only visible in the project to people who can read the repository.
+- **Project:** the project's *Settings* → *Manage access*. Give the same people the same level. Add stakeholders here after they have accepted the repository invitation; until then GitHub cannot find them. A private repository's issues are only visible in the project to people who can read the repository.
 
 ## 6. Replace the README
 
@@ -121,10 +121,10 @@ The `LICENSE` file covers the template itself. Delete it in your board if it doe
 2. When a delivery issue must wait for a question or belief to be resolved, mark it as *blocked by* the card. Use *Relationships* in the issue's sidebar, or GitHub CLI 2.94.0 or newer:
    ```bash
    gh issue edit <number> --repo <owner>/<delivery-repo> \
-     --add-blocked-by https://github.com/<owner>/<discovery-repo>/issues/<number>
+     --add-blocked-by https://github.com/<owner>/<discovery-repo>/issues/<card-number>
    ```
    Never block delivery on an informed bet. The bet is the decision to proceed.
-3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides. Never write «Closes» or «Fixes» before a card: closing it would mark it as current understanding.
+3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides. Never close a card from the delivery repository: no «Closes», «Fixes» or «Resolves» before a card in a pull request or commit message, and no pull request linked in the card's *Development* sidebar. Merging would close the card and mark it as current understanding.
 
 ## 8. Try it
 

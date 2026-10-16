@@ -38,12 +38,12 @@ body:
     id: bet
     attributes:
       label: Informed bet
-      description: Filled in only if the team decides to proceed before the uncertainty is resolved. Set the revisit date as Next checkpoint too.
+      description: Filled in when the team proposes to proceed before the uncertainty is resolved. The team decides, usually in the weekly review. When the card moves, set the revisit date as Next checkpoint.
       value: |
         **We proceed with:** <!-- what we are choosing to do -->
         **Why it is reasonable now:**
         **If we are wrong:** <!-- the consequence -->
-        **Revisit when:** <!-- a date or a trigger -->
+        **Revisit when:** <!-- a date, and optionally a trigger that brings it forward -->
   - type: textarea
     id: decisions
     attributes:

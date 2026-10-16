@@ -110,9 +110,9 @@ Two things can both be a basis for action:
 
 Keeping them apart lets the team move fast without rewriting uncertainty as certainty, and makes it possible to trace later which decisions rested on evidence and which on a bet.
 
-An informed bet usually grows out of an existing question or belief. The team decides on it together, usually in the weekly review: it fills in the *Informed bet* section, sets the revisit date as Next checkpoint, and moves the card. The title stays as it is. When a decision cannot wait for the review, decide with the people involved and take it up in the next review.
+An informed bet usually grows out of an existing question or belief. The team decides on it together, usually in the weekly review: it checks the *Informed bet* section, filled in beforehand or in the review, sets the revisit date as Next checkpoint, and moves the card. The title stays as it is. When a decision cannot wait for the review, decide with the people involved and take it up in the next review.
 
-A bet stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence. Revisiting means keeping the bet, moving the card to *Prioritized* to investigate it, or concluding it if evidence has arrived.
+A bet stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence. Revisiting means keeping the bet with a new revisit date as Next checkpoint, moving the card to *Prioritized* to investigate it, or concluding it if evidence has arrived.
 
 ## Outcome: making changed minds visible
 
@@ -121,7 +121,7 @@ Beliefs get an **Outcome** when they are concluded:
 | Outcome | Means |
 | --- | --- |
 | Supported | The belief held within the scope of the evidence. |
-| Refined | It held only in part, or the wording had to become narrower. |
+| Refined | It held only in part: some of what we believed did not hold. |
 | Did not hold | The evidence contradicted what we believed. |
 | Inconclusive | The investigation did not give a usable answer. |
 
@@ -129,13 +129,15 @@ Questions do not get an Outcome.
 
 The view **Changed our mind** shows every card with *Did not hold* or *Refined*. It is one of the most useful views in a stakeholder conversation: it shows that the team is genuinely learning, not making everything look inevitable afterwards. A card that did not hold still moves to *What we currently know*, with a title that states what the team understands now. When nothing better is known yet, the title can say what did not hold: *The belief that store staff own the full return process did not hold (5 of 6 stores observed)*.
 
-An *Inconclusive* card goes back to *What we think we know* or *What we need to know* with a sharper criterion, or becomes an informed bet. The team decides in the weekly review.
+Every understanding is worded no broader than its evidence, so a narrower title alone does not make a belief Refined.
+
+An *Inconclusive* belief goes back to *What we think we know* with a sharper criterion, or becomes an informed bet. The team decides in the weekly review.
 
 ## Closing and reopening
 
-- A card is closed when the team moves it to *What we currently know* in the weekly review. The project closes it automatically, and a card closed any other way moves there automatically. So never close a card because the work on it is done, an investigation has ended or a feature has shipped, and never write «Closes» or «Fixes» before a card in a pull request.
+- A card is closed when the team moves it to *What we currently know* in the weekly review. The project closes it automatically, and a card closed any other way moves there automatically. So never close a card because the work on it is done, an investigation has ended or a feature has shipped, and never close a card from the delivery repository: no «Closes», «Fixes» or «Resolves» before a card in a pull request or commit message, and no pull request or branch linked in the card's *Development* sidebar. Merging would close the card.
 - An informed bet stays open. It is a basis for action, not knowledge, and closing it would make milestone progress look like learning that never happened.
-- When an understanding is challenged, reopen the card. The project then puts it in *What we think we know* (if it has the *Item reopened* workflow): what the team understood is a belief again. Move it on if another state fits better. Dragging a card out of *What we currently know* does not reopen it, so reopen it first.
+- When an understanding is challenged, reopen the card. The project then puts it in *What we think we know* (if it has the *Item reopened* workflow): what the team understood is a belief again. Rewrite the title as that belief («We believe …»), or for a question card as the question and move it to *What we need to know*. Clear Outcome until the team concludes the card again. The old title stays in the issue history. Dragging a card out of *What we currently know* does not reopen it, so reopen it first.
 - Cards that turn out to be duplicates or irrelevant: remove their milestone, then choose **Close as not planned**, also for a duplicate (comment «Duplicate of #12»). Do not use *Close as duplicate*. The project archives only cards closed as not planned, and treats every other closed card as knowledge.
 
 ## Threads
@@ -216,14 +218,14 @@ Choosing which scenarios to understand first is a prioritisation decision. It fr
 5. Where are we already proceeding as bets?
 6. Which important decisions have weak or invisible reasoning?
 
-The output is the first board state: beliefs in *What we think we know* and open questions in *What we need to know*. Beliefs with evidence the team can point to get their *Current understanding* filled in, and beliefs the team already proceeds on get their *Informed bet* section filled in. The first weekly review decides which of them become *What we currently know* or *Informed bet*. Limit it to about 15 cards that matter for the direction ahead. The exercise usually surfaces exactly the problem the board exists for: assumptions that have quietly become accepted facts.
+The output is the first board state: beliefs in *What we think we know* and open questions in *What we need to know*. Beliefs with evidence the team can point to get their *Current understanding* filled in, and beliefs the team already proceeds on without such evidence get their *Informed bet* section filled in. The first weekly review decides which of them become *What we currently know* or *Informed bet*. Limit it to about 15 cards that matter for the direction ahead. The exercise usually surfaces exactly the problem the board exists for: assumptions that have quietly become accepted facts.
 
 ## The weekly review
 
 The board alone is not enough. A short weekly review, 20 to 30 minutes and preferably as part of a meeting the team already has, keeps it alive. The whole team owns it. One person, the board keeper, runs it and keeps the board tidy, but does not own the cards.
 
 1. What did we learn since the last review?
-2. Can any investigations be concluded, and are any informed bets due for a revisit? For each card about to become current understanding, ask the three questions in [The rule](#the-rule), agree on the new title, set Outcome for a belief, and move the card. For each card about to become an informed bet, check that its four parts are filled in. A bet due for a revisit is kept, investigated or concluded.
+2. Can any investigations be concluded, and are any informed bets due for a revisit? For each card about to become current understanding, ask the three questions in [The rule](#the-rule), agree on the new title, set Outcome for a belief, and move the card. For each card about to become an informed bet, or moved there since the last review, check that its four parts are filled in. A bet due for a revisit is kept, investigated or concluded.
 3. Did anything strengthen, refine or challenge what we currently know? Reopen cards whose understanding no longer holds, and take up comments that question a card.
 4. Which uncertainties matter most for the decisions coming up? Sort new cards: beliefs that landed in *What we need to know* move to *What we think we know*.
 5. Do prioritized and investigating cards have people, a next checkpoint and a criterion?

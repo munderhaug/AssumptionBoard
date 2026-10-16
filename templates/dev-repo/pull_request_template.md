@@ -7,7 +7,7 @@ It links the code to the learning it builds on.
 
 ## Learning this builds on
 
-<!-- Link the card on the discovery board, for example «Informed by org/discovery#123». Never write «Closes» or «Fixes» before a card: merging would close it and mark it as current understanding. Write «None» if the change does not build on discovery. -->
+<!-- Link the card on the discovery board, for example «Informed by org/discovery#123». Never write «Closes», «Fixes» or «Resolves» before a card: merging would close it and mark it as current understanding. Write «None» if the change does not build on discovery. -->
 
 - Card:
 - Basis: Current understanding / Informed bet / None

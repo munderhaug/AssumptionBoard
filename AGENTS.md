@@ -17,7 +17,7 @@ gh issue list --state all --limit 500 \
   --json number,title,state,stateReason,createdAt,closedAt,updatedAt,labels,assignees,milestone,url,body
 
 # Board fields per card: Status, Primary lens, Outcome, Next checkpoint
-gh project item-list <number> --owner <owner> --format json --limit 500
+gh project item-list <project-number> --owner <owner> --format json --limit 500
 
 # Milestones (learning objectives)
 gh api 'repos/{owner}/{repo}/milestones?state=all' --jq '.[] | {number, title, state, due_on, description}'
@@ -29,7 +29,7 @@ date +%F
 - If a result count equals `--limit`, raise the limit so no cards are missed.
 - Card bodies have the sections `### Why it matters`, `### What would be enough to update our understanding?` (questions) or `### What evidence would strengthen or challenge it?` (beliefs), `### Existing material` (or `### Existing material and indications`), `### Current understanding`, `### Informed bet` and `### Decisions informed`. Empty fields read `_No response_`. The *Current understanding* and *Informed bet* sections start prefilled with bold labels and HTML comments; a section with only those counts as empty.
 - Every issue should be a card with the label `question` or `belief`. The browser hides blank issues only from people with read access: the team can still open one, and issues created from the command line skip the forms. If an issue has neither label, say so and leave it alone.
-- Cards closed as *not planned* or as *duplicate* are duplicates or irrelevant, never knowledge. Ignore them unless asked. When asked to close a duplicate or irrelevant card, close it as not planned, since only that reason is archived: `gh issue close <number> --reason "not planned" --comment "Duplicate of #<number>"` (the comment only for a duplicate). Remove its milestone first.
+- Cards closed as *not planned* or as *duplicate* are duplicates or irrelevant, never knowledge. Ignore them unless asked, but point out a card closed as *duplicate*: it is not archived and still shows as knowledge until it is reopened and closed as not planned. When asked to close a duplicate or irrelevant card, remove its milestone first and close it as not planned, since only that reason is archived: `gh issue close <card> --reason "not planned" --comment "Duplicate of #<original>"` (the comment only for a duplicate).
 
 ## The method in brief
 
@@ -42,9 +42,9 @@ The authority is `docs/working-model.md`. Read it when in doubt. Good cards are 
 - **Prioritized and Investigating** cards have assignees and a Next checkpoint: the date the team next looks at what has been learned, not a deadline. Informed bets carry their revisit date as Next checkpoint. Keep *Investigating* to three cards or fewer.
 - **What we currently know** is the team's best current understanding, scoped to the evidence. Its title is rewritten to state the understanding, with the basis in parentheses. The rule: a card only gets there when the team will use the statement in a real decision and can explain what evidence it rests on, who or what that evidence represents, and where it may not apply. The team decides this in the weekly review and moves the card there. Until then, a *Current understanding* section on an open card is a draft.
 - **Research coverage is not knowledge.** «We interviewed four roles» never belongs in *What we currently know*.
-- **Informed bet** is a deliberate decision by the team to proceed despite uncertainty: what we proceed with, why it is reasonable now, the consequence if wrong, and when to revisit. It is a basis for action, never knowledge, and it stays open. The title stays as it is. Revisiting means keeping the bet, investigating it, or concluding it.
+- **Informed bet** is a deliberate decision by the team to proceed despite uncertainty: what we proceed with, why it is reasonable now, the consequence if wrong, and when to revisit. It is a basis for action, never knowledge, and it stays open. The title stays as it is. Revisiting means keeping the bet with a new revisit date, investigating it, or concluding it.
 - **Outcome** is set on beliefs only, when they are concluded. *Did not hold* and *Refined* show in the view *Changed our mind*, which is a sign of healthy discovery.
-- **Closing:** a card is closed when the team moves it to *What we currently know*, never because the work on it is done. It is reopened when the understanding is challenged; moving it out of the column does not reopen it.
+- **Closing:** a card is closed when the team moves it to *What we currently know*, never because the work on it is done. It is reopened when the understanding is challenged; moving it out of the column does not reopen it. A reopened card gets a belief or question title again, and its Outcome is cleared until the team concludes it again.
 - **Threads** are parent issues with sub-issues, only when the hierarchy adds meaning.
 - **Milestones** are learning objectives: desired learning, what needs to be understood, reached when.
 - **Evidence stays in its source system** (Miro, Figma, documents, code). The card holds the conclusion and links to the source.
@@ -69,7 +69,7 @@ The authority is `docs/working-model.md`. Read it when in doubt. Good cards are 
 ### Never
 
 - Never write to GitHub without that explicit yes.
-- Never decide for the team: do not move a card to *What we currently know* or *Informed bet*, or set Outcome, on your own initiative, and do not write the *Current understanding* or *Informed bet* sections without being asked. When asked to draft them, mark the draft as yours and use only what the card and its linked sources say.
+- Never decide for the team: do not move a card to *What we currently know* or *Informed bet*, or set Outcome, on your own initiative, and do not write the *Current understanding* or *Informed bet* sections without being asked. If someone asks you to move a card there outside the weekly review, say that the team decides it in the review and that the move will be checked there, then wait for their yes. When asked to draft them, mark the draft as yours and use only what the card and its linked sources say.
 - Never declare something current understanding, decide that a bet is acceptable, or make product, design or architectural decisions.
 - Never invent results, numbers, quotes or evidence. If it is not on the card or in a linked source, say it is missing.
 - Never answer as a user, client or stakeholder, and never present model output as evidence. Asking an AI is not research.
@@ -92,7 +92,7 @@ One skill, `.claude/skills/discovery-assistant/SKILL.md`, covers the four jobs A
 | Prepare the review | Before the weekly review |
 | Communicate | Draft the stakeholder learning update |
 
-Claude Code and GitHub Copilot load skills from `.claude/skills/` automatically. In other tools, ask the agent to read and follow the file. `.claude/settings.json` makes Claude Code ask before every GitHub write. Other tools do not read it, so there these rules are the only safeguard.
+Claude Code and GitHub Copilot load skills from `.claude/skills/` automatically. In other tools, ask the agent to read and follow the file. `.claude/settings.json` makes Claude Code ask before the `gh` commands that write to this board (issues, the project, labels and `gh api`) and before `git push`. It does not cover other GitHub tools, such as a GitHub MCP server, and other AI tools do not read it. There these rules apply on their own.
 
 Searching Miro, Figma or document tools for existing evidence is not part of the assistant until those tools are connected (for example through MCP servers added to the repository). Until then, say that you cannot search them.
 

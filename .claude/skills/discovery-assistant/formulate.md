@@ -82,7 +82,7 @@ Question:
 **We proceed with:** <!-- what we are choosing to do -->
 **Why it is reasonable now:**
 **If we are wrong:** <!-- the consequence -->
-**Revisit when:** <!-- a date or a trigger -->
+**Revisit when:** <!-- a date, and optionally a trigger that brings it forward -->
 
 ### Decisions informed
 

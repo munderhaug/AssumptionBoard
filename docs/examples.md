@@ -2,7 +2,7 @@
 
 Fictional cards from one discovery board, showing what a good card looks like in each state. The domain is invented: a service that helps small accounting firms collect invoices from their clients.
 
-The cards are shown the way they read in GitHub: the title, the fields on the board, and the sections in the issue body. Empty sections are left out.
+The cards are shown the way they read in GitHub: the title, the fields on the board, and the sections in the issue body. Empty sections, and sections already shown for the same card, are left out.
 
 ---
 
@@ -59,7 +59,7 @@ The trial itself runs in the product and its analytics. The card links to the tr
 **Label:** `belief` · **Outcome:** Supported · **Primary lens:** Product · closed
 
 **Current understanding**
-- **What we found:** 6 of 8 pilot clients uploaded at least one invoice themselves during the trial week, alongside email. Every upload in the trial took under a minute, about 40 seconds on average. The two clients that did not upload have a bookkeeper who collects their invoices for them.
+- **What we found:** 6 of 8 pilot clients uploaded at least one invoice themselves during the trial week, alongside email. Every upload in the trial took under a minute, about 40 seconds on average. No reminders were sent. The two clients that did not upload have a bookkeeper who collects their invoices for them.
 - **So this means:** Upload becomes the main intake flow in the next release. Email stays as a fallback.
 - **Evidence and sources:** Upload page analytics and the trial summary in Miro, frame «Upload trial week 41», 14 October.
 - **Applies to:** Small clients with fewer than 20 invoices a month, over one week, with email still available. Not tested with larger clients, over a longer period, or with uploads that take longer.
@@ -67,7 +67,7 @@ The trial itself runs in the product and its analytics. The card links to the tr
 **Decisions informed**
 org/app#456 Upload as the main intake flow
 
-> The title changed from «We believe clients will upload invoices themselves if it takes less than a minute». The old title is in the issue history. The new title claims no more than the trial showed: clients uploaded when it took under a minute, not that the time is why they did, because upload time was never varied. The Outcome is Supported because the trial met the criterion and nothing in it contradicted the belief within its scope.
+> The title changed from «We believe clients will upload invoices themselves if it takes less than a minute». The old title is in the issue history. The new title claims no more than the trial showed: clients uploaded when it took under a minute, not that the time is why they did, because upload time was never varied. The Outcome is Supported: the trial met the criterion, and nothing in it contradicted the belief. Scoping the title to the trial is part of every understanding, not a sign of Refined.
 
 ---
 

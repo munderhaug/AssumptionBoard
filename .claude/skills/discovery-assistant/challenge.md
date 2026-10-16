@@ -14,12 +14,12 @@ Before a card becomes *What we currently know* or an *Informed bet*, question it
 **1. Read the card.**
 
 ```bash
-gh issue view <number> --json number,title,body,state,stateReason,labels,assignees,milestone,url,projectItems
+gh issue view <number> --json number,title,body,comments,state,stateReason,labels,assignees,milestone,url,projectItems
 ```
 
-Take Status from `projectItems`. Outcome and Next checkpoint are not in it: take them from `gh project item-list <number> --owner <owner> --format json --limit 500`.
+Take Status from `projectItems`. Outcome and Next checkpoint are not in it: take them from `gh project item-list <project-number> --owner <owner> --format json --limit 500`, with the project number from `gh repo view --json projectsV2`.
 
-**2. Read the evidence first.** Read the criterion («What would be enough…» or «What evidence would…»), *What we found* and the linked sources before you read *So this means* and the proposed title. Form your own view of what the evidence shows, so the team's conclusion does not steer your reading. If a linked source is a whole board or a folder rather than a specific frame or document, or you cannot open it, say so.
+**2. Read the evidence first.** Read the criterion («What would be enough…» or «What evidence would…»), *What we found* and the linked sources before you read *So this means* and the proposed title. Form your own view of what the evidence shows, so the team's conclusion does not steer your reading. Read the comments too: a stakeholder's objection to the card is usually there. If a linked source is a whole board or a folder rather than a specific frame or document, or you cannot open it, say so.
 
 If a linked source contains raw notes, recordings or anything that identifies a person, stop reading and ask for a link to a summary.
 
@@ -48,7 +48,7 @@ For *Informed bet*:
 | All four parts | *We proceed with*, *Why it is reasonable now*, *If we are wrong* and *Revisit when* are filled in. |
 | Not disguised knowledge | Nothing in the card presents the bet as evidence-backed. |
 | Revisit | The date or trigger is concrete enough that someone will notice it, and a revisit date is also set as Next checkpoint. |
-| Delivery | No delivery issue should be blocked by a bet: the bet is the decision to proceed. gh does not show relationships, so ask the team to check the card's *Relationships*. |
+| Delivery | No delivery issue should be blocked by a bet: the bet is the decision to proceed. Check with `gh issue view <number> --json blocking` (GitHub CLI 2.94.0 or newer, as in `docs/setup.md` step 7). If gh does not know the field, say so and ask the team to check the card's *Relationships*. |
 
 **4. Write the challenge** in this shape. One line per check that needs attention, quoting the card word for word. List what looks fine in one line at the end.
 

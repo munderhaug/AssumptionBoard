@@ -26,11 +26,11 @@ Every job starts from the actual cards and their board fields:
 gh repo view --json nameWithOwner,isTemplate,projectsV2
 gh issue list --state all --limit 500 \
   --json number,title,state,stateReason,createdAt,closedAt,updatedAt,labels,assignees,milestone,url,body
-gh project item-list <number> --owner <owner> --format json --limit 500
+gh project item-list <project-number> --owner <owner> --format json --limit 500
 date +%F
 ```
 
-If `isTemplate` is true, this is the template: say so and stop. Take Status, Primary lens, Outcome and Next checkpoint from `gh project item-list`; an issue's `projectItems` holds Status only. If you cannot read the project (missing `project` scope, or no project linked), say so and stop. Never guess a card's state from its text.
+If `isTemplate` is true, this is the template: say so and stop. The project number comes from `projectsV2`. Take Status, Primary lens, Outcome and Next checkpoint from `gh project item-list`; an issue's `projectItems` holds Status only. If you cannot read the project (missing `project` scope, or no project linked), say so and stop. Never guess a card's state from its text.
 
 When a job needs milestones, read them with the milestones command in `AGENTS.md`. It uses `gh api`, so Claude Code asks before running it. A card's `milestone` field does not say whether the milestone is open or closed.
 

@@ -72,7 +72,7 @@ LENS_FIELD='mutation($projectId: ID!) {
 OUTCOME_FIELD='mutation($projectId: ID!) {
   createProjectV2Field(input: {projectId: $projectId, dataType: SINGLE_SELECT, name: "Outcome", singleSelectOptions: [
     {name: "Supported", color: GREEN, description: "The belief held within the scope of the evidence."},
-    {name: "Refined", color: BLUE, description: "It held only in part, or the wording had to become narrower."},
+    {name: "Refined", color: BLUE, description: "It held only in part: some of what we believed did not hold."},
     {name: "Did not hold", color: RED, description: "The evidence contradicted what we believed."},
     {name: "Inconclusive", color: GRAY, description: "The investigation did not give a usable answer."}
   ]}) { projectV2Field { ... on ProjectV2SingleSelectField { id } } }
@@ -119,9 +119,9 @@ create_view() {
 
 echo "1/5 Creating labels in $FULL_REPO ..."
 gh label create "question" --repo "$FULL_REPO" --color "1d76db" \
-  --description "An open question the team needs to understand" --force
+  --description "A card that started as a question" --force
 gh label create "belief" --repo "$FULL_REPO" --color "fbca04" \
-  --description "A working belief, not yet established understanding" --force
+  --description "A card that started as a belief («We believe …»)" --force
 
 # --- 2. Project ---------------------------------------------------------------
 

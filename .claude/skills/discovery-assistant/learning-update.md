@@ -14,7 +14,7 @@ Draft a short learning update for stakeholders who do not follow the board. It b
 
 **1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone.
 
-**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since Outcome has no date), and the cards in *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
+**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since Outcome has no date), and the cards in *Prioritized*, *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
 
 Leave out, and list separately in step 5:
 
@@ -31,9 +31,10 @@ Leave out, and list separately in step 5:
 
 **What changed**
 - We believed <old belief>. It did not hold: <what we understand now>. ([#15](<url>))
+- We believed <old belief>. It held only in part: <what we understand now>. ([#16](<url>))
 
 **What remains uncertain**
-- <important open questions or beliefs>, and the informed bets we proceed on: <bet>, revisited <date>. ([#9](<url>))
+- <the cards in *Prioritized*>, and the informed bets we proceed on: <bet>, revisited <date>. ([#9](<url>))
 
 **What we are learning now**
 - <investigating cards>. ([#18](<url>))

@@ -23,15 +23,17 @@ Draft a short agenda for the weekly review from the board, so the meeting spends
 | --- | --- | --- |
 | Open cards whose *Current understanding* section is filled in | Candidates for *What we currently know*. The team asks the three questions in «The rule», agrees on the title, sets Outcome for a belief, and moves the card | 1 and 2 |
 | Cards closed in the period (`stateReason` COMPLETED) | Has the team agreed on each? If not, ask the three questions now, or reopen | 1 |
-| Closed cards whose title is still a question or starts with «We believe» | The understanding has not been written as the title | 1 |
-| Investigating cards past their Next checkpoint | Can they be concluded, continued or stopped? | 2 |
-| Open cards whose *Informed bet* section is filled in, outside *Informed bet* | Candidate bets: are all four parts there? The team decides | 2 |
+| Cards closed as completed whose title is still a question or starts with «We believe» | The understanding has not been written as the title | 1 |
+| Prioritized or Investigating cards past their Next checkpoint | Can they be concluded, continued or stopped? | 2 |
+| Open cards in *What we need to know* or *What we think we know* whose *Informed bet* section is filled in | Candidate bets: are all four parts there? The team decides | 2 |
+| *Informed bet* cards updated in the period (`updatedAt`, an estimate) | Bets decided between reviews: are all four parts there, and is the revisit date set as Next checkpoint? | 2 |
 | Informed bets past their Next checkpoint or revisit date | Keep, investigate or conclude? | 2 |
-| Cards reopened in the period (`stateReason` REOPENED) | What challenged the understanding? Is the card in the state that fits? | 3 |
+| Cards reopened in the period (`stateReason` REOPENED, `updatedAt` in the period, an estimate) | What challenged the understanding? Is the card in the state that fits, does its title read as a belief or question again, and is Outcome cleared? | 3 |
 | Comments in the period that question a card | Take them up, for example from a stakeholder | 3 |
 | Outcome *Did not hold* or *Refined* set in the period | Changed understanding, worth telling stakeholders | 3 and 7 |
 | Beliefs (label `belief`) still in *What we need to know* | Move them to *What we think we know* | 4 |
 | Issues with neither the `question` nor the `belief` label | Not a card yet | 4 |
+| Cards closed as duplicate (`stateReason` DUPLICATE) | Not archived, so they show as knowledge. Reopen and close as not planned | 4 |
 | Milestones due within two weeks, and open cards on a closed milestone | Is the learning objective met? The team decides | 4 |
 | More than three cards in Investigating | The limit is three | 4 |
 | Prioritized or Investigating cards without assignees, a Next checkpoint or a criterion | Committed learning needs people, a checkpoint and a criterion agreed before it starts | 5 |
