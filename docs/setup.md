@@ -172,7 +172,7 @@ According to GitHub's documentation on [copying projects](https://docs.github.co
 
 As of 16 October 2026, the setup has been checked offline: the script has run against a fake `gh` command in every mode and failure case, its GraphQL documents validate against GitHub's published schema, the issue forms and `.claude/settings.json` validate against their published schemas, and every `gh` command and flag in this repository exists in GitHub CLI 2.89 (2.94 for blocked-by). It has not run against a real project yet, so the first board you set up is also the test. Step 8 checks the workflows. Check these too, and use the fallback if one does not hold:
 
-| Check | Basis so far | If it does not hold |
+| Check | Evidence so far | If it does not hold |
 | --- | --- | --- |
 | The Status options, fields and views are created as described in step 3. Creating views through the API is new (July 2026). | In GitHub's schema and changelog | The script names what failed. Create that view by hand from the table in step 4. If a field failed, the script stops and says how to delete the project before you try again. |
 | *Board* uses Status as its columns after the script turns the first view into a board. | GitHub's docs: Status is the usual column field | In the view menu, set *Column field* to Status. |
