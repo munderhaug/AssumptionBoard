@@ -172,14 +172,14 @@ According to GitHub's documentation on [copying projects](https://docs.github.co
 
 As of 16 October 2026, the setup has been checked offline: the script has run against a fake `gh` command in every mode and failure case, its GraphQL documents validate against GitHub's published schema, the issue forms and `.claude/settings.json` validate against their published schemas, and every `gh` command and flag in this repository exists in GitHub CLI 2.89 (2.94 for blocked-by). It has not run against a real project yet, so the first board you set up is also the test. Step 8 checks the workflows. Check these too, and use the fallback if one does not hold:
 
-| Check | If it does not hold |
-| --- | --- |
-| The Status options, fields and views are created as described in step 3. Creating views through the API is new (July 2026). | The script names what failed. Create that view by hand from the table in step 4. If a field failed, the script stops and says how to delete the project before you try again. |
-| *Board* uses Status as its columns after the script turns the first view into a board. | In the view menu, set *Column field* to Status. |
-| The *Item reopened* workflow exists in your project. | Move a reopened card by hand: a belief to *What we think we know*, a question to *What we need to know*. |
-| *Auto-close issue* closes the issue when a card is dragged to *What we currently know*. | Close the issue by hand when the team moves the card in the review. |
-| The filters work as written, including `outcome:"Did not hold",Refined` and `assignee:@me`. | Build the filter in the view's filter bar from its suggestions, and save the view. |
-| Auto-archive with `is:closed reason:"not planned"` archives cards closed as not planned, soon after *Item closed* has moved them to *What we currently know*. | Archive them by hand (the card's menu → *Archive*). *Ready for action* leaves them out either way. |
-| *Ready for action* keeps only its two columns after you hide the others. | Hide them again. The filter still shows only the two states. |
+| Check | Basis so far | If it does not hold |
+| --- | --- | --- |
+| The Status options, fields and views are created as described in step 3. Creating views through the API is new (July 2026). | In GitHub's schema and changelog | The script names what failed. Create that view by hand from the table in step 4. If a field failed, the script stops and says how to delete the project before you try again. |
+| *Board* uses Status as its columns after the script turns the first view into a board. | GitHub's docs: Status is the usual column field | In the view menu, set *Column field* to Status. |
+| The *Item reopened* workflow exists in your project. | Seen in the workflow list, not in GitHub's docs | Move a reopened card by hand: a belief to *What we think we know*, a question to *What we need to know*. |
+| *Auto-close issue* closes the issue when a card is dragged to *What we currently know*. | GitHub's docs on built-in automations | Close the issue by hand when the team moves the card in the review. |
+| The filters work as written, including `outcome:"Did not hold",Refined` and `assignee:@me`. | GitHub's docs on filtering projects | Build the filter in the view's filter bar from its suggestions, and save the view. |
+| Auto-archive with `is:closed reason:"not planned"` archives cards closed as not planned, soon after *Item closed* has moved them to *What we currently know*. | GitHub's docs on archiving automatically | Archive them by hand (the card's menu → *Archive*). *Ready for action* leaves them out either way. |
+| *Ready for action* keeps only its two columns after you hide the others. | GitHub's docs on board layout | Hide them again. The filter still shows only the two states. |
 
 When you have checked them, replace this section with the results and the date.
