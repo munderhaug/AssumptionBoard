@@ -50,7 +50,7 @@ Draft a short agenda for the weekly review from the board, so the meeting spends
 4. **What matters next:** <milestones due> · Investigating 2 of 3 · New cards to sort: [#21](<url>), [#22](<url>)
 5. **Missing people, checkpoints or criterion:** [#19](<url>)
 6. **Decisions affected:** [#18](<url>) informs org/app#456
-7. **For stakeholders:** [#16](<url>) «<title>» (Did not hold)
+7. **For stakeholders:** [#18](<url>), if the team concludes it today. [#16](<url>) «<title>» (Did not hold)
 ```
 
 Skip empty items. If little has happened, say so: «Little to discuss this week. Consider a short review.»

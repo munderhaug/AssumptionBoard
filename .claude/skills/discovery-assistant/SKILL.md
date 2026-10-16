@@ -44,7 +44,7 @@ When a job needs milestones, read them with the milestones command in `AGENTS.md
 
 ## Ask first
 
-- Any write to GitHub. Show exactly what will change, wait for an explicit yes to that change, and show it again if the person asks for any change. «Yes, but …», «do what you think is best» and no answer are not a yes.
+- Any write to GitHub. Show exactly what will change, wait for an explicit yes to that change, and show it again if the person asks for any change. «Yes, but …», «do what you think is best» and no answer are not a yes. This also applies when the person asks for a change after a read-only job: the job itself changes nothing.
 
 ## Never
 
