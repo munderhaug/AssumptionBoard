@@ -1,85 +1,74 @@
-# Antakelsestavle: mal for synlig discovery
+# Discovery board
 
-En mal som lar hele teamet eie discovery. Hvert kort på tavlen er noe teamet ikke vet ennå, ikke en oppgave. Det er enten en **antakelse** («Vi tror at…»), noe vi tror, men ikke har verifisert, eller en **utforsking** («Vi vil forstå…»), noe vi må forstå før vi vet hva vi tror. Tavlen viser hva vi utforsker og tester, hva som er bekreftet, hva som viste seg ikke å stemme, hva vi har forstått, og hva vi bygget på gjetning med vilje.
+A GitHub template for a product team's shared map of learning. It makes visible what the team needs to know, what it thinks it knows, what it is investigating, what it currently knows well enough to act on, and where it proceeds on purpose despite uncertainty.
 
-Dette er en **mal**. Den definerer ingen milepæler eller kort for dere. Teamet lager sine egne, når de trenger dem.
+Each card is a question or a belief, never a task. The board shows the state of the team's understanding, not progress on work. Research, design and engineering happen in the tools that suit them. The board holds the conclusions and links back to the work.
 
-Tavlen skal være **levende og praktisk**, ikke et prosjektstyringsverktøy. Den er der for å hjelpe teamet å ta bedre beslutninger sammen. Fyller dere den ut fordi dere må, er den på feil kurs. Se [En levende tavle](docs/HVORDAN-VI-JOBBER.md#en-levende-tavle-ikke-prosjektstyring).
+It is built for teams that know kanban but are new to structured discovery, including teams in the middle of a project where some of what has been built rests on beliefs nobody has checked.
 
-Bevisene kan ligge i Miro, Figma eller andre verktøy. Konklusjonen og hva den betyr for produktet skrives på kortet, så repoet blir beslutningsloggen.
+## The board
 
-Repoet gir deg to issue-skjemaer, PR-mal, eksempelkort, etiketter og et skript som setter opp et GitHub Project. Noen innstillinger (kolonner, grenser, visninger) gjøres for hånd, eller følger med fra et [malprosjekt](docs/OPPSETT.md#malprosjekt). Regn med ca. 20 minutter totalt.
+| What we need to know | What we think we know | Prioritized | Investigating | What we currently know | Informed bet |
+| --- | --- | --- | --- | --- | --- |
+| Open questions that matter for a decision ahead | Working beliefs, not yet established | Committed: has people and a next checkpoint | Learning under way, three cards at most | The best current understanding, scoped to the evidence | Proceeding despite uncertainty, on purpose |
 
-## Kom i gang
+- **Two ways in:** a **Question** («How do bookkeepers find missing invoices at month end?») or a **Belief** («We believe clients will upload invoices themselves»).
+- **The card changes shape with its state.** It starts with a title, why it matters and what would be enough to update our understanding. When it becomes *What we currently know*, its title is rewritten to state the understanding and the evidence it rests on.
+- **Knowledge and action are separate.** *What we currently know* means the team knows enough within the current scope. *Informed bet* means it does not, and proceeds anyway, knowingly.
+- **Changed minds are visible.** Concluded beliefs get an Outcome. The view *Changed our mind* shows the ones that did not hold or had to be refined.
+- **A weekly review** of 20 to 30 minutes keeps the board alive and decides what the team is willing to call current understanding.
 
-Her er kortversjonen. Hele oppsettet steg for steg, også installasjon av GitHub CLI, står i [docs/OPPSETT.md](docs/OPPSETT.md).
+The method is in [docs/working-model.md](docs/working-model.md). Good cards are in [docs/examples.md](docs/examples.md).
 
-1. **Lag ditt eget repo fra malen.** Trykk *Use this template* → *Create a new repository* på GitHub, og gjør det **privat**. Bruk ett repo per kunde. Skal kunden bare ha lesetilgang, må repoet eies av en organisasjon, se [Tilgang](docs/OPPSETT.md#8-tilgang). Alternativt: klon dette repoet og push det til et nytt.
-2. **Kjør oppsettsskriptet** fra en lokal kopi av det nye repoet. Det krever [GitHub CLI](https://cli.github.com):
+## Get started
+
+The full setup, including installing GitHub CLI, is in [docs/setup.md](docs/setup.md). Plan for about 30 minutes.
+
+1. **Create a repository from the template:** *Use this template* → *Create a new repository*, and make it private. Use one repository per product or client. If stakeholders should only read the board, the repository must be owned by an organization.
+2. **Run the setup script** from a clone of the new repository. It needs [GitHub CLI](https://cli.github.com):
    ```bash
-   gh repo clone <eier>/<repo> && cd <repo>
    gh auth refresh -s project
-   ./scripts/setup.sh <eier> <repo>
+   ./scripts/setup.sh <owner> <repo>
    ```
-   `<eier>` er GitHub-brukeren eller organisasjonen, `<repo>` er navnet på det nye repoet. Skriptet lager etikettene, et Project med tre felt og kobler det til repoet.
-3. **Gjør resten for hånd** i [docs/OPPSETT.md](docs/OPPSETT.md), fra steg 4: kolonner, automatisering, visninger, grenser, tilgang, kobling til dev-repoet og et testkort. Med et malprosjekt er kolonner, visninger og grenser allerede på plass.
-4. **Bruk tavlen.** Start med det dere allerede har bygd og det dere vet at dere ikke vet (se [Hvor kortene kommer fra](docs/HVORDAN-VI-JOBBER.md#hvor-kortene-kommer-fra)). [docs/HVORDAN-VI-JOBBER.md](docs/HVORDAN-VI-JOBBER.md) beskriver resten, og de fem avtalene står øverst. [Eksempelkortene](docs/EKSEMPELKORT.md) viser hvordan et godt kort ser ut.
+   It creates the labels, a project with the six states, the fields *Primary lens*, *Outcome* and *Next checkpoint*, and six views, and links the project to the repository.
+3. **Finish by hand:** workflows, the column limit, and sorting and grouping in the views ([docs/setup.md](docs/setup.md), step 4). GitHub's API cannot set these.
+4. **Start.** A new project starts with an empty board. A project that is already running starts with a 90-minute mapping of what has been built and what it rests on ([Where to start](docs/working-model.md#where-to-start)).
 
-## Tavlen i korte trekk
-
-```
-Backlog → Neste opp → Under discovery ─┬→ Klar for implementering → Implementert
-                                       ├→ Ikke sant
-                                       └→ Innsikt
-```
-
-- To typer kort i samme flyt. **Antakelser** testes og ender i *Klar for implementering*, *Implementert* eller *Ikke sant*. **Utforskinger** har en stoppregel og ender i *Innsikt*, med nye kort. Sammen viser sluttkolonnene det dere vet nå: hva som er testet, hva dere bevisst bygger på gjetning, og hva dere har sett, men ikke testet. Visningen *Det vi vet* viser dem samlet.
-- Alle åpne kort har en **oppfølgingsdato**: når vi senest ser på kortet igjen. Det er et signal, ikke en frist å bli målt på.
-- Kortene kan grupperes under **læringsmilepæler** som teamet lager selv: hva vi må vite, og innen når.
-- Kort kan **blokkere hverandre** hvis dere vil, og leveranse-issuer i dev-repoet kan **blokkeres av** antakelsene de venter på.
-- Maks **3** kort under discovery, begge typene til sammen, og **5** i Neste opp.
-- Antakelser som har forlatt discovery merkes med **Basis**: `Validert` (vi har bevis) eller `Bet` (vi bygger uten å ha testet, med vilje). En Bet er greit, så lenge den er merket.
-- Ingen kort forlater discovery uten en skrevet konklusjon: beslutning og produktimplikasjon på en antakelse, innsikt og nye kort på en utforsking, eller hvorfor det ikke ble noen.
-- Issuen lukkes når beslutningen er tatt eller innsikten er skrevet, så milepælens fremdrift måler læring.
-- «Trenger mer research» er en etikett, ikke en kolonne.
-- Start smått: kolonnene, de to skjemaene, Oppfølging og Basis er nok. Risikotype og læringsmilepæler tar dere i bruk når dere trenger dem.
-
-## Innhold
+## What is in the repository
 
 ```
-.github/ISSUE_TEMPLATE/antakelse.yml   Skjema for nye antakelser, med beslutningsnotat
-.github/ISSUE_TEMPLATE/utforsking.yml  Skjema for utforskinger, med innsikt og nye kort
-.github/ISSUE_TEMPLATE/config.yml      Slår av tomme issues, så alle bruker skjemaene
-templates/dev-repo/pull_request_template.md   PR-mal som kopieres til dev-repoet
-scripts/setup.sh                       Oppretter etiketter, Project og felt
-docs/OPPSETT.md                        Oppsett steg for steg
-docs/HVORDAN-VI-JOBBER.md              Fem avtaler, korttypene, kolonnene, rutiner og kobling til dev
-docs/EKSEMPELKORT.md                   Fire ferdig utfylte kort: en utforsking og tre antakelser
-AGENTS.md                              Instruksjoner for AI-assistenter (CLAUDE.md peker hit)
-.claude/skills/                        Fire ferdigheter for AI-assistenter
-.mcp.json                              Kobling til Miro og Figma for AI-assistenter
+.github/ISSUE_TEMPLATE/question.yml        The Question form
+.github/ISSUE_TEMPLATE/belief.yml          The Belief form
+.github/ISSUE_TEMPLATE/config.yml          Turns off blank issues
+docs/working-model.md                      The method
+docs/examples.md                           Example cards in each state
+docs/setup.md                              Setup, step by step
+scripts/setup.sh                           Creates labels, project, fields and views
+templates/dev-repo/pull_request_template.md  For the delivery repository: which learning a change builds on
+AGENTS.md                                  Instructions for AI assistants
+.claude/skills/discovery-assistant/        The AI assistant's four jobs
+.claude/settings.json                      Which GitHub commands the assistant may run without asking
 ```
 
-## AI-assistenter (valgfritt)
+## The AI assistant (optional)
 
-Tavlen virker uten AI, og alle lager kort selv, i skjemaet eller med hjelp fra en assistent. Bruker teamet AI-verktøy, ligger instruksjonene klare:
+The board works without AI. If the team uses Claude Code or GitHub Copilot, the assistant in `.claude/skills/discovery-assistant/` has four jobs:
 
-- `AGENTS.md` gir alle AI-verktøy metoden, kommandoene og grensene: hva de alltid gjør, hva de spør om først, og hva de aldri gjør. `CLAUDE.md` peker dit.
-- Fire ferdigheter (skills) i `.claude/skills/`. Claude Code og GitHub Copilot finner dem selv. I andre verktøy kan du be assistenten lese fila.
-  - `writing-cards` hjelper dere å gjøre spørsmål, idéer, funksjoner eller en løs tanke om til gode kort: en antakelse når dere vet hva dere tror, en utforsking når dere må forstå mer først. Den finner hva dere må finne ut av fra produkt, design, teknologi og forretning, utfordrer hvert kort og foreslår en test eller en måte å utforske på. Den oppretter issuen bare etter et ja.
-  - `preparing-weekly-meeting` går gjennom tavlen og lager en kort agenda til ukesmøtet. Den endrer ingenting.
-  - `summarizing-learnings` skriver et utkast til ukens læringsbrev, «Dette lærte vi», fra beslutningene og innsikten på kortene, med lenke til hvert kort. Den kan også oppsummere en læringsmilepæl. Den sender ingenting.
-  - `reviewing-decisions` går gjennom ett kort før det forlater discovery: om «Det vi så» når grensen i «Vi har rett hvis…», om en Validert egentlig er en Bet, og om innsikten fra en utforsking blir presentert som testet. Den stiller spørsmål og godkjenner aldri.
-- `.mcp.json` kobler Claude Code og VS Code (GitHub Copilot) til Miro og Figma. Da kan assistenten lese bevisene kortene lenker til, og utfordre konklusjonen mot dem. Hver person logger inn med egen konto (i Claude Code med `/mcp`), og assistenten ser bare det personen har tilgang til. Den skal bare lese, aldri endre. På Mirós Enterprise-plan må en admin slå på MCP-serveren først. Begge tjenestene er nye og kan endre seg. Andre verktøy med MCP-server kan legges til i samme fil.
+1. **Formulate:** turn a concern, idea or loose belief into a good question or belief card, and help map a running project.
+2. **Challenge:** before a card becomes current understanding or an informed bet, question its scope, evidence and wording.
+3. **Prepare the review:** draft the weekly review agenda from the board.
+4. **Communicate:** draft the learning update for stakeholders.
 
-Assistentene kan ta feil. En sjekk fra dem er aldri bevis, og teamet bestemmer. Instruksjonene er på engelsk, men assistentene svarer på norsk. Sjekk at avtalen med kunden tillater at innhold fra tavlen sendes til en AI-tjeneste.
+It reads the board with GitHub CLI and writes to GitHub only after an explicit yes to the exact change. It never decides what the team knows, never sends anything, and never presents its own output as evidence. The rules are in [AGENTS.md](AGENTS.md).
 
-## Personvern
+## Privacy
 
-Hold denne malen fri for kundedata. Kjør de ekte tavlene i private repoer. Legg ikke personopplysninger i issues: lenk til oppsummeringer av intervjuer, ikke til opptak, navn eller rådata.
+The board holds conclusions, not raw research. Never put names of interviewees, identifying quotes, recordings or raw notes in an issue. Link to summaries in the tools where the research lives.
 
-## Tilpass
+## Keep it small
 
-Dette er et startpunkt. Etter 3–4 uker: sjekk om grensene på 3 og 5 passer, spør hva dere gjør bare fordi dere må, og fjern kolonner, felt og avtaler dere ikke bruker.
+Two forms, six states, three fields and one weekly review are enough. Add only what the team will actually use, and remove what nobody uses.
 
-Et repo som er laget fra malen, får ikke senere endringer i malen. Vil dere ha med en forbedring, kopier den over for hånd. Historikken i malen viser hva som er endret.
+## License
+
+[MIT](LICENSE)

@@ -1,17 +1,17 @@
 <!--
-Kopier denne filen til dev-repoet som .github/pull_request_template.md.
-Den kobler koden til antakelsene den bygger på.
+Copy this file to the delivery repository as .github/pull_request_template.md.
+It links the code to the learning it builds on.
 -->
 
-## Hva endres
+## What changes
 
-## Bygger på antakelse
+## Learning this builds on
 
-<!-- Lenk kortet på discovery-tavlen, f.eks. org/discovery#123. Skriv «Ingen» hvis endringen ikke bygger på en antakelse. -->
+<!-- Link the card on the discovery board, for example org/discovery#123. Write «None» if the change does not build on discovery. -->
 
-- Antakelse: 
-- Basis: Validert / Bet / Ingen
+- Card:
+- Basis: Current understanding / Informed bet / None
 
-## Nye antakelser underveis?
+## New uncertainty?
 
-<!-- Tok du et valg som bygger på noe vi ikke vet? Lag et kort med skjemaet «Antakelse» i discovery-repoet og lenk det her. Er arbeidet avhengig av svaret, marker leveranse-issuen som «blocked by» kortet. -->
+<!-- Did you make a choice that rests on something the team does not know? Create a Belief card in the discovery repository and link it here. If this work depends on the answer, mark the delivery issue as «blocked by» that card. -->
