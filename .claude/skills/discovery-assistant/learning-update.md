@@ -12,7 +12,7 @@ Draft a short learning update for stakeholders who do not follow the board. It b
 - [ ] 5. Show the draft and what was left out
 ```
 
-**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone. The update follows the weekly review. If the review has not happened yet, say so, and in step 5 list the cards closed since the last review separately, as not yet checked in a review.
+**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone. The update follows the weekly review. Unless the person has said when the last review was, ask. If it has not happened yet, say so, and in step 5 list the cards closed since the last review separately, as not yet checked in a review.
 
 **2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since `gh project item-list` shows no date for Outcome), and the cards in *Prioritized*, *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
 
@@ -20,7 +20,7 @@ Read the comments on the cards you use (`gh issue view <number> --comments`). Ig
 
 - a card in *What we currently know* whose *Current understanding* section is empty, or whose title is still a question or starts with «We believe»,
 - a card in *Informed bet* whose *Informed bet* section is empty,
-- a card that a comment questions, unless the review has taken it up.
+- a card that a comment questions, unless the review has taken it up or the card has been reopened (report it under «is open again»).
 
 **3. Draft the update:**
 
@@ -48,7 +48,7 @@ Read the comments on the cards you use (`gh issue view <number> --comments`). Ig
 
 Skip empty sections. Keep each line to what the card says, in the team's words. Present *Did not hold* as a useful result, in the card's words. Do not say the team avoided building on it unless the card says so.
 
-The old belief for «What changed» is in the title history, since the title was rewritten. Read it on the issue page, or with `gh api repos/{owner}/{repo}/issues/<number>/events --jq '[.[] | select(.event == "renamed")][0].rename.from'`, which Claude Code asks before running. If you cannot get it, ask. Never reconstruct it from the new title.
+The old belief for «What changed» is in the title history, since the title was rewritten. Read it on the issue page, or with `gh api --paginate repos/{owner}/{repo}/issues/<number>/events --jq '.[] | select(.event == "renamed") | .rename.from'`, which lists the earlier titles oldest first and which Claude Code asks before running. The old belief is the last of them that starts with «We believe». If there is none, ask. Never reconstruct it from the new title.
 
 For one milestone instead of a period, use the milestone's three parts: what the desired learning was, what is now understood, and what the cards show against «reached when». Say that it is reached only if the team has closed the milestone or said so.
 

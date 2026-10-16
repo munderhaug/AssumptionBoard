@@ -131,7 +131,7 @@ The view **Changed our mind** shows every card with *Did not hold* or *Refined*.
 
 Every understanding is worded no broader than its evidence, so a narrower title alone does not make a belief Refined.
 
-An *Inconclusive* belief goes back to *What we think we know* with a sharper criterion, or becomes an informed bet. Empty its *Current understanding* and link what was found under *Existing material and indications*, so the draft is not read as a conclusion. A question whose investigation gave no usable answer is handled the same way, without an Outcome. The team decides in the weekly review.
+An *Inconclusive* belief goes back to *What we think we know* with a sharper criterion, or becomes an informed bet. Empty its *Current understanding* and link what was found under *Existing material and indications*, so the draft is not read as a conclusion. A question whose investigation gave no usable answer is handled the same way, but goes back to *What we need to know*, with what was found under *Existing material*, and without an Outcome. The team decides in the weekly review.
 
 ## Closing and reopening
 

@@ -21,7 +21,7 @@ Draft a short agenda for the weekly review from the board, so the meeting spends
 
 | Look for | Why | Agenda item |
 | --- | --- | --- |
-| Open cards whose *Current understanding* section is filled in, except cards reopened in the period | Candidates for *What we currently know*. The team asks the three questions in «The rule», agrees on the title, sets Outcome for a belief, and moves the card | 1 and 2 |
+| Open cards whose *Current understanding* section is filled in, except cards reopened in the period | Candidates for *What we currently know*. The team asks the three questions in «The rule», agrees on the title, sets Outcome for a belief, and moves the card | 1, 2 and 7 |
 | Cards closed in the period (`stateReason` COMPLETED) | Has the team agreed on each? If not, ask the three questions now, or reopen | 1 |
 | Cards closed as completed whose title is still a question or starts with «We believe» | The understanding has not been written as the title | 1 |
 | Prioritized or Investigating cards past their Next checkpoint | Can they be concluded, continued or stopped? | 2 |
