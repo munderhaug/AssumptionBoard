@@ -76,7 +76,7 @@ GitHub's API cannot set workflows, column limits, sorting or grouping. Open the 
 | Auto-archive items | On, filter `is:closed reason:"not planned"` |
 | Pull request linked, Pull request merged, Code changes requested, Code review approved | Off |
 
-Why: closing a card and moving it to *What we currently know* become the same action, from either direction. The reverse is not automatic: moving a card out of *What we currently know* does not reopen it, so reopen the issue first. *Item closed* also moves cards closed as not planned to *What we currently know*, and auto-archive is what removes them, so it must be on. Close duplicates as not planned too: a card closed with *Close as duplicate* is not archived. On GitHub Free a project can only have one auto-add workflow, so it adds all issues; the repository is only used for cards. Auto-add does not pick up issues that existed before you turned it on.
+Why: closing a card and moving it to *What we currently know* become the same action, from either direction. The reverse is not automatic: moving a card out of *What we currently know* does not reopen it, so reopen the issue first. *Item closed* also moves cards closed as not planned to *What we currently know*, and auto-archive is what removes them, so it must be on. Close duplicates as not planned too: a card closed with *Close as duplicate* is not archived. On GitHub Free a project can only have one auto-add workflow, so it adds all issues; the repository is only used for cards. Auto-add adds issues only when they are created or updated, so issues that existed before you turned it on appear only when someone next updates them. Add them by hand.
 
 **Column limit:** in *Board*, open the menu next to *Investigating* → *Set column limit*, type 3 and click *Save*. The limit only highlights; it does not block.
 
@@ -117,14 +117,14 @@ The `LICENSE` file covers the template itself. Delete it in your board if it doe
 
 ## 7. Link to the delivery repository
 
-1. Copy `templates/dev-repo/pull_request_template.md` to the delivery repository as `.github/pull_request_template.md`. Every pull request then names the learning it builds on, and whether that is current understanding or an informed bet.
+1. Copy `templates/dev-repo/pull_request_template.md` to the delivery repository as `.github/pull_request_template.md`. Every pull request then names the learning it builds on, and whether that is current understanding, an informed bet or not decided yet.
 2. When a delivery issue must wait for a question or belief to be resolved, mark it as *blocked by* the card. Use *Relationships* in the issue's sidebar, or GitHub CLI 2.94.0 or newer:
    ```bash
    gh issue edit <number> --repo <owner>/<delivery-repo> \
      --add-blocked-by https://github.com/<owner>/<discovery-repo>/issues/<card-number>
    ```
    Never block delivery on an informed bet. The bet is the decision to proceed.
-3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides. Never close a card from the delivery repository: no «Closes», «Fixes» or «Resolves» before a card in a pull request or commit message, and no pull request linked in the card's *Development* sidebar. Merging would close the card and mark it as current understanding.
+3. Mention cards in delivery issues and decisions, for example «Informed by org/discovery#12». GitHub then shows the link on both sides. Never close a card from the delivery repository: no «Closes», «Fixes», «Resolves» or any other closing keyword before a card in a pull request or commit message, and no pull request or branch linked in the card's *Development* sidebar. Merging would close the card and mark it as current understanding.
 
 ## 8. Try it
 

@@ -46,7 +46,7 @@ The first two columns are two starting points, not two steps: a question starts 
 
 ## Two ways in
 
-Every card starts as one of two issue forms:
+Every card starts as one of two issue forms, under *Issues* → *New issue* (not *+ Add item* on the board, which makes a draft without the form):
 
 - **Question** (label `question`): something the team needs to understand. The title is the question.
 - **Belief** (label `belief`): something the team believes but has not established. The title starts with «We believe».
@@ -64,7 +64,7 @@ A broader learning question with several distinct parts becomes a **thread**: a 
 | What we currently know | The *Current understanding* section, filled in before the weekly review. In the review: a new title that states the understanding, and Outcome for beliefs. |
 | Informed bet | The *Informed bet* section, and its revisit date as Next checkpoint. The title stays as it is. |
 
-The **next checkpoint** is the date the team next looks at what has been learned and decides to conclude, continue or stop. It is not a deadline for finishing.
+The **next checkpoint** is the date the team next looks at what has been learned and decides to conclude, continue or stop. It is not a deadline for finishing. Stopping moves the card back to where it started, *What we need to know* or *What we think we know*, without people or a checkpoint. If it no longer matters, close it as not planned (see [Closing and reopening](#closing-and-reopening)).
 
 The later sections are already in the card from the start, with short hints that show when someone edits the card. GitHub keeps the old title and every edit in the issue's history, so nothing is lost when the title is rewritten.
 
@@ -112,7 +112,7 @@ Keeping them apart lets the team move fast without rewriting uncertainty as cert
 
 An informed bet usually grows out of an existing question or belief. The team decides on it together, usually in the weekly review: it checks the *Informed bet* section, filled in beforehand or in the review, sets the revisit date as Next checkpoint, and moves the card. The title stays as it is. When a decision cannot wait for the review, decide with the people involved and take it up in the next review.
 
-A bet stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence. Revisiting means keeping the bet with a new revisit date as Next checkpoint, moving the card to *Prioritized* to investigate it, or concluding it if evidence has arrived.
+A bet stays open, because the uncertainty is still there. It is revisited when its date or trigger arrives, or earlier if the team or a stakeholder asks for evidence. Revisiting means keeping the bet with a new date under *Revisit when* and as Next checkpoint, moving the card to *Prioritized* to investigate it, or concluding it if evidence has arrived.
 
 ## Outcome: making changed minds visible
 
@@ -131,13 +131,13 @@ The view **Changed our mind** shows every card with *Did not hold* or *Refined*.
 
 Every understanding is worded no broader than its evidence, so a narrower title alone does not make a belief Refined.
 
-An *Inconclusive* belief goes back to *What we think we know* with a sharper criterion, or becomes an informed bet. The team decides in the weekly review.
+An *Inconclusive* belief goes back to *What we think we know* with a sharper criterion, or becomes an informed bet. Empty its *Current understanding* and link what was found under *Existing material and indications*, so the draft is not read as a conclusion. A question whose investigation gave no usable answer is handled the same way, without an Outcome. The team decides in the weekly review.
 
 ## Closing and reopening
 
-- A card is closed when the team moves it to *What we currently know* in the weekly review. The project closes it automatically, and a card closed any other way moves there automatically. So never close a card because the work on it is done, an investigation has ended or a feature has shipped, and never close a card from the delivery repository: no «Closes», «Fixes» or «Resolves» before a card in a pull request or commit message, and no pull request or branch linked in the card's *Development* sidebar. Merging would close the card.
+- A card is closed when the team moves it to *What we currently know* in the weekly review. The project closes it automatically, and a card closed any other way moves there automatically. So never close a card because the work on it is done, an investigation has ended or a feature has shipped, and never close a card from the delivery repository: no «Closes», «Fixes», «Resolves» or any other closing keyword before a card in a pull request or commit message, and no pull request or branch linked in the card's *Development* sidebar. Merging would close the card.
 - An informed bet stays open. It is a basis for action, not knowledge, and closing it would make milestone progress look like learning that never happened.
-- When an understanding is challenged, reopen the card. The project then puts it in *What we think we know* (if it has the *Item reopened* workflow): what the team understood is a belief again. Rewrite the title as that belief («We believe …»), or for a question card as the question and move it to *What we need to know*. Clear Outcome until the team concludes the card again. The old title stays in the issue history. Dragging a card out of *What we currently know* does not reopen it, so reopen it first.
+- When an understanding is challenged, reopen the card. The project then puts it in *What we think we know* (if it has the *Item reopened* workflow): what the team understood is a belief again. Rewrite the title as that belief («We believe …»), or for a question card as the question and move it to *What we need to know*. Clear Outcome and empty *Current understanding* until the team concludes the card again. The old title and text stay in the issue history. Dragging a card out of *What we currently know* does not reopen it, so reopen it first.
 - Cards that turn out to be duplicates or irrelevant: remove their milestone, then choose **Close as not planned**, also for a duplicate (comment «Duplicate of #12»). Do not use *Close as duplicate*. The project archives only cards closed as not planned, and treats every other closed card as knowledge.
 
 ## Threads

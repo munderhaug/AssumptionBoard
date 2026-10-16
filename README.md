@@ -40,6 +40,7 @@ The full setup, including installing GitHub CLI, is in [docs/setup.md](docs/setu
 .github/ISSUE_TEMPLATE/question.yml        The Question form
 .github/ISSUE_TEMPLATE/belief.yml          The Belief form
 .github/ISSUE_TEMPLATE/config.yml          Hides blank issues from readers
+.gitattributes                             Keeps the setup script runnable on Windows
 docs/working-model.md                      The method
 docs/examples.md                           Example cards in each state
 docs/setup.md                              Setup, step by step

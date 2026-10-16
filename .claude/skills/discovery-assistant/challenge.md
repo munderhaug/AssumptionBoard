@@ -38,7 +38,7 @@ For *What we currently know*:
 | Strong enough | Is it strong enough for the decision it is meant to inform now? |
 | Knowledge, not coverage | Is it about users, work, domain, product or technology, not about the research itself («we interviewed…»)? |
 | Title | Does the title state the understanding, with its basis in parentheses, not the original question or belief? |
-| Outcome | For a belief: does Outcome (Supported, Refined, Did not hold) match what was found? A question has no Outcome. |
+| Outcome | For a belief: does Outcome (Supported, Refined, Did not hold) match what was found? If the title has been rewritten, the original belief is in the title history, read as in `learning-update.md`. A question has no Outcome. |
 | Sources | Do the links point to specific summaries with dates? Do the numbers in the card appear there? |
 
 For *Informed bet*:
@@ -70,11 +70,11 @@ Looks fine: the Outcome matches *What we found*, and *Applies to* names what was
 | «It is obviously true» | Then the evidence will show it. Which part of *What we found* shows it? |
 | «We need it for the demo tomorrow» | An informed bet can be shown in a demo just as well, as long as it is called a bet. |
 | «We learned something else important» | Good. Make it a new card. It is not what this card investigated. |
-| «It is close enough» | Put what the criterion asked for next to what was found. If it falls short, Refined or Inconclusive may be the honest outcome. The team decides. |
+| «It is close enough» | Put what the criterion asked for next to what was found. If it falls short, Did not hold, Refined or Inconclusive may be the honest outcome. The team decides. |
 
 ## Never
 
 - Never approve, score or certify a card, or give your own verdict.
-- Never change the card, its fields or its state. Never close it.
+- Never change the card, its fields or its state as part of the challenge, and never close it. If the person then asks for a change, it is a write: follow «Ask first» in `AGENTS.md`.
 - Never write the *Current understanding* or *Informed bet* sections for the team unless asked. If asked, mark the draft as yours and use only what the card and its sources say.
-- Never read beyond the sources the card links to, and never quote personal data.
+- Never read sources beyond the board and the links on the card, and never quote personal data.

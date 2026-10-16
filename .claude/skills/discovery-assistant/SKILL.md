@@ -38,7 +38,7 @@ When a job needs milestones, read them with the milestones command in `AGENTS.md
 
 - Base everything on what the cards and their linked sources say, and link every card you mention.
 - Separate the card's content from your suggestions, and say briefly why you suggest something.
-- Ask one or two questions at a time. A guess the person can correct is fine: «My guess: … Is that right?»
+- Ask one question at a time. A guess the person can correct is fine: «My guess: … Is that right?»
 - Keep the wording no broader than the evidence.
 - Respect a no. The cards belong to the team.
 

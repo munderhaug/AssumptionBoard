@@ -28,7 +28,7 @@ date +%F
 
 - If a result count equals `--limit`, raise the limit so no cards are missed.
 - Card bodies have the sections `### Why it matters`, `### What would be enough to update our understanding?` (questions) or `### What evidence would strengthen or challenge it?` (beliefs), `### Existing material` (or `### Existing material and indications`), `### Current understanding`, `### Informed bet` and `### Decisions informed`. Empty fields read `_No response_`. The *Current understanding* and *Informed bet* sections start prefilled with bold labels and HTML comments; a section with only those counts as empty.
-- Every issue should be a card with the label `question` or `belief`. The browser hides blank issues only from people with read access: the team can still open one, and issues created from the command line skip the forms. If an issue has neither label, say so and leave it alone.
+- Every issue should be a card with the label `question` or `belief`. The browser hides blank issues only from people with read access: the team can still open one, and issues created from the command line, and drafts made with *+ Add item* on the board, skip the forms. If an issue has neither label, say so and leave it alone.
 - Cards closed as *not planned* or as *duplicate* are duplicates or irrelevant, never knowledge. Ignore them unless asked, but point out a card closed as *duplicate*: it is not archived and still shows as knowledge until it is reopened and closed as not planned. When asked to close a duplicate or irrelevant card, remove its milestone first and close it as not planned, since only that reason is archived: `gh issue close <card> --reason "not planned" --comment "Duplicate of #<original>"` (the comment only for a duplicate).
 
 ## The method in brief

@@ -12,14 +12,15 @@ Draft a short learning update for stakeholders who do not follow the board. It b
 - [ ] 5. Show the draft and what was left out
 ```
 
-**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone.
+**1. Period and audience.** The default is the last 7 days, for stakeholders outside the team. Ask if the person wants another period or one milestone. The update follows the weekly review. If the review has not happened yet, say so, and in step 5 list the cards closed since the last review separately, as not yet checked in a review.
 
-**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since Outcome has no date), and the cards in *Prioritized*, *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
+**2. Read the board** as in `SKILL.md`. Use cards closed as completed in the period (`closedAt`), cards whose Status or Outcome changed in the period (from `updatedAt`, an estimate, since `gh project item-list` shows no date for Outcome), and the cards in *Prioritized*, *Investigating* and *Informed bet* now. For one milestone, read the milestones with the command in `AGENTS.md`.
 
-Leave out, and list separately in step 5:
+Read the comments on the cards you use (`gh issue view <number> --comments`). Ignore cards closed as not planned or as duplicate. Leave out, and list separately in step 5:
 
 - a card in *What we currently know* whose *Current understanding* section is empty, or whose title is still a question or starts with «We believe»,
-- a card in *Informed bet* whose *Informed bet* section is empty.
+- a card in *Informed bet* whose *Informed bet* section is empty,
+- a card that a comment questions, unless the review has taken it up.
 
 **3. Draft the update:**
 
@@ -32,9 +33,10 @@ Leave out, and list separately in step 5:
 **What changed**
 - We believed <old belief>. It did not hold: <what we understand now>. ([#15](<url>))
 - We believed <old belief>. It held only in part: <what we understand now>. ([#16](<url>))
+- <the understanding> is open again: <what challenged it, as the card or its comments say>. ([#17](<url>))
 
 **What remains uncertain**
-- <the cards in *Prioritized*>, and the informed bets we proceed on: <bet>, revisited <date>. ([#9](<url>))
+- <the cards in *Prioritized*>, and the informed bets we proceed on: <bet>, revisit date <date>. ([#9](<url>))
 
 **What we are learning now**
 - <investigating cards>. ([#18](<url>))

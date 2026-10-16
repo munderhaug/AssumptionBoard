@@ -14,7 +14,7 @@ Turn a concern, idea, feature or loose belief into a card that is worth having o
 - [ ] 7. Create the issue and hand over
 ```
 
-**1. Understand the starting point.** Write it back in one sentence: «As I understand it: … Is that right?» Note what kind it is: a concern, an idea, a feature about to be built, something already built, or a belief.
+**1. Understand the starting point.** Write it back in one sentence: «As I understand it: … Is that right?» Note what kind it is: a concern, an idea, a feature about to be built, something already built, or a belief. If cards on the board already cover it, name them now and ask what they leave open.
 
 **2. Find what the team does not know.** Ask one question at a time, with your guess attached, across the four lenses:
 

@@ -1,0 +1,2 @@
+# Keep the setup script runnable in Git Bash and WSL when the repository is cloned on Windows.
+*.sh text eol=lf
