@@ -40,6 +40,7 @@ The full setup, including installing GitHub CLI, is in [docs/setup.md](docs/setu
 .github/ISSUE_TEMPLATE/question.yml        The Question form
 .github/ISSUE_TEMPLATE/belief.yml          The Belief form
 .github/ISSUE_TEMPLATE/config.yml          Hides blank issues from readers
+.github/copilot-instructions.md            Short rules for Copilot Chat on github.com
 .gitattributes                             Keeps the setup script runnable on Windows
 docs/working-model.md                      The method
 docs/examples.md                           Example cards in each state
@@ -61,6 +62,12 @@ The board works without AI. If the team uses Claude Code or GitHub Copilot, the 
 4. **Communicate:** draft the learning update for stakeholders.
 
 It reads the board with GitHub CLI and writes to GitHub only after an explicit yes to the exact change. It never decides what the team knows, never sends anything, and never presents its own output as evidence. The rules are in [AGENTS.md](AGENTS.md).
+
+- **Start it** with `/discovery-assistant` in Claude Code, or just ask, for example «we believe clients will upload invoices themselves: make a card».
+- **Use it in a local session:** Claude Code in a terminal, Claude Desktop or VS Code, or GitHub Copilot's agent mode or CLI. From a browser or phone, reach your local session through [Remote Control](https://code.claude.com/docs/en/remote-control). Claude Code on the web cannot read the board's fields, so there it can only help draft cards.
+- **Approve each write.** Claude Code asks before every board write, as set in `.claude/settings.json`. Copilot asks too, but do not choose *always allow*, *Allow all* or similar for board work. Never assign a card to Copilot: its cloud agent works without asking.
+- **Copilot Chat on github.com** follows the short rules in `.github/copilot-instructions.md`. It can draft a card from the Question or Belief form for you to check and create, but it cannot see the board's fields.
+- **What is sent to the AI provider:** everything you and the assistant read and write, including card text and comments. Before using it on a client's board, check that your agreement with the client allows it. Use a business plan (such as Claude Team or Enterprise, or Copilot Business or Enterprise), or turn off model training in your own settings. See [how Claude Code uses data](https://code.claude.com/docs/en/data-usage) and [GitHub's Copilot data policy](https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/).
 
 ## Privacy
 

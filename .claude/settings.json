@@ -35,7 +35,15 @@
       "Bash(gh label:*)",
       "Bash(gh repo edit:*)",
       "Bash(gh api:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "mcp__*__create_*",
+      "mcp__*__update_*",
+      "mcp__*__add_*",
+      "mcp__*__remove_*",
+      "mcp__*__delete_*",
+      "mcp__*__merge_*",
+      "mcp__*__push_*",
+      "mcp__*__*_write"
     ],
     "deny": [
       "Bash(gh issue delete:*)",

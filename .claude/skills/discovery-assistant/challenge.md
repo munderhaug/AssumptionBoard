@@ -39,7 +39,7 @@ For *What we currently know*:
 | Knowledge, not coverage | Is it about users, work, domain, product or technology, not about the research itself («we interviewed…»)? |
 | Title | Does the title state the understanding, with its basis in parentheses, not the original question or belief? |
 | Outcome | For a belief: does Outcome (Supported, Refined, Did not hold) match what was found? If the title has been rewritten, the original belief is in the title history, read as in `learning-update.md`. A question has no Outcome. |
-| Sources | Do the links point to specific summaries with dates? Do the numbers in the card appear there? |
+| Sources | Do the links point to specific summaries with dates? Do the numbers in the card appear there? If a linked summary was made by an AI tool, has someone checked it against the notes or recordings? Ask; do not open them. |
 
 For *Informed bet*:
 
@@ -50,7 +50,7 @@ For *Informed bet*:
 | Revisit | The date or trigger is concrete enough that someone will notice it, and a revisit date is also set as Next checkpoint. |
 | Delivery | No delivery issue should be blocked by a bet: the bet is the decision to proceed. Check with `gh issue view <number> --json blocking` (GitHub CLI 2.94.0 or newer, as in `docs/setup.md` step 7). If gh does not know the field, say so and ask the team to check the card's *Relationships*. |
 
-**4. Write the challenge** in this shape. One line per check that needs attention, quoting the card word for word. List what looks fine in one line at the end.
+**4. Write the challenge** in this shape. One line per check that needs attention, quoting the card word for word. End with one line naming the checks that raised no question.
 
 ```markdown
 **Challenge of #12 «<title>»**
@@ -60,8 +60,10 @@ These are questions for the team, not an approval. The team decides.
 - **Say or do:** «would prefer to upload» describes an intention. Did anyone actually upload?
 - **Sources:** the link goes to a whole Miro board. Which frame holds the summary?
 
-Looks fine: the Outcome matches *What we found*, and *Applies to* names what was not tested.
+No questions on: Outcome against *What we found*, and *Applies to* naming what was not tested.
 ```
+
+A challenge is not a check the card passed. Never cite it as support in a card or a learning update.
 
 ## When someone pushes back
 
@@ -76,5 +78,5 @@ Looks fine: the Outcome matches *What we found*, and *Applies to* names what was
 
 - Never approve, score or certify a card, or give your own verdict.
 - Never change the card, its fields or its state as part of the challenge, and never close it. If the person then asks for a change, it is a write: follow «Ask first» in `AGENTS.md`.
-- Never write the *Current understanding* or *Informed bet* sections for the team unless asked. If asked, mark the draft as yours and use only what the card and its sources say.
+- Never write the *Current understanding* or *Informed bet* sections for the team unless asked. If asked, first ask the person, one question at a time, what they found (or what the team proceeds with, why it is reasonable now and what happens if it is wrong), in their own words. Then tighten only that wording, using the card and its sources, and mark the draft as yours.
 - Never read sources beyond the board and the links on the card, and never quote personal data.

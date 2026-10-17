@@ -239,7 +239,7 @@ When there is little to discuss, keep it short. Do not skip it two weeks in a ro
 Choose one of two modes, or both:
 
 - **Stakeholders read the board.** Give them read access to the repository and the project, and point them to *Ready for action*, *Learning now* and *Changed our mind*. They do not need to read the whole list of open questions. A stakeholder who questions a card comments on it, and the team takes it up in the next weekly review. Read-only access needs a repository owned by an organization (a free one is enough).
-- **Stakeholders get a weekly learning update.** After the review, send a short update: what we learned, what changed, what remains uncertain, what we are learning now, and which decisions it affects. Each item links to its card. The AI assistant can draft it, and a person reviews and sends it.
+- **Stakeholders get a weekly learning update.** After the review, send a short update: what we learned, what changed, what remains uncertain, what we are learning now, and which decisions it affects. Each item links to its card. The AI assistant can draft it, and a person reviews and sends it. If the team uses AI, tell stakeholders once how: the assistant drafts from the board, a person checks every line against its card, and AI output is never evidence.
 
 ## The role of AI
 
@@ -252,7 +252,9 @@ AI is an assistant, never the owner of discovery. Initially it has four jobs:
 
 Searching connected sources for existing evidence is added only once Miro, Figma or document tools are actually connected.
 
-AI never declares something current understanding, decides that a bet is acceptable, makes product or architectural decisions, rewrites the board's history, or replaces direct contact with users and domain experts. Humans make the judgements.
+These are support jobs. The sense-making stays with the team: talking to users, deciding what the evidence shows, and wording what the team now understands. That is how the team learns, and how it can explain its basis to the client. So the assistant asks before it suggests, the person writes first when a conclusion is drafted, and the team answers the three questions in [The rule](#the-rule) before it reads any challenge from the assistant.
+
+AI never declares something current understanding, decides that a bet is acceptable, makes product or architectural decisions, rewrites the board's history, or replaces direct contact with users and domain experts. It never stands in for users either: a model's answer about what users think is not evidence. Humans make the judgements.
 
 ## What the board is not
 
@@ -268,3 +270,6 @@ Its purpose is narrower: make uncertainty, learning and the basis for decisions 
 - [The Test Card and the Learning Card, Strategyzer](https://assets.strategyzer.com/assets/resources/the-test-card.pdf)
 - [Lean UX, chapter 3, Jeff Gothelf and Josh Seiden](https://www.oreilly.com/library/view/lean-ux/9781449366834/ch03.html)
 - [Product Discovery Recipes, Jeff Patton](https://andrewclark.super.site/all-media/product-discovery-recipes)
+- [Don't use generative AI to replace discovery with real humans, Teresa Torres, Product Talk](https://www.producttalk.org/2024/06/generative-ai-discovery/)
+- [Don't outsource the learning: why human-led research still matters, Nielsen Norman Group](https://www.nngroup.com/articles/human-led-research-still-matters/)
+- [Synthetic users: if, when, and how to use AI-generated «research», Nielsen Norman Group](https://www.nngroup.com/articles/synthetic-users/)

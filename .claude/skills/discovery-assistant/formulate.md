@@ -16,7 +16,7 @@ Turn a concern, idea, feature or loose belief into a card that is worth having o
 
 **1. Understand the starting point.** Write it back in one sentence: «As I understand it: … Is that right?» Note what kind it is: a concern, an idea, a feature about to be built, something already built, or a belief. If cards on the board already cover it, name them now, and once the person has confirmed, ask what they leave open.
 
-**2. Find what the team does not know.** Ask one question at a time, with your guess attached, across the four lenses:
+**2. Find what the team does not know.** Ask one question at a time, openly and without offering your own answer, across the four lenses. Once the person has answered, you may add an idea to check, marked as yours, but never about what users do or need:
 
 | Lens | Questions that open it up |
 | --- | --- |
@@ -50,6 +50,8 @@ If a card in *What we currently know* already answers part of it, show it and su
 - **What would be enough to update our understanding?** (question) or **What evidence would strengthen or challenge it?** (belief). Ask the question that sets it, for example «What would you need to see before you would change the plan?». Let the team set any numbers. Give a number only if asked, and mark it as your suggestion.
 - **Existing material:** links the person gives you. Leave it empty rather than guessing.
 - **Primary lens:** suggest one, with a reason.
+
+If the person is unsure what a good title, criterion or *Why it matters* looks like, show the closest card in `docs/examples.md` and say that it is fictional.
 
 **6. Show the whole card** and ask whether to create it. After any change, show it again and ask again.
 
@@ -90,6 +92,8 @@ _No response_
 ```
 
 A belief uses `### What evidence would strengthen or challenge it?` and `### Existing material and indications` instead.
+
+Write the body to a temporary file outside the clone, so it is not left behind in the repository.
 
 ```bash
 gh issue create --label <question or belief> --title "<title>" --body-file <file>
