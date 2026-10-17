@@ -43,6 +43,7 @@
       "mcp__*__delete_*",
       "mcp__*__merge_*",
       "mcp__*__push_*",
+      "mcp__*__assign_*",
       "mcp__*__*_write"
     ],
     "deny": [
