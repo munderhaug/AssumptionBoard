@@ -54,7 +54,7 @@ For *Informed bet*:
 
 ```markdown
 **Challenge of #12 «<title>»**
-These are questions for the team, not an approval. The team decides. If it has not yet answered the three questions in «The rule» for this card, answer them before reading on.
+These are questions for the team, not an approval. The team decides. For a card about to become *What we currently know*: if the team has not yet answered the three questions in «The rule», answer them before reading on.
 
 - **Scope:** the title says «clients upload invoices themselves». *What we found* covers 8 pilot clients over one week. Should the title say so?
 - **Say or do:** «would prefer to upload» describes an intention. Did anyone actually upload?

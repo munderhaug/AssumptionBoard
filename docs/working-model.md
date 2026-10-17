@@ -252,7 +252,7 @@ AI is an assistant, never the owner of discovery. Initially it has four jobs:
 
 Searching connected sources for existing evidence is added only once Miro, Figma or document tools are actually connected.
 
-These are support jobs. The sense-making stays with the team: talking to users, deciding what the evidence shows, and wording what the team now understands. That is how the team learns, and how it can explain its basis to the client. So the assistant asks before it suggests, the person writes first when a conclusion is drafted, and the team answers the three questions in [The rule](#the-rule) before it reads any challenge from the assistant.
+These are support jobs. The sense-making stays with the team: talking to users, deciding what the evidence shows, and wording what the team now understands. That is how the team learns, and how it can explain its basis to the client. So the assistant asks before it suggests, the person writes first when a conclusion is drafted, and, for a card about to become current understanding, the team answers the three questions in [The rule](#the-rule) before it reads the assistant's challenge.
 
 AI never declares something current understanding, decides that a bet is acceptable, makes product or architectural decisions, rewrites the board's history, or replaces direct contact with users and domain experts. It never stands in for users either: a model's answer about what users think is not evidence. Humans make the judgements.
 
